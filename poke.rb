@@ -31,10 +31,6 @@ class Player
 
 	def turn(direction)
 		@direction = direction
-		#if    direction == :left  then @x -= 4
-		#elsif direction == :right then @x += 4
-		#elsif direction == :up    then @y -= 4
-		#elsif direction == :down  then @y += 4 end
 		case direction
 			when :left  then @x -= 4
 			when :right then @x += 4

@@ -22,10 +22,6 @@ class Player
 		@current_image.draw(@x, @y, 0)
 	end
 
-	def move
-	
-	end
-
 	def move(direction)
 		@direction = direction
 		case direction

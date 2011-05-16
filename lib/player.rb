@@ -1,4 +1,5 @@
 class Player
+
 	attr_reader :name, :x, :y, :current_image
 
 	def initialize(window, name, x, y)

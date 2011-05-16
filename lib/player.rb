@@ -3,7 +3,7 @@ class Player
 
 	def initialize(window, name, x, y)
 		@facing_right, @facing_up, @facing_left, @facing_down =
-			Gosu::Image.load_tiles(window, 'art/arrows.png', 16, 16, false)
+			Gosu::Image.load_tiles(window, 'media/arrows.png', 16, 16, false)
 		@current_image = @facing_down
 		@x, @y = x, y
 		@name = name

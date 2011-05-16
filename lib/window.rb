@@ -4,7 +4,7 @@ class GameWindow < Gosu::Window
 		super(480,320,false)
 		self.caption = 'Poke'
 		
-		@backgroundImage = Gosu::Image.new(self, 'art/white_background.png', true)
+		@backgroundImage = Gosu::Image.new(self, 'media/white_background.png', true)
 
 		# The player image is 16*16px, so use math to center it in the screen
 		@player = Player.new(self, 'Ferd', (480/2 - 16/2), (320/2 - 16/2))

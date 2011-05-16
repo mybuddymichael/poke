@@ -26,7 +26,7 @@ class Player
 	
 	end
 
-	def turn(direction)
+	def move(direction)
 		@direction = direction
 		case direction
 			when :left  then @x -= 4

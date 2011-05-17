@@ -32,10 +32,12 @@ class Player
 			when :down  then @y += 4
 		end
 
-		if @x < 0 then @x = 0 end
-		if @x > (480-16) then @x = (480-16) end
-		if @y < 0 then @y = 0 end
-		if @y > (320-16) then @y = (320-16) end
+		position_extremes = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}
+
+		if @x < position_extremes[:xmin] then @x = position_extremes[:xmin] end
+		if @x > position_extremes[:xmax] then @x = position_extremes[:xmax] end
+		if @y < position_extremes[:ymin] then @y = position_extremes[:ymin] end
+		if @y > position_extremes[:ymax] then @y = position_extremes[:ymax] end
 	end
 
 end

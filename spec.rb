@@ -31,7 +31,7 @@ class TestPlayer < MiniTest::Unit::TestCase
 		end
 		assert_equal(464, @player.x)
 
-		200.times do
+		150.times do
 			@player.move(:left)
 		end
 		assert_equal(0, @player.x)

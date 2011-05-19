@@ -8,6 +8,7 @@ class Player
 		@current_image = @facing_down
 		@x, @y = x, y
 		@name = name
+		@position_range = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}.freeze
 	end
 
 	def update
@@ -32,12 +33,11 @@ class Player
 			when :down  then @y += 4
 		end
 
-		position_extremes = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}
 
-		if @x < position_extremes[:xmin] then @x = position_extremes[:xmin] end
-		if @x > position_extremes[:xmax] then @x = position_extremes[:xmax] end
-		if @y < position_extremes[:ymin] then @y = position_extremes[:ymin] end
-		if @y > position_extremes[:ymax] then @y = position_extremes[:ymax] end
+		if @x < @position_range[:xmin] then @x = @position_range[:xmin] end
+		if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
+		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
+		if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
 	end
 
 end

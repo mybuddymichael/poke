@@ -9,6 +9,7 @@ class GameWindow < Gosu::Window
 		# The player image is 16*16px, so use math to center it in the screen
 		@player = Player.new(self, 'Ferd', (480/2 - 16/2), (320/2 - 16/2))
 
+		# Create an array to keep track of the controls
 		@buttons_pushed = []
 	end
 	

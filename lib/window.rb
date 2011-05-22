@@ -13,18 +13,6 @@ class GameWindow < Gosu::Window
 	end
 	
 	def update
-		#if button_down? Gosu::KbLeft or button_down? Gosu::KbA
-			#@player.move(:left)
-		#end
-		#if button_down? Gosu::KbRight or button_down? Gosu::KbD
-			#@player.move(:right)
-		#end
-		#if button_down? Gosu::KbDown or button_down? Gosu::KbS
-			#@player.move(:down)
-		#end
-		#if button_down? Gosu::KbUp or button_down? Gosu::KbW
-			#@player.move(:up)
-		#end
 		@buttons_pushed.uniq! if @buttons_pushed.uniq!
 
 		case @buttons_pushed.last

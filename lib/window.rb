@@ -13,6 +13,7 @@ class GameWindow < Gosu::Window
 	end
 	
 	def update
+		# This is probably unnecessary and but nil scares the hell out of me.
 		@buttons_pushed.uniq! if @buttons_pushed.uniq!
 
 		case @buttons_pushed.last

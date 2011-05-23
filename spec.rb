@@ -8,7 +8,7 @@ class TestPlayer < MiniTest::Unit::TestCase
 	def setup
 		@window = GameWindow.new
 		@player = Player.new(@window, 'Ferd', 100, 100)
-		@directions = [:up, :down, :left, :right]
+		@directions = [:up, :down, :left, :right].freeze
 	end
 
 	def test_that_player_is_created

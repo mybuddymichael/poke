@@ -8,8 +8,8 @@ class GameWindow < Gosu::Window
 		
 		@pause_button = Gosu::Image.new(self, 'media/pause_button.png', true)
 
-		@black = Gosu::Color.argb(0xaa000000)
-		@white = Gosu::Color::WHITE
+		@trans_gray = Gosu::Color.argb(0xaa000000)
+		@white      = Gosu::Color::WHITE
 
 		# The player image is 16*16px, so use math to center it in the screen
 		@player = Player.new(self, 'Ferd', (480/2 - 16/2), (320/2 - 16/2))
@@ -34,7 +34,7 @@ class GameWindow < Gosu::Window
 		draw_rect(@window_width, @window_height, @white, 0)
 		@player.draw
 		if @paused
-			draw_rect(@window_width, @window_height, @black, 1)
+			draw_rect(@window_width, @window_height, @trans_gray, 1)
 			@pause_button.draw(160,144,2)
 		end
 	end

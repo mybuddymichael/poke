@@ -8,7 +8,7 @@ class GameWindow < Gosu::Window
 		
 		@pause_button = Gosu::Image.new(self, 'media/pause_button.png', true)
 
-		@trans_gray = Gosu::Color.argb(0xaa000000)
+		@trans_gray = Gosu::Color.argb(0xd5000000)
 		@white      = Gosu::Color::WHITE
 
 		# The player image is 16*16px, so use math to center it in the screen

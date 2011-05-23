@@ -6,7 +6,7 @@ class GameWindow < Gosu::Window
 
 		@window_width, @window_height = 480, 320
 		
-		@pause_button     = Gosu::Image.new(self, 'media/pause_button.png', true)
+		@pause_button = Gosu::Image.new(self, 'media/pause_button.png', true)
 
 		@black = Gosu::Color.argb(0xaa000000)
 		@white = Gosu::Color::WHITE

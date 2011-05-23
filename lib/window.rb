@@ -3,6 +3,8 @@ class GameWindow < Gosu::Window
 	def initialize
 		super(480,320,false)
 		self.caption = 'Poke'
+
+		@window_width, @window_height = 480, 320
 		
 		@backgroundImage = Gosu::Image.new(self, 'media/white_background.png', true)
 

@@ -8,6 +8,7 @@ class TestPlayer < MiniTest::Unit::TestCase
 	def setup
 		@window = GameWindow.new
 		@player = Player.new(@window, 'Ferd', 100, 100)
+		@directions = [:up, :down, :left, :right]
 	end
 
 	def test_that_player_is_created
@@ -15,36 +16,25 @@ class TestPlayer < MiniTest::Unit::TestCase
 	end
 
 	def test_that_player_will_move
-		@player.move(:left)
-		assert_equal(96, @player.x)
-		@player.move(:right)
-		assert_equal(100, @player.x)
-		@player.move(:up)
-		assert_equal(96, @player.y)
-		@player.move(:down)
-		assert_equal(100, @player.y)
+		@directions.each do |direction|
+			@player.move (direction)
+			assert_equal(direction, @player.direction)
+		end
 	end
 
 	def test_that_player_will_stay_onscreen
-		100.times do
-			@player.move(:right)
+		@directions.each do |direction|
+			200.times do
+				@player.move(direction)
+				@player.update
+			end
+			case direction
+				when :up    then assert_equal(0, @player.y)
+				when :down  then assert_equal(304, @player.y)
+				when :left  then assert_equal(0, @player.x)
+				when :right then assert_equal(464, @player.x)
+			end
 		end
-		assert_equal(464, @player.x)
-
-		150.times do
-			@player.move(:left)
-		end
-		assert_equal(0, @player.x)
-
-		100.times do
-			@player.move(:up)
-		end
-		assert_equal(0, @player.y)
-
-		100.times do
-			@player.move(:down)
-		end
-		assert_equal(304, @player.y)
 	end
 
 end

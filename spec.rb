@@ -17,7 +17,7 @@ class TestPlayer < MiniTest::Unit::TestCase
 
 	def test_that_player_will_move
 		@directions.each do |direction|
-			@player.move (direction)
+			@player.move(direction)
 			assert_equal(direction, @player.direction)
 		end
 	end

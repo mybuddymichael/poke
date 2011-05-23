@@ -30,6 +30,7 @@ class Player
 				@x += @movement_factor
 		end
 
+		# If the player position is off the screen, move him just inside
 		if @x < @position_range[:xmin] then @x = @position_range[:xmin] end
 		if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
 		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end

@@ -1,6 +1,6 @@
 class Player
 
-	attr_reader :name, :x, :y, :current_image
+	attr_reader :name, :x, :y, :current_image, :direction
 
 	def initialize(window, name, x, y)
 		@facing_right, @facing_up, @facing_left, @facing_down =

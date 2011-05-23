@@ -6,11 +6,12 @@ class Player
 		@facing_right, @facing_up, @facing_left, @facing_down =
 			Gosu::Image.load_tiles(window, 'media/arrows.png', 16, 16, false)
 		@current_image = @facing_down
+
 		@x, @y = x, y
-		@name = name
+		@name  = name
 
 		@movement_factor = 4
-		@position_range = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}.freeze
+		@position_range  = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}.freeze
 	end
 
 	def update

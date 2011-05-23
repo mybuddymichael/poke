@@ -10,7 +10,7 @@ class Player
 		@x, @y = x, y
 		@name  = name
 
-		@movement_factor = 4
+		@movement_factor = 3
 		@position_range  = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}.freeze
 	end
 

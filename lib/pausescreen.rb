@@ -16,9 +16,8 @@ class PauseScreen
 
 	def draw_rect(width, height, color, z_order)
 		# Draws a rectangle by coordinates clockwise from top-left
-		@window.draw_quad(0, 0, color, width, 0, color,
-		          width, height, color, 0, height, color,
-		          z_order, :default)
+		@window.draw_quad(0, 0, color, width, 0, color, width, height, color,
+		                  0, height, color, z_order, :default)
 	end
 
 end

@@ -27,7 +27,8 @@ class GameWindow < Gosu::Window
 	end
 	
 	def draw
-		draw_rect(@window_width, @window_height, Pokeconstants::White, 0)
+		draw_rect(@window_width, @window_height,
+		          Pokeconstants::White, ZOrder::Background)
 		@player.draw
 		if @paused
 			@pause_screen.draw
@@ -64,9 +65,8 @@ class GameWindow < Gosu::Window
 
 	def draw_rect(width, height, color, z_order)
 		# Draws a rectangle by coordinates clockwise from top-left
-		draw_quad(0, 0, color, width, 0, color,
-		          width, height, color, 0, height, color,
-		          z_order, :default)
+		draw_quad(0, 0, color, width, 0, color, width, height, color,
+		          0, height, color, z_order, :default)
 	end
 
 end

@@ -27,11 +27,10 @@ class GameWindow < Gosu::Window
 	end
 	
 	def draw
-		draw_rect(@window_width, @window_height, @white, 0)
+		draw_rect(@window_width, @window_height, Pokeconstants::White, 0)
 		@player.draw
 		if @paused
-			draw_rect(@window_width, @window_height, @trans_gray, 1)
-			@pause_button.draw(160,144,2)
+			@pause_screen.draw
 		end
 	end
 	

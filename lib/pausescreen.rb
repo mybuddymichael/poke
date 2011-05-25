@@ -11,6 +11,7 @@ class PauseScreen
 	def draw
 		draw_rect(@window_width, @window_height, Pokeconstants::Trans_black,
 		          ZOrder::Pause_background)
+		@pause_button.draw(160, 144, ZOrder::Pause_button)
 	end
 
 	def draw_rect(width, height, color, z_order)

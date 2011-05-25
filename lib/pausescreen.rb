@@ -6,4 +6,16 @@ class PauseScreen
 		@window = window
 	end
 
+	def draw
+		draw_rect(@window_width, @window_height, Pokeconstants::Trans_black,
+		          ZOrder::Pause_background)
+	end
+
+	def draw_rect(width, height, color, z_order)
+		# Draws a rectangle by coordinates clockwise from top-left
+		@window.draw_quad(0, 0, color, width, 0, color,
+		          width, height, color, 0, height, color,
+		          z_order, :default)
+	end
+
 end

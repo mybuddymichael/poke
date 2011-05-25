@@ -28,7 +28,7 @@ class GameWindow < Gosu::Window
 	
 	def draw
 		draw_rect(@window_width, @window_height,
-		          Pokeconstants::White, ZOrder::Background)
+		          Colors::White, ZOrder::Background)
 		@player.draw
 		if @paused
 			@pause_screen.draw

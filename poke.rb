@@ -1,6 +1,5 @@
 require 'gosu'
-require './lib/player.rb'
-require './lib/window.rb'
+Dir['./lib/*.rb'].each { |file| require file }
 
 window = GameWindow.new
 window.show

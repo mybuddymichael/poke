@@ -5,5 +5,5 @@ module Pokeconstants
 end
 
 module ZOrder
-	Background, Player, Pause_background = *0..2
+	Background, Player, Pause_background, Pause_button = *0..2
 end

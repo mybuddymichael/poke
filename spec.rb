@@ -31,7 +31,7 @@ class TestPlayer < MiniTest::Unit::TestCase
 
 	def setup
 		@window = GameWindow.new
-		@player = Player.new(@window, 'Ferd', 100, 100)
+		@player = Player.new(@window, 'Ferd', 224, 128)
 		@directions = [:up, :down, :left, :right].freeze
 	end
 
@@ -48,15 +48,15 @@ class TestPlayer < MiniTest::Unit::TestCase
 
 	def test_that_player_will_stay_onscreen
 		@directions.each do |direction|
-			200.times do
+			300.times do
 				@player.move(direction)
 				@player.update
 			end
 			case direction
 				when :up    then assert_equal(0, @player.y)
-				when :down  then assert_equal(304, @player.y)
+				when :down  then assert_equal(288, @player.y)
 				when :left  then assert_equal(0, @player.x)
-				when :right then assert_equal(464, @player.x)
+				when :right then assert_equal(448, @player.x)
 			end
 		end
 	end

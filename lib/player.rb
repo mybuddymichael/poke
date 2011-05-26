@@ -1,6 +1,7 @@
 class Player
 
 	attr_reader :name, :x, :y, :current_image, :direction
+	attr_writer :on_next_square
 
 	def initialize(window, name, x, y)
 		@facing_right, @facing_up, @facing_left, @facing_down =
@@ -10,7 +11,7 @@ class Player
 		@x, @y = x, y
 		@name  = name
 
-		@movement_factor = 1
+		@movement_factor = 2
 		@position_range  = {xmin: 0, xmax: 480-32, ymin: 0, ymax: 320-32}.freeze
 	end
 
@@ -28,10 +29,21 @@ class Player
 			when :right
 				@current_image = @facing_right
 				@x += @movement_factor
+			else
+				if @on_next_square == false
+					case @current_image
+						when @facing_up    then @y -= @movement_factor
+						when @facing_down  then @y += @movement_factor
+						when @facing_left  then @x -= @movement_factor
+						when @facing_right then @x += @movement_factor
+					end
+				end
 		end
-
-		unless on_next_square?
-			self.update
+	
+		if (@x%32 == 0) and (@y%32 == 0)
+			@on_next_square = true
+		else
+			@on_next_square = false
 		end
 
 		# If the player position is off the screen, move him just inside
@@ -50,10 +62,15 @@ class Player
 
 	def move(direction)
 		@direction = direction
+		@on_next_square = false
 	end
 
 	def on_next_square?
-		(@x%32 == 0) and (@y%32 == 0)
+		if (@x%32 == 0) and (@y%32 == 0)
+			@on_next_square = true
+		else
+			@on_next_square = false
+		end
 	end
 
 end

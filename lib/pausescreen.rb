@@ -13,6 +13,8 @@ class PauseScreen
 		          ZOrder::Pause_background)
 		@pause_button.draw(160, 144, ZOrder::Pause_button)
 	end
+	
+	private
 
 	def draw_rect(width, height, color, z_order)
 		# Draws a rectangle by coordinates clockwise from top-left

@@ -41,7 +41,7 @@ class Player
 	end
 
 	def draw
-		@current_image.draw(@x, @y, 0)
+		@current_image.draw(@x, @y, ZOrder::Player)
 	end
 
 	def move(direction)

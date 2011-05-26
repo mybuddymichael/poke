@@ -10,7 +10,7 @@ class Player
 		@x, @y = x, y
 		@name  = name
 
-		@movement_factor = 3
+		@movement_factor = 1
 		@position_range  = {xmin: 0, xmax: 480-32, ymin: 0, ymax: 320-32}.freeze
 	end
 
@@ -18,16 +18,20 @@ class Player
 		case @direction
 			when :up
 				@current_image = @facing_up
-				@y -= @movement_factor until on_next_square?
+				@y -= @movement_factor
 			when :down
 				@current_image = @facing_down
-				@y += @movement_factor until on_next_square?
+				@y += @movement_factor
 			when :left
 				@current_image = @facing_left
-				@x -= @movement_factor until on_next_square?
+				@x -= @movement_factor
 			when :right
 				@current_image = @facing_right
-				@x += @movement_factor until on_next_square?
+				@x += @movement_factor
+		end
+
+		unless on_next_square?
+			self.update
 		end
 
 		# If the player position is off the screen, move him just inside

@@ -4,14 +4,14 @@ class Player
 
 	def initialize(window, name, x, y)
 		@facing_right, @facing_up, @facing_left, @facing_down =
-			Gosu::Image.load_tiles(window, 'media/arrows.png', 16, 16, false)
+			Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
 		@current_image = @facing_down
 
 		@x, @y = x, y
 		@name  = name
 
 		@movement_factor = 3
-		@position_range  = {xmin: 0, xmax: 480-16, ymin: 0, ymax: 320-16}.freeze
+		@position_range  = {xmin: 0, xmax: 480-32, ymin: 0, ymax: 320-32}.freeze
 	end
 
 	def update

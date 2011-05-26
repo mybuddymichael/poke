@@ -6,8 +6,8 @@ class GameWindow < Gosu::Window
 
 		@window_width, @window_height = 480, 320
 		
-		# The player image is 16*16px, so use math to center it in the screen
-		@player       = Player.new(self, 'Ferd', (480/2 - 16/2), (320/2 - 16/2))
+		# The player image is 32*32px, so use math to center it in the screen
+		@player       = Player.new(self, 'Ferd', (480/2 - 32/2), (320/2 - 32/2))
 		@pause_screen = PauseScreen.new(self, @window_width, @window_height)
 		@speed_counter = SpeedCounter.new(self, @player)
 

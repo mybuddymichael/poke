@@ -40,17 +40,17 @@ class Player
 				end
 		end
 	
-		if (@x%32 == 0) and (@y%32 == 0)
-			unlock
-		else
-			lock
-		end
-
 		# If the player position is off the screen, move him just inside
 		if @x < @position_range[:xmin] then @x = @position_range[:xmin] end
 		if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
 		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
 		if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
+
+		if (@x%32 == 0) and (@y%32 == 0)
+			unlock
+		else
+			lock
+		end
 		
 		# This makes the player stop when the button is released
 		@direction = :no_direction

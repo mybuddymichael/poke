@@ -30,7 +30,7 @@ class Player
 				@current_image = @facing_right
 				@x += @movement_factor
 			else
-				if @on_next_square == false
+				if @locked == true
 					case @current_image
 						when @facing_up    then @y -= @movement_factor
 						when @facing_down  then @y += @movement_factor
@@ -41,9 +41,9 @@ class Player
 		end
 	
 		if (@x%32 == 0) and (@y%32 == 0)
-			@on_next_square = true
+			unlock
 		else
-			@on_next_square = false
+			lock
 		end
 
 		# If the player position is off the screen, move him just inside
@@ -62,14 +62,21 @@ class Player
 
 	def move(direction)
 		@direction = direction
-		@on_next_square = false
 	end
 
-	def on_next_square?
-		if (@x%32 == 0) and (@y%32 == 0)
-			@on_next_square = true
+	def lock
+		@locked = true
+	end
+
+	def unlock
+		@locked = false
+	end
+
+	def locked
+		if @locked
+			return true
 		else
-			@on_next_square = false
+			return false
 		end
 	end
 

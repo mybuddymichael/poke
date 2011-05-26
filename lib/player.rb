@@ -18,16 +18,16 @@ class Player
 		case @direction
 			when :up
 				@current_image = @facing_up
-				@y -= @movement_factor until on_square?
+				@y -= @movement_factor until on_next_square?
 			when :down
 				@current_image = @facing_down
-				@y += @movement_factor until on_square?
+				@y += @movement_factor until on_next_square?
 			when :left
 				@current_image = @facing_left
-				@x -= @movement_factor until on_square?
+				@x -= @movement_factor until on_next_square?
 			when :right
 				@current_image = @facing_right
-				@x += @movement_factor until on_square?
+				@x += @movement_factor until on_next_square?
 		end
 
 		# If the player position is off the screen, move him just inside
@@ -48,9 +48,8 @@ class Player
 		@direction = direction
 	end
 
-	def on_square?
-		original_x = @x
-		(@x/32.0 == @x/32) and (@y/32.0 == @y/32)
+	def on_next_square?
+		(@x%32 == 0) and (@y%32 == 0)
 	end
 
 end

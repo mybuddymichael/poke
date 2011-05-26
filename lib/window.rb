@@ -11,6 +11,8 @@ class GameWindow < Gosu::Window
 		@pause_screen = PauseScreen.new(self, @window_width, @window_height)
 		@speed_counter = SpeedCounter.new(self, @player)
 
+		@grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
+
 		# Create an array to keep track of the controls
 		@buttons_pushed = []
 	end
@@ -31,6 +33,7 @@ class GameWindow < Gosu::Window
 	def draw
 		draw_rect(@window_width, @window_height,
 		          Colors::White, ZOrder::Background)
+		@grid.draw(0,0,0)
 		@player.draw
 		@speed_counter.draw
 		if @paused

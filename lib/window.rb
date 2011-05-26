@@ -9,6 +9,7 @@ class GameWindow < Gosu::Window
 		# The player image is 16*16px, so use math to center it in the screen
 		@player       = Player.new(self, 'Ferd', (480/2 - 16/2), (320/2 - 16/2))
 		@pause_screen = PauseScreen.new(self, @window_width, @window_height)
+		@speed_counter = SpeedCounter.new(self, @player)
 
 		# Create an array to keep track of the controls
 		@buttons_pushed = []
@@ -23,6 +24,7 @@ class GameWindow < Gosu::Window
 				when :right then @player.move(:right)
 			end
 			@player.update
+			@speed_counter.update
 		end
 	end
 	
@@ -30,6 +32,7 @@ class GameWindow < Gosu::Window
 		draw_rect(@window_width, @window_height,
 		          Colors::White, ZOrder::Background)
 		@player.draw
+		@speed_counter.draw
 		if @paused
 			@pause_screen.draw
 		end

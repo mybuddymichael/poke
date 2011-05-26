@@ -3,6 +3,18 @@ require 'gosu'
 require './lib/player.rb'
 require './lib/window.rb'
 
+class TestWindow < MiniTest::Unit::TestCase
+
+	def setup
+		@window = GameWindow.new
+	end
+
+	def test_that_window_is_created
+		refute_nil(@window)
+	end
+
+end
+
 class TestPlayer < MiniTest::Unit::TestCase
 
 	def setup
@@ -35,18 +47,6 @@ class TestPlayer < MiniTest::Unit::TestCase
 				when :right then assert_equal(464, @player.x)
 			end
 		end
-	end
-
-end
-
-class TestWindow < MiniTest::Unit::TestCase
-
-	def setup
-		@window = GameWindow.new
-	end
-
-	def test_that_window_is_created
-		refute_nil(@window)
 	end
 
 end

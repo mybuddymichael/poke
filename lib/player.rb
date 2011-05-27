@@ -46,7 +46,7 @@ class Player
 	end
 
 	def move(direction)
-		@direction = direction
+		@direction = direction unless locked
 	end
 
 	def reset_direction

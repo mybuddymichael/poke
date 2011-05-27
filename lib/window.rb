@@ -20,10 +20,10 @@ class GameWindow < Gosu::Window
 	def update
 		unless @paused
 			case @buttons_pushed.last
-				when :up    then @player.move(:up)    unless @player.locked
-				when :down  then @player.move(:down)  unless @player.locked
-				when :left  then @player.move(:left)  unless @player.locked
-				when :right then @player.move(:right) unless @player.locked
+				when :up    then @player.move(:up)
+				when :down  then @player.move(:down)
+				when :left  then @player.move(:left)
+				when :right then @player.move(:right)
 			end
 			@player.update
 			@speed_counter.update

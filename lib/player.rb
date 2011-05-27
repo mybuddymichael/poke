@@ -52,7 +52,7 @@ class Player
 		end
 		
 		# This makes the player stop when the button is released
-		@direction = :no_direction
+		reset_direction
 	end
 
 	def draw
@@ -61,6 +61,10 @@ class Player
 
 	def move(direction)
 		@direction = direction
+	end
+
+	def reset_direction
+		@direction = :no_direction
 	end
 
 	def lock

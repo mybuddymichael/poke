@@ -64,7 +64,7 @@ class GameWindow < Gosu::Window
 	def toggle_pause
 		if @paused
 			@paused = false
-		elsif !@paused
+		else
 			@paused = true
 		end
 	end

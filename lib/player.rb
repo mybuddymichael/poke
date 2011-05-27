@@ -1,6 +1,6 @@
 class Player
 
-	attr_reader :name, :x, :y, :direction
+	attr_reader :name, :x, :y, :direction, :locked
 
 	def initialize(window, name, x, y)
 		@facing_right, @facing_up, @facing_left, @facing_down =
@@ -69,14 +69,6 @@ class Player
 
 	def unlock
 		@locked = false
-	end
-
-	def locked
-		if @locked
-			return true
-		else
-			return false
-		end
 	end
 
 end

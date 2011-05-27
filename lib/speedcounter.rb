@@ -2,7 +2,7 @@ class SpeedCounter
 
 	def initialize(window, player)
 		@window, @player = window, player
-		@speed_text = Gosu::Font.new(@window, 'media/poke.ttf', 18)
+		@speed_text = Gosu::Font.new(@window, 'media/poke.ttf', 16)
 	end
 
 	def update

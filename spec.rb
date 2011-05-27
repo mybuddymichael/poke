@@ -61,4 +61,9 @@ class TestPlayer < MiniTest::Unit::TestCase
 		end
 	end
 
+	def test_that_direction_can_be_reset
+		@player.reset_direction
+		assert_equal(:no_direction, @player.direction)
+	end
+
 end

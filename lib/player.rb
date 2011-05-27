@@ -29,21 +29,11 @@ class Player
 				@current_image = @facing_right
 				@x += @movement_factor
 			else
-				if @locked == true
-					case @current_image
-						when @facing_up    then @y -= @movement_factor
-						when @facing_down  then @y += @movement_factor
-						when @facing_left  then @x -= @movement_factor
-						when @facing_right then @x += @movement_factor
-					end
-				end
+				continue_movement_if_locked
 		end
 	
 		# If the player position is off the screen, move him just inside
-		if @x < @position_range[:xmin] then @x = @position_range[:xmin] end
-		if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
-		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
-		if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
+		keep_player_in_window
 
 		lock_direction_unless_square
 		
@@ -77,6 +67,24 @@ class Player
 		else
 			lock
 		end
+	end
+
+	def continue_movement_if_locked
+		if @locked == true
+			case @current_image
+				when @facing_up    then @y -= @movement_factor
+				when @facing_down  then @y += @movement_factor
+				when @facing_left  then @x -= @movement_factor
+				when @facing_right then @x += @movement_factor
+			end
+		end
+	end
+
+	def keep_player_in_window
+		if @x < @position_range[:xmin] then @x = @position_range[:xmin] end
+		if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
+		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
+		if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
 	end
 
 end

@@ -45,11 +45,7 @@ class Player
 		if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
 		if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
 
-		if (@x%32 == 0) and (@y%32 == 0)
-			unlock
-		else
-			lock
-		end
+		lock_movement_unless_square
 		
 		# This makes the player stop when the button is released
 		reset_direction
@@ -73,6 +69,14 @@ class Player
 
 	def unlock
 		@locked = false
+	end
+
+	def lock_movement_unless_square
+		if (@x%32 == 0) and (@y%32 == 0)
+			unlock
+		else
+			lock
+		end
 	end
 
 end

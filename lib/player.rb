@@ -1,6 +1,6 @@
 class Player
 
-	attr_reader :name, :x, :y, :direction, :locked
+	attr_reader :x, :y, :direction, :locked
 
 	def initialize(window, name, x, y)
 		@window, @name, @x, @y, = window, name, x, y

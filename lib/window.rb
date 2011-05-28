@@ -20,12 +20,6 @@ class GameWindow < Gosu::Window
 	
 	def update
 		unless @paused
-			case @buttons_pushed.last
-				when :up    then @player.move(:up)
-				when :down  then @player.move(:down)
-				when :left  then @player.move(:left)
-				when :right then @player.move(:right)
-			end
 			@player.update
 			@coordinates.update
 		end

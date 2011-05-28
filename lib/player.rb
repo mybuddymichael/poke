@@ -14,6 +14,10 @@ class Player
 	end
 
 	def update
+		if @window.buttons_pushed.last
+			move(@window.buttons_pushed.last)
+		end
+
 		case @direction
 			when :up
 				@current_image = @facing_up

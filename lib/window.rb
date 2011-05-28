@@ -1,5 +1,7 @@
 class GameWindow < Gosu::Window
 
+	attr_reader :buttons_pushed
+
 	def initialize
 		super(480, 320, false)
 		self.caption = 'Poke'

@@ -65,10 +65,10 @@ class Player
 	end
 
 	def lock_direction_unless_square
-		if (@x%32 == 0) and (@y%32 == 0)
-			unlock
-		else
+		unless (@x%32 == 0) and (@y%32 == 0)
 			lock
+		else
+			unlock
 		end
 	end
 

@@ -3,12 +3,11 @@ class Player
 	attr_reader :name, :x, :y, :direction, :locked
 
 	def initialize(window, name, x, y)
+		@window, @name, @x, @y, = window, name, x, y
+
 		@facing_right, @facing_up, @facing_left, @facing_down =
 			Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
 		@current_image = @facing_down
-
-		@x, @y = x, y
-		@name  = name
 
 		@movement_factor = 2
 		@position_range  = {xmin: 0, xmax: 480-32, ymin: 0, ymax: 320-32}.freeze

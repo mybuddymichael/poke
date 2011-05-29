@@ -1,4 +1,4 @@
-class GameWindow < Gosu::Window
+class Window < Gosu::Window
 
   attr_reader :buttons_pushed
 

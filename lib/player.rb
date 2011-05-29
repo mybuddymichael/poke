@@ -14,30 +14,16 @@ class Player
 	end
 
 	def update
-		if @window.buttons_pushed.last
-			move(@window.buttons_pushed.last)
-		end
+		# Grab the current direction, or ignore it if locked
+		get_current_direction
 
-		case @direction
-			when :up
-				@current_image = @facing_up
-				@y -= @movement_factor
-			when :down
-				@current_image = @facing_down
-				@y += @movement_factor
-			when :left
-				@current_image = @facing_left
-				@x -= @movement_factor
-			when :right
-				@current_image = @facing_right
-				@x += @movement_factor
-			else
-				continue_movement_if_locked
-		end
+		# Move in the current direction.
+		move
 	
 		# If the player position is off the screen, move him just inside
 		keep_player_in_window
 
+		# Continue in the same direction until on a square again
 		lock_direction_unless_square
 		
 		# This makes the player stop when the button is released
@@ -48,8 +34,27 @@ class Player
 		@current_image.draw(@x, @y, ZOrder::Player)
 	end
 
-	def move(direction)
-		@direction = direction unless locked
+	def get_current_direction
+		@direction = @window.buttons_pushed.last unless locked
+	end
+
+	def move
+		case @direction
+		when :up
+			@current_image = @facing_up
+			@y -= @movement_factor
+		when :down
+			@current_image = @facing_down
+			@y += @movement_factor
+		when :left
+			@current_image = @facing_left
+			@x -= @movement_factor
+		when :right
+			@current_image = @facing_right
+			@x += @movement_factor
+		else
+			continue_movement_if_locked
+		end
 	end
 
 	def reset_direction

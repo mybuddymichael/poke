@@ -25,9 +25,6 @@ class Player
 
     # Continue in the same direction until on a square again
     lock_direction_unless_square
-
-    # This makes the player stop when the button is released
-    reset_direction
   end
 
   def draw
@@ -57,10 +54,6 @@ class Player
     else
       continue_movement_if_locked
     end
-  end
-
-  def reset_direction
-    @direction = :no_direction
   end
 
   def lock

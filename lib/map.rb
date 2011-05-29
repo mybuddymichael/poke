@@ -12,4 +12,12 @@ class Map
     @lines = File.readlines(file).map { |line| line.chomp }
   end
 
+  def get_map_width
+    @width = @lines.size
+  end
+
+  def get_map_height
+    @height = @lines.size
+  end
+
 end

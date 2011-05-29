@@ -6,6 +6,8 @@ class Map
                                       32, 32, false)
 
     get_lines(mapfile)
+    get_map_width
+    get_map_height
   end
 
   def get_lines(file)

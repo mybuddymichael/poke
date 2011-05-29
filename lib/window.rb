@@ -1,73 +1,73 @@
 class GameWindow < Gosu::Window
 
-	attr_reader :buttons_pushed
+  attr_reader :buttons_pushed
 
-	def initialize
-		super(480, 320, false)
-		self.caption = 'Poke'
+  def initialize
+    super(480, 320, false)
+    self.caption = 'Poke'
 
-		@window_width, @window_height = 480, 320
-		
-		@player       = Player.new(self, 'Ferd', 224, 128)
-		@pause_screen = PauseScreen.new(self, @window_width, @window_height)
-		@coordinates  = Coordinates.new(self, @player)
+    @window_width, @window_height = 480, 320
 
-		@grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
+    @player       = Player.new(self, 'Ferd', 224, 128)
+    @pause_screen = PauseScreen.new(self, @window_width, @window_height)
+    @coordinates  = Coordinates.new(self, @player)
 
-		# Create an array to keep track of the controls
-		@buttons_pushed = []
-	end
-	
-	def update
-		unless @paused
-			@player.update
-			@coordinates.update
-		end
-	end
-	
-	def draw
-		draw_rect(@window_width, @window_height,
-		          Color::White, ZOrder::Background)
-		@grid.draw(0,0,0)
-		@player.draw
-		@coordinates.draw
-		if @paused
-			@pause_screen.draw
-		end
-	end
-	
-	def button_down(id)
-		case id
-			when Gosu::KbUp     then @buttons_pushed.push(:up)
-			when Gosu::KbDown   then @buttons_pushed.push(:down)
-			when Gosu::KbLeft   then @buttons_pushed.push(:left)
-			when Gosu::KbRight  then @buttons_pushed.push(:right)
-			when Gosu::KbEscape then toggle_pause
-			when Gosu::KbQ      then close if @paused
-		end
-	end
-	
-	def button_up(id)
-		case id
-			when Gosu::KbUp    then @buttons_pushed.delete(:up)
-			when Gosu::KbDown  then @buttons_pushed.delete(:down)
-			when Gosu::KbLeft  then @buttons_pushed.delete(:left)
-			when Gosu::KbRight then @buttons_pushed.delete(:right)
-		end
-	end
+    @grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
 
-	def toggle_pause
-		if @paused
-			@paused = false
-		else
-			@paused = true
-		end
-	end
+    # Create an array to keep track of the controls
+    @buttons_pushed = []
+  end
 
-	def draw_rect(width, height, color, z_order)
-		# Draws a rectangle by coordinates clockwise from top-left
-		draw_quad(0, 0, color, width, 0, color, width, height, color,
-		          0, height, color, z_order, :default)
-	end
+  def update
+    unless @paused
+      @player.update
+      @coordinates.update
+    end
+  end
+
+  def draw
+    draw_rect(@window_width, @window_height,
+              Color::White, ZOrder::Background)
+    @grid.draw(0,0,0)
+    @player.draw
+    @coordinates.draw
+    if @paused
+      @pause_screen.draw
+    end
+  end
+
+  def button_down(id)
+    case id
+      when Gosu::KbUp     then @buttons_pushed.push(:up)
+      when Gosu::KbDown   then @buttons_pushed.push(:down)
+      when Gosu::KbLeft   then @buttons_pushed.push(:left)
+      when Gosu::KbRight  then @buttons_pushed.push(:right)
+      when Gosu::KbEscape then toggle_pause
+      when Gosu::KbQ      then close if @paused
+    end
+  end
+
+  def button_up(id)
+    case id
+      when Gosu::KbUp    then @buttons_pushed.delete(:up)
+      when Gosu::KbDown  then @buttons_pushed.delete(:down)
+      when Gosu::KbLeft  then @buttons_pushed.delete(:left)
+      when Gosu::KbRight then @buttons_pushed.delete(:right)
+    end
+  end
+
+  def toggle_pause
+    if @paused
+      @paused = false
+    else
+      @paused = true
+    end
+  end
+
+  def draw_rect(width, height, color, z_order)
+    # Draws a rectangle by coordinates clockwise from top-left
+    draw_quad(0, 0, color, width, 0, color, width, height, color,
+              0, height, color, z_order, :default)
+  end
 
 end

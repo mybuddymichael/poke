@@ -15,7 +15,7 @@ class Map
   end
 
   def get_map_width
-    @width = @lines.size
+    @width = @lines[0].size
   end
 
   def get_map_height

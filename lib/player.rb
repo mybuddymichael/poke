@@ -19,13 +19,13 @@ class Player
 
 		# Move in the current direction.
 		move
-	
+
 		# If the player position is off the screen, move him just inside
 		keep_player_in_window
 
 		# Continue in the same direction until on a square again
 		lock_direction_unless_square
-		
+
 		# This makes the player stop when the button is released
 		reset_direction
 	end
@@ -33,6 +33,8 @@ class Player
 	def draw
 		@current_image.draw(@x, @y, ZOrder::Player)
 	end
+
+	private
 
 	def get_current_direction
 		@direction = @window.buttons_pushed.last unless locked

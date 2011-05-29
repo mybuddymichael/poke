@@ -1,14 +1,16 @@
 class GameWindow < Gosu::Window
 
+	attr_reader :buttons_pushed
+
 	def initialize
 		super(480, 320, false)
 		self.caption = 'Poke'
 
 		@window_width, @window_height = 480, 320
 		
-		@player        = Player.new(self, 'Ferd', 224, 128)
-		@pause_screen  = PauseScreen.new(self, @window_width, @window_height)
-		@speed_counter = SpeedCounter.new(self, @player)
+		@player       = Player.new(self, 'Ferd', 224, 128)
+		@pause_screen = PauseScreen.new(self, @window_width, @window_height)
+		@coordinates  = Coordinates.new(self, @player)
 
 		@grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
 
@@ -18,14 +20,8 @@ class GameWindow < Gosu::Window
 	
 	def update
 		unless @paused
-			case @buttons_pushed.last
-				when :up    then @player.move(:up)
-				when :down  then @player.move(:down)
-				when :left  then @player.move(:left)
-				when :right then @player.move(:right)
-			end
 			@player.update
-			@speed_counter.update
+			@coordinates.update
 		end
 	end
 	
@@ -34,7 +30,7 @@ class GameWindow < Gosu::Window
 		          Colors::White, ZOrder::Background)
 		@grid.draw(0,0,0)
 		@player.draw
-		@speed_counter.draw
+		@coordinates.draw
 		if @paused
 			@pause_screen.draw
 		end

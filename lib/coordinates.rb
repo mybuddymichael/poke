@@ -11,7 +11,7 @@ class Coordinates
 
   def draw
     @coordinate_text.draw("#{@x.to_s}, #{@y.to_s}", 400, 300, 1, 1, 1, Color::Black,
-                     :default)
+                          :default)
   end
 
 end

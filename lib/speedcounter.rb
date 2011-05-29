@@ -2,10 +2,7 @@ class Coordinates
 
 	def initialize(window, player)
 		@window, @player = window, player
-<<<<<<< HEAD
-=======
 		@coordinate_text = Gosu::Font.new(@window, 'media/poke.ttf', 18)
->>>>>>> 1fbe6fda006ace37cd8244f93fd422aa5656b64f
 	end
 
 	def update

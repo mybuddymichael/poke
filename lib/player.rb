@@ -75,10 +75,10 @@ class Player
   def continue_movement_if_locked
     if @locked
       case @current_image
-        when @facing_up    then @y -= @movement_factor
-        when @facing_down  then @y += @movement_factor
-        when @facing_left  then @x -= @movement_factor
-        when @facing_right then @x += @movement_factor
+      when @facing_up    then @y -= @movement_factor
+      when @facing_down  then @y += @movement_factor
+      when @facing_left  then @x -= @movement_factor
+      when @facing_right then @x += @movement_factor
       end
     end
   end

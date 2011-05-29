@@ -38,21 +38,21 @@ class Window < Gosu::Window
 
   def button_down(id)
     case id
-      when Gosu::KbUp     then @buttons_pushed.push(:up)
-      when Gosu::KbDown   then @buttons_pushed.push(:down)
-      when Gosu::KbLeft   then @buttons_pushed.push(:left)
-      when Gosu::KbRight  then @buttons_pushed.push(:right)
-      when Gosu::KbEscape then toggle_pause
-      when Gosu::KbQ      then close if @paused
+    when Gosu::KbUp     then @buttons_pushed.push(:up)
+    when Gosu::KbDown   then @buttons_pushed.push(:down)
+    when Gosu::KbLeft   then @buttons_pushed.push(:left)
+    when Gosu::KbRight  then @buttons_pushed.push(:right)
+    when Gosu::KbEscape then toggle_pause
+    when Gosu::KbQ      then close if @paused
     end
   end
 
   def button_up(id)
     case id
-      when Gosu::KbUp    then @buttons_pushed.delete(:up)
-      when Gosu::KbDown  then @buttons_pushed.delete(:down)
-      when Gosu::KbLeft  then @buttons_pushed.delete(:left)
-      when Gosu::KbRight then @buttons_pushed.delete(:right)
+    when Gosu::KbUp    then @buttons_pushed.delete(:up)
+    when Gosu::KbDown  then @buttons_pushed.delete(:down)
+    when Gosu::KbLeft  then @buttons_pushed.delete(:left)
+    when Gosu::KbRight then @buttons_pushed.delete(:right)
     end
   end
 

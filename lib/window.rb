@@ -27,7 +27,7 @@ class GameWindow < Gosu::Window
 	
 	def draw
 		draw_rect(@window_width, @window_height,
-		          Colors::White, ZOrder::Background)
+		          Color::White, ZOrder::Background)
 		@grid.draw(0,0,0)
 		@player.draw
 		@coordinates.draw

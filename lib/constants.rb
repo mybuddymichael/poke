@@ -5,7 +5,7 @@ module Color
 end
 
 module ZOrder
-  Background, Player, Pause_background, Pause_button = *0..3
+  Background, Grid, Texture, Player, Pause_background, Pause_button = *0..5
 end
 
 module Media

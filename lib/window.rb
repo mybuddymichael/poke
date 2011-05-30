@@ -11,6 +11,7 @@ class Window < Gosu::Window
     @player       = Player.new(self, 'Ferd', 224, 128)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)
     @coordinates  = Coordinates.new(self, @player)
+    @map          = Map.new(self, 'media/map.txt')
 
     @grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
 
@@ -28,7 +29,8 @@ class Window < Gosu::Window
   def draw
     draw_rect(@window_width, @window_height,
               Color::White, ZOrder::Background)
-    @grid.draw(0,0,0)
+    @map.draw
+    @grid.draw(0,0,ZOrder::Grid)
     @player.draw
     @coordinates.draw
     if @paused

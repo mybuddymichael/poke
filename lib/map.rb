@@ -8,6 +8,18 @@ class Map
     get_lines(mapfile)
     get_map_width
     get_map_height
+    map_tiles
+  end
+
+  def draw
+    @height.times do |y|
+      @width.times do |x|
+        tile = @tiles[x][y]
+        if tile
+          @tileset[tile].draw(x * 32, y * 32, ZOrder::Texture)
+        end
+      end
+    end
   end
 
   private
@@ -22,6 +34,19 @@ class Map
 
   def get_map_height
     @height = @lines.size
+  end
+
+  def map_tiles
+    @tiles = Array.new(@width) do |x|
+      Array.new(@height) do |y|
+        case @lines[y][x, 1]
+        when 'v'
+          0
+        else
+          nil
+        end
+      end
+    end
   end
 
 end

@@ -10,6 +10,8 @@ class Map
     get_map_height
   end
 
+  private
+
   def get_lines(file)
     @lines = File.readlines(file).map { |line| line.chomp }
   end

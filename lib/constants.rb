@@ -7,3 +7,7 @@ end
 module ZOrder
   Background, Player, Pause_background, Pause_button = *0..3
 end
+
+module Media
+  Font = 'media/poke.dfont'
+end

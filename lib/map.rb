@@ -14,7 +14,7 @@ class Map
   def draw
     @height.times do |y|
       @width.times do |x|
-        tile = @tiles[x][y]
+        tile = @tiles[y][x]
         if tile
           @tileset[tile].draw(x * 32, y * 32, ZOrder::Texture)
         end
@@ -37,15 +37,19 @@ class Map
   end
 
   def map_tiles
-    @tiles = Array.new(@width) do |x|
-      Array.new(@height) do |y|
-        case @lines[y][x, 1]
+    @tiles = @lines
+
+    @height.times do |y|
+      line = []
+      @width.times do |x|
+        case @lines[y][x,1]
         when 'v'
-          0
+          line.push(0)
         else
-          nil
+          line.push(nil)
         end
       end
+      @tiles[y] = line
     end
   end
 

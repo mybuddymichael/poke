@@ -10,8 +10,8 @@ class Coordinates
   end
 
   def draw
-    @coordinate_text.draw("#{@x.to_s}, #{@y.to_s}", 400, 300, 1, 1, 1, Color::Black,
-                          :default)
+    @coordinate_text.draw("#{@x.to_s}, #{@y.to_s}", 416, 300, 1, 1, 1,
+                          Color::Black, :default)
   end
 
 end

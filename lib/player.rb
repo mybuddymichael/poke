@@ -41,16 +41,16 @@ class Player
     case @direction
     when :up
       @current_image = @facing_up
-      @y -= @movement_factor
+      @y -= @movement_factor unless solid?
     when :down
       @current_image = @facing_down
-      @y += @movement_factor
+      @y += @movement_factor unless solid?
     when :left
       @current_image = @facing_left
-      @x -= @movement_factor
+      @x -= @movement_factor unless solid?
     when :right
       @current_image = @facing_right
-      @x += @movement_factor
+      @x += @movement_factor unless solid?
     else
       continue_movement_if_locked
     end
@@ -88,6 +88,23 @@ class Player
     if @x > @position_range[:xmax] then @x = @position_range[:xmax] end
     if @y < @position_range[:ymin] then @y = @position_range[:ymin] end
     if @y > @position_range[:ymax] then @y = @position_range[:ymax] end
+  end
+
+  def solid?
+    unless locked
+      x_cell, y_cell = @x/32, @y/32
+
+      case @current_image
+      when @facing_up
+        @window.map.tiles[y_cell-1][x_cell] == 0
+      when @facing_down
+        @window.map.tiles[y_cell+1][x_cell] == 0
+      when @facing_left
+        @window.map.tiles[y_cell][x_cell-1] == 0
+      when @facing_right
+        @window.map.tiles[y_cell][x_cell+1] == 0
+      end
+    end
   end
 
 end

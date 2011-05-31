@@ -94,14 +94,14 @@ class Player
     unless locked
       x_cell, y_cell = @x/32, @y/32
 
-      case @current_image
-      when @facing_up
+      case @direction
+      when :up
         @window.map.tiles[y_cell-1][x_cell] == 0
-      when @facing_down
+      when :down
         @window.map.tiles[y_cell+1][x_cell] == 0
-      when @facing_left
+      when :left
         @window.map.tiles[y_cell][x_cell-1] == 0
-      when @facing_right
+      when :right
         @window.map.tiles[y_cell][x_cell+1] == 0
       end
     end

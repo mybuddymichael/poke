@@ -2,7 +2,7 @@ class Map
 
   def initialize(window, mapfile)
     @window = window
-    @tileset = Gosu::Image.load_tiles(window, 'media/32x32diagonal_lines.png',
+    @tileset = Gosu::Image.load_tiles(window, 'media/tileset.png',
                                       32, 32, false)
 
     get_lines(mapfile)
@@ -45,6 +45,8 @@ class Map
         case @lines[y][x,1]
         when 'v'
           line.push(0)
+        when 'g'
+          line.push(1)
         else
           line.push(nil)
         end

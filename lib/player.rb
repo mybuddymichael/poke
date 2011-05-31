@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :x, :y, :direction, :locked
+  attr_reader :x, :y, :direction
 
   def initialize(window, name, x, y)
     @window, @name, @x, @y, = window, name, x, y
@@ -34,7 +34,7 @@ class Player
   private
 
   def get_current_direction
-    @direction = @window.buttons_pushed.last unless locked
+    @direction = @window.buttons_pushed.last unless locked?
   end
 
   def move
@@ -64,6 +64,10 @@ class Player
     @locked = false
   end
 
+  def locked?
+    @locked
+  end
+
   def lock_direction_unless_square
     unless (@x%32 == 0) and (@y%32 == 0)
       lock
@@ -73,7 +77,7 @@ class Player
   end
 
   def continue_movement_if_locked
-    if @locked
+    if locked?
       case @current_image
       when @facing_up    then @y -= @movement_factor
       when @facing_down  then @y += @movement_factor
@@ -91,7 +95,7 @@ class Player
   end
 
   def solid?
-    unless locked
+    unless locked?
       x_cell, y_cell = @x/32, @y/32
 
       case @direction

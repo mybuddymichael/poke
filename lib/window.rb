@@ -1,6 +1,6 @@
 class Window < Gosu::Window
 
-  attr_reader :buttons_pushed
+  attr_reader :buttons_pushed, :map
 
   def initialize
     super(480, 320, false)

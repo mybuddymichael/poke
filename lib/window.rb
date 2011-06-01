@@ -24,7 +24,7 @@ class Window < Gosu::Window
     unless @paused
       @player.update
       @coordinates.update
-      @camera_x = [[@player.x - 240, 0].max, @map.width * 32 - 480].min
+      @camera_x = [[@player.x - 224, 0].max, @map.width * 32 - 480].min
       @camera_y = [[@player.y - 160, 0].max, @map.height * 32 - 320].min
     end
   end

@@ -7,6 +7,7 @@ class Window < Gosu::Window
     self.caption = 'Poke'
 
     @window_width, @window_height = 480, 320
+    @camera_x = @camera_y = 0
 
     @map          = Map.new(self, 'media/map.txt')
     @player       = Player.new(self, 'Ferd', 224, 128)
@@ -23,15 +24,19 @@ class Window < Gosu::Window
     unless @paused
       @player.update
       @coordinates.update
+      @camera_x = [[@player.x - 240, 0].max, @map.width * 32 - 480].min
+      @camera_y = [[@player.y - 160, 0].max, @map.height * 32 - 320].min
     end
   end
 
   def draw
     draw_rect(@window_width, @window_height,
               Color::White, ZOrder::Background)
-    @map.draw
-    @grid.draw(0,0,ZOrder::Grid)
-    @player.draw
+    translate(-@camera_x, -@camera_y) do
+      @map.draw
+      #@grid.draw(0,0,ZOrder::Grid)
+      @player.draw
+    end
     @coordinates.draw
     if @paused
       @pause_screen.draw

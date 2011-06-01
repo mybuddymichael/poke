@@ -8,10 +8,10 @@ class Window < Gosu::Window
 
     @window_width, @window_height = 480, 320
 
-    @player       = Player.new(self, 'Ferd', 224, 128)
-    @pause_screen = PauseScreen.new(self, @window_width, @window_height)
-    @coordinates  = Coordinates.new(self, @player)
     @map          = Map.new(self, 'media/map.txt')
+    @player       = Player.new(self, 'Ferd', 224, 128)
+    @coordinates  = Coordinates.new(self, @player)
+    @pause_screen = PauseScreen.new(self, @window_width, @window_height)
 
     @grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
 

@@ -1,5 +1,5 @@
 class Map
-  attr_reader :tiles
+  attr_reader :tiles, :width, :height
 
   def initialize(window, mapfile)
     @window = window

@@ -8,6 +8,10 @@ module ZOrder
   Background, Grid, Texture, Player, Pause_background, Pause_button = *0..5
 end
 
+module Tiles
+  Solid = [0]
+end
+
 module Media
   Font = 'media/poke.dfont'
 end

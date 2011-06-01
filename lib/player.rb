@@ -4,6 +4,7 @@ class Player
 
   def initialize(window, name, x, y)
     @window, @name, @x, @y, = window, name, x, y
+    @tiles = @window.map.tiles
 
     @facing_right, @facing_up, @facing_left, @facing_down =
       Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
@@ -100,13 +101,13 @@ class Player
 
       case @direction
       when :up
-        @window.map.tiles[y_cell-1][x_cell] == 0
+        Tiles::Solid.include?(@tiles[y_cell-1][x_cell])
       when :down
-        @window.map.tiles[y_cell+1][x_cell] == 0
+        Tiles::Solid.include?(@tiles[y_cell+1][x_cell])
       when :left
-        @window.map.tiles[y_cell][x_cell-1] == 0
+        Tiles::Solid.include?(@tiles[y_cell][x_cell-1])
       when :right
-        @window.map.tiles[y_cell][x_cell+1] == 0
+        Tiles::Solid.include?(@tiles[y_cell][x_cell+1])
       end
     end
   end

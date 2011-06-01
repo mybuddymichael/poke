@@ -21,9 +21,6 @@ class Player
     # Move in the current direction.
     move
 
-    # If the player position is off the screen, move him just inside
-    keep_player_in_window
-
     # Continue in the same direction until on a square again
     lock_direction_unless_square
   end

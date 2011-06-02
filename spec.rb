@@ -5,7 +5,7 @@ Dir['./lib/*.rb'].each { |file| require file }
 class TestWindow < MiniTest::Unit::TestCase
 
   def setup
-    @window = GameWindow.new
+    @window = Window.new
   end
 
   def test_that_window_is_created
@@ -17,7 +17,7 @@ end
 class TestPauseScreeen < MiniTest::Unit::TestCase
 
   def setup
-    @window = GameWindow.new
+    @window = Window.new
     @pause_screen = PauseScreen.new(@window, 480, 320)
   end
 
@@ -30,7 +30,7 @@ end
 class TestPlayer < MiniTest::Unit::TestCase
 
   def setup
-    @window = GameWindow.new
+    @window = Window.new
     @player = Player.new(@window, 'Ferd', 224, 128)
     @directions = [:up, :down, :left, :right].freeze
   end

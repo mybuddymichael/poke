@@ -1,9 +1,9 @@
 class Map
   attr_reader :tiles, :width, :height
 
-  def initialize(window, mapfile)
+  def initialize(window, mapfile, tileset)
     @window = window
-    @tileset = Gosu::Image.load_tiles(window, 'media/tileset.png',
+    @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
 
     get_lines(mapfile)

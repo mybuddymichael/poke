@@ -9,7 +9,7 @@ class Window < Gosu::Window
     @window_width, @window_height = 480, 320
     @camera_x = @camera_y = 0
 
-    @map          = Map.new(self, 'media/map.txt')
+    @map          = Map.new(self, 'media/map.txt', 'media/tileset.png')
     @player       = Player.new(self, 'Ferd', 224, 128)
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)

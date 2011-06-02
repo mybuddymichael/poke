@@ -83,8 +83,6 @@ class Player
   def solid?
     unless locked?
       x_tile, y_tile = @x/32, @y/32
-
-      # *"" converts the element into a string to get around NoMethod error.
       x_tc = (@tile_coefficients[@direction][1])
       y_tc = (@tile_coefficients[@direction][0])
 

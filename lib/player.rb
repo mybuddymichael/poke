@@ -15,13 +15,8 @@ class Player
   end
 
   def update
-    # Grab the current direction, or ignore it if locked
     get_current_direction
-
-    # Move in the current direction.
     move
-
-    # Continue in the same direction until on a square again
     lock_direction_unless_square
   end
 

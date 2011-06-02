@@ -43,7 +43,7 @@ class Map
     @height.times do |y|
       line = []
       @width.times do |x|
-        case @lines[y][x,1]
+        case @lines[y][x]
         when 'v'
           line.push(0)
         when 'g'

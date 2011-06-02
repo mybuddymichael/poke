@@ -82,13 +82,13 @@ class Player
 
   def solid?
     unless locked?
-      x_cell, y_cell = @x/32, @y/32
+      x_tile, y_tile = @x/32, @y/32
 
       # *"" converts the element into a string to get around NoMethod error.
       x_tc = (@tile_coefficients[@direction][1,1]*"").to_i
       y_tc = (@tile_coefficients[@direction][0,1]*"").to_i
 
-      Tiles::Solid.include?(@tiles[y_cell+y_tc][x_cell+x_tc])
+      Tiles::Solid.include?(@tiles[y_tile+y_tc][x_tile+x_tc])
     end
   end
 

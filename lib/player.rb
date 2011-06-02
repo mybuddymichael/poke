@@ -10,6 +10,7 @@ class Player
       Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
     @current_image = @facing_down
 
+    @tile_coefficients = {up:[-1,0], down:[1,0], left:[0,-1], right:[0,1]}
     @movement_factor = 2
   end
 
@@ -88,16 +89,11 @@ class Player
     unless locked?
       x_cell, y_cell = @x/32, @y/32
 
-      case @direction
-      when :up
-        Tiles::Solid.include?(@tiles[y_cell-1][x_cell])
-      when :down
-        Tiles::Solid.include?(@tiles[y_cell+1][x_cell])
-      when :left
-        Tiles::Solid.include?(@tiles[y_cell][x_cell-1])
-      when :right
-        Tiles::Solid.include?(@tiles[y_cell][x_cell+1])
-      end
+      # *"" converts the element into a string to get around NoMethod error.
+      x_tc = (@tile_coefficients[@direction][1,1]*"").to_i
+      y_tc = (@tile_coefficients[@direction][0,1]*"").to_i
+
+      Tiles::Solid.include?(@tiles[y_cell+y_tc][x_cell+x_tc])
     end
   end
 

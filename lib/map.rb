@@ -1,10 +1,11 @@
 class Map
   attr_reader :tiles, :width, :height
 
-  def initialize(window, mapfile, tileset)
-    @window = window
+  def initialize(window, mapfile, tileset, map_key)
+    @window  = window
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
+    @map_key = map_key
 
     get_lines(mapfile)
     get_width
@@ -43,13 +44,11 @@ class Map
     @height.times do |y|
       line = []
       @width.times do |x|
-        case @lines[y][x]
-        when 'v'
-          line.push(0)
-        when 'g'
-          line.push(1)
-        else
-          line.push(nil)
+        @map_key.each do |key, value|
+          case @lines[y][x]
+          when key
+            line.push(value)
+          end
         end
       end
       @tiles[y] = line

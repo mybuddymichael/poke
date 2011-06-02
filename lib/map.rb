@@ -7,8 +7,8 @@ class Map
                                       32, 32, false)
 
     get_lines(mapfile)
-    get_map_width
-    get_map_height
+    get_width
+    get_height
     map_tiles
   end
 
@@ -29,11 +29,11 @@ class Map
     @lines = File.readlines(file).map { |line| line.chomp }
   end
 
-  def get_map_width
+  def get_width
     @width = @lines[0].size
   end
 
-  def get_map_height
+  def get_height
     @height = @lines.size
   end
 

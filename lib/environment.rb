@@ -3,7 +3,6 @@ class Environment
   attr_reader :tiles, :width, :height, :solid_blocks
 
   def initialize(window, mapfile, tileset, map_key, solid_blocks)
-    @window  = window
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
     @map_key, @solid_blocks = map_key, solid_blocks

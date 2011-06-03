@@ -18,7 +18,7 @@ class Environment
       @width.times do |x|
         tile = @tiles[y][x]
         if tile
-          @tileset[tile].draw(x * 32, y * 32, ZOrder::Texture)
+          @tileset[tile].draw(x * 32, y * 32, ZOrder::Environment)
         end
       end
     end

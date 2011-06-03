@@ -15,8 +15,6 @@ class Window < Gosu::Window
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)
 
-    @grid = Gosu::Image.new(self, 'media/32x32grid.png', false)
-
     # Create an array to keep track of the controls
     @buttons_pushed = []
   end
@@ -35,7 +33,6 @@ class Window < Gosu::Window
               Color::White, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
       @map.draw
-      #@grid.draw(0,0,ZOrder::Grid)
       @player.draw
     end
     @coordinates.draw

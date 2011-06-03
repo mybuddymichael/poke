@@ -16,7 +16,6 @@ class Window < Gosu::Window
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)
 
-    # Create an array to keep track of the controls
     @buttons_pushed = []
   end
 

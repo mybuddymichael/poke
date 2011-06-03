@@ -1,12 +1,12 @@
-class Map
+class Environment
 
-  attr_reader :tiles, :width, :height
+  attr_reader :tiles, :width, :height, :solid_blocks
 
-  def initialize(window, mapfile, tileset, map_key)
+  def initialize(window, mapfile, tileset, map_key, solid_blocks)
     @window  = window
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
-    @map_key = map_key
+    @map_key, @solid_blocks = map_key, solid_blocks
 
     get_lines(mapfile)
     get_width
@@ -46,8 +46,7 @@ class Map
       line = []
       @width.times do |x|
         @map_key.each do |key, value|
-          case @lines[y][x]
-          when key
+          if @lines[y][x] == key
             line.push(value)
           end
         end

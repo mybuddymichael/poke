@@ -4,7 +4,7 @@ class Player
 
   def initialize(window, name, x, y)
     @window, @name, @x, @y, = window, name, x, y
-    @tiles = @window.map.tiles
+    @tiles = @window.current_env.tiles
 
     @facing_right, @facing_up, @facing_left, @facing_down =
       Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
@@ -82,11 +82,13 @@ class Player
 
   def solid?
     unless locked?
+      solid_blocks = @window.current_env.solid_blocks
+
       x_tile, y_tile = @x/32, @y/32
       x_tc = (@tile_coefficients[@direction][1])
       y_tc = (@tile_coefficients[@direction][0])
 
-      Tiles::Solid.include?(@tiles[y_tile+y_tc][x_tile+x_tc])
+      solid_blocks.include?(@tiles[y_tile+y_tc][x_tile+x_tc])
     end
   end
 

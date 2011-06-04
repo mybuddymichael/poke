@@ -1,4 +1,4 @@
-class Environment
+class Map
 
   attr_reader :tiles, :width, :height, :solid_blocks
 

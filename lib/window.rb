@@ -1,6 +1,6 @@
 class Window < Gosu::Window
 
-  attr_reader :buttons_pushed, :current_env
+  attr_reader :buttons_pushed, :current_map
 
   def initialize
     super(480, 320, false)
@@ -9,9 +9,9 @@ class Window < Gosu::Window
     @window_width, @window_height = 480, 320
     @camera_x = @camera_y = 0
 
-    @world_one    = Environment.new(self, 'media/map.txt', 'media/tileset.png',
-                                    {"v"=>0, "g"=>1, "."=>nil}, [0])
-    @current_env  = @world_one
+    @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
+                            {'v'=>0, 'g'=>1, '.'=>nil}, ['v'])
+    @current_map  = @world_one
     @player       = Player.new(self, 'Ferd', 224, 128)
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)
@@ -23,8 +23,8 @@ class Window < Gosu::Window
     unless @paused
       @player.update
       @coordinates.update
-      @camera_x = [[@player.x - 224, 0].max, @current_env.width * 32 - 480].min
-      @camera_y = [[@player.y - 160, 0].max, @current_env.height * 32 - 320].min
+      @camera_x = [[@player.x - 224, 0].max, @current_map.width * 32 - 480].min
+      @camera_y = [[@player.y - 160, 0].max, @current_map.height * 32 - 320].min
     end
   end
 
@@ -32,7 +32,7 @@ class Window < Gosu::Window
     draw_rect(@window_width, @window_height,
               Color::White, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
-      @current_env.draw
+      @current_map.draw
       @player.draw
     end
     @coordinates.draw

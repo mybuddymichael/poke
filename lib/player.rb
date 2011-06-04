@@ -82,7 +82,7 @@ class Player
   def solid?
     unless locked?
       solid_blocks = @window.current_map.solid_blocks
-      maptiles     = @window.current_map.tiles
+      maptiles     = @window.current_map.lines
 
       x_tile, y_tile = @x/32, @y/32
       x_tc = (@tile_coefficients[@direction][1])

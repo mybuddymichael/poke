@@ -1,6 +1,6 @@
 class Map
 
-  attr_reader :tiles, :width, :height, :solid_blocks
+  attr_reader :lines, :tiles, :width, :height, :solid_blocks
 
   def initialize(window, mapfile, tileset, map_key, solid_blocks)
     @tileset = Gosu::Image.load_tiles(window, tileset,
@@ -39,7 +39,7 @@ class Map
   end
 
   def map_tiles
-    @tiles = @lines
+    @tiles = []
 
     @height.times do |y|
       line = []

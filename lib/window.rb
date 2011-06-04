@@ -10,7 +10,7 @@ class Window < Gosu::Window
     @camera_x = @camera_y = 0
 
     @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
-                            {'v'=>0, 'g'=>1, '.'=>nil}, [0])
+                            {'v'=>0, 'g'=>1, '.'=>nil}, ['v'])
     @current_map  = @world_one
     @player       = Player.new(self, 'Ferd', 224, 128)
     @coordinates  = Coordinates.new(self, @player)

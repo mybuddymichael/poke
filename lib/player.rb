@@ -2,8 +2,8 @@ class Player
 
   attr_reader :x, :y, :direction
 
-  def initialize(window, name, x, y)
-    @window, @name, @x, @y, = window, name, x, y
+  def initialize(window, x, y)
+    @window, @x, @y, = window, x, y
 
     @facing_right, @facing_up, @facing_left, @facing_down =
       Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)

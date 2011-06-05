@@ -12,7 +12,7 @@ class Window < Gosu::Window
     @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
                             {'V'=>0, 'g'=>1, '.'=>nil})
     @current_map  = @world_one
-    @player       = Player.new(self, 'Ferd', 416, 288)
+    @player       = Player.new(self, 416, 288)
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @window_width, @window_height)
 

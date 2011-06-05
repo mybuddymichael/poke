@@ -2,10 +2,11 @@ class Map
 
   attr_reader :lines, :tiles, :width, :height, :solid_blocks
 
-  def initialize(window, mapfile, tileset, map_key, solid_blocks)
+  def initialize(window, mapfile, tileset, map_key)
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
-    @map_key, @solid_blocks = map_key, solid_blocks
+    @map_key = map_key
+    get_solid_blocks
 
     get_lines(mapfile)
     get_width
@@ -25,6 +26,16 @@ class Map
   end
 
   private
+
+  def get_solid_blocks
+    @solid_blocks = []
+
+    @map_key.each_key do |key|
+      if (key.upcase == key) and (key != '.')
+        @solid_blocks.push(key)
+      end
+    end
+  end
 
   def get_lines(file)
     @lines = File.readlines(file).map { |line| line.chomp }

@@ -6,7 +6,7 @@ class Window < Gosu::Window
     super(480, 320, false)
     self.caption = 'Poke'
 
-    @window_width, @window_height = 480, 320
+    @width, @height = 480, 320
     @camera_x = @camera_y = 0
 
     @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
@@ -14,7 +14,7 @@ class Window < Gosu::Window
     @current_map  = @world_one
     @player       = Player.new(self, 416, 288)
     @coordinates  = Coordinates.new(self, @player)
-    @pause_screen = PauseScreen.new(self, @window_width, @window_height)
+    @pause_screen = PauseScreen.new(self, @width, @height)
 
     @buttons_pushed = []
   end
@@ -29,7 +29,7 @@ class Window < Gosu::Window
   end
 
   def draw
-    draw_rect(@window_width, @window_height,
+    draw_rect(@width, @height,
               Color::White, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
       @current_map.draw

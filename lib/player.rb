@@ -5,8 +5,8 @@ class Player
   def initialize(window, x, y)
     @window, @x, @y, = window, x, y
 
-    @facing_right, @facing_up, @facing_left, @facing_down =
-      Gosu::Image.load_tiles(window, 'media/arrows.png', 32, 32, false)
+    @facing_left, @facing_right, @facing_down, @facing_up =
+      Gosu::Image.load_tiles(window, 'media/player.png', 32, 32, false)
     @current_image = @facing_down
 
     @tile_coefficients = {up:[-1,0], down:[1,0], left:[0,-1], right:[0,1]}

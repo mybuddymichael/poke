@@ -43,8 +43,6 @@ class Player
     when :right
       @current_image = @facing_right
       @x += @movement_factor unless solid?
-    else
-      continue_movement_if_locked
     end
   end
 
@@ -65,17 +63,6 @@ class Player
       lock
     else
       unlock
-    end
-  end
-
-  def continue_movement_if_locked
-    if locked?
-      case @direction
-      when :up    then @y -= @movement_factor
-      when :down  then @y += @movement_factor
-      when :left  then @x -= @movement_factor
-      when :right then @x += @movement_factor
-      end
     end
   end
 

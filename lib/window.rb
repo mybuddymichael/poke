@@ -29,8 +29,7 @@ class Window < Gosu::Window
   end
 
   def draw
-    draw_rect(@width, @height,
-              Color::White, ZOrder::Background)
+    draw_rect(@width, @height, Color::White, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
       @current_map.draw
       @player.draw

@@ -33,16 +33,16 @@ class Player
     case @direction
     when :up
       @current_image = @facing_up
-      @y -= @movement_factor unless solid?
+      @y -= @movement_factor unless next_block_is_solid?
     when :down
       @current_image = @facing_down
-      @y += @movement_factor unless solid?
+      @y += @movement_factor unless next_block_is_solid?
     when :left
       @current_image = @facing_left
-      @x -= @movement_factor unless solid?
+      @x -= @movement_factor unless next_block_is_solid?
     when :right
       @current_image = @facing_right
-      @x += @movement_factor unless solid?
+      @x += @movement_factor unless next_block_is_solid?
     end
   end
 
@@ -66,7 +66,7 @@ class Player
     end
   end
 
-  def solid?
+  def next_block_is_solid?
     unless locked?
       solid_blocks = @window.current_map.solid_blocks
       maptiles     = @window.current_map.lines

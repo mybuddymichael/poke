@@ -19,6 +19,8 @@ class Window < Gosu::Window
     @buttons_pushed = []
   end
 
+  private
+
   def update
     unless @paused
       @player.update

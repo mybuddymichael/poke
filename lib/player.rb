@@ -26,7 +26,7 @@ class Player
   private
 
   def get_current_direction
-    @direction = @window.buttons_pushed.last unless locked?
+    @direction = @window.buttons_pushed.last unless movement_is_locked?
   end
 
   def move
@@ -54,7 +54,7 @@ class Player
     @locked = false
   end
 
-  def locked?
+  def movement_is_locked?
     @locked
   end
 
@@ -67,7 +67,7 @@ class Player
   end
 
   def next_block_is_solid?
-    unless locked?
+    unless movement_is_locked?
       solid_blocks = @window.current_map.solid_blocks
       maptiles     = @window.current_map.lines
 

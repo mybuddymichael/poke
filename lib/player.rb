@@ -42,16 +42,16 @@ class Player
     when :left
       @current_image = @facing_left
       @x -= @movement_factor unless next_block_is_solid?
-      if @x % 32 > 16
+      if @x % 64 > 32
         @current_image = @running_left_one
-      elsif @x % 32 <= 16
+      elsif @x % 64 <= 32
         @current_image = @running_left_two
       end
     when :right
       @current_image = @facing_right
-      if @x % 32 < 16
+      if @x % 64 < 32
         @current_image = @running_right_one
-      elsif @x % 32 >= 16
+      elsif @x % 64 >= 32
         @current_image = @running_right_two
       end
       @x += @movement_factor unless next_block_is_solid?

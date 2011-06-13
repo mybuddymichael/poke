@@ -2,11 +2,11 @@ class Player
 
   attr_reader :x, :y, :direction
 
-  def initialize(window, x, y)
-    @window, @x, @y, = window, x, y
+  def initialize(args)
+    @window, @x, @y = args[:window], args[:x], args[:y]
 
     @facing_left, @facing_right, @facing_down, @facing_up =
-      Gosu::Image.load_tiles(window, 'media/player.png', 32, 32, false)
+      Gosu::Image.load_tiles(@window, 'media/player.png', 32, 32, false)
     @current_image = @facing_down
 
     @tile_coefficients = {up:[-1,0], down:[1,0], left:[0,-1], right:[0,1]}

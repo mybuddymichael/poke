@@ -11,6 +11,8 @@ class Window < Gosu::Window
 
     @paused = false
 
+    @background   = Gosu::Image.new(self, 'media/background.png', false)
+
     @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
                             {'V'=>0, 'g'=>1, '.'=>nil})
     @current_map  = @world_one
@@ -33,7 +35,7 @@ class Window < Gosu::Window
   end
 
   def draw
-    draw_rect(@width, @height, Color::White, ZOrder::Background)
+    @background.draw(0, 0, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
       @current_map.draw
       @player.draw

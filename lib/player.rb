@@ -5,8 +5,8 @@ class Player
   def initialize(window, x, y)
     @window, @x, @y, = window, x, y
 
-    @facing_left, @facing_right, @facing_down, @facing_up =
-      Gosu::Image.load_tiles(window, 'media/player.png', 32, 32, false)
+    @facing_down, @facing_up, @facing_right, @facing_left =
+      Gosu::Image.load_tiles(window, 'media/player.png', 32, 40, false)
     @current_image = @facing_down
 
     @tile_coefficients = {up:[-1,0], down:[1,0], left:[0,-1], right:[0,1]}
@@ -20,7 +20,7 @@ class Player
   end
 
   def draw
-    @current_image.draw(@x, @y, ZOrder::Player)
+    @current_image.draw(@x, @y-8, ZOrder::Player)
   end
 
   private

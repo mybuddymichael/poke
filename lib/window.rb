@@ -9,14 +9,14 @@ class Window < Gosu::Window
     @width, @height = 480, 320
     @camera_x = @camera_y = 0
 
+    @paused = false
+
     @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
                             {'V'=>0, 'g'=>1, '.'=>nil})
     @current_map  = @world_one
     @player       = Player.new(self, 416, 288)
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @width, @height)
-
-    @paused = false
 
     @buttons_pushed = []
   end

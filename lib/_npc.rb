@@ -12,7 +12,7 @@ class NPC < Player
   end
 
   def get_current_direction
-    movement_coefficient = 2000
+    movement_coefficient = 1800
     movement = rand(movement_coefficient)
     unless movement_is_locked?
       if movement == 0

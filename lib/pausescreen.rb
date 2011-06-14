@@ -5,7 +5,6 @@ class PauseScreen
     @window_width, @window_height = window_width, window_height
 
     @pause_button = Gosu::Image.new(window, 'media/pause_button.png', false)
-    @pause_text   = Gosu::Image.from_text(window, 'Paused', Media::Font, 16)
     @press_q      = Gosu::Image.new(window, 'media/press_q.png', false)
   end
 

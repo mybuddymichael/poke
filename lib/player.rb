@@ -3,7 +3,7 @@ class Player
   attr_reader :x, :y, :direction
 
   def initialize(window, x, y)
-    @window, @x, @y, = window, x, y
+    @window, @x, @y = window, x, y
 
     @facing_up, @facing_down, @facing_left, @facing_right =
       Gosu::Image.load_tiles(window, 'media/player.png', 32, 38, false)

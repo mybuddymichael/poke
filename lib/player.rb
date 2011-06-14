@@ -5,10 +5,8 @@ class Player
   def initialize(window, x, y)
     @window, @x, @y, = window, x, y
 
-    @facing_down, @facing_up, @facing_right, @facing_left,
-      @running_right_one, @running_right_two,
-      @running_left_one,  @running_left_two =
-      Gosu::Image.load_tiles(window, 'media/player.png', 32, 40, false)
+    @facing_up, @facing_down, @facing_left, @facing_right =
+      Gosu::Image.load_tiles(window, 'media/player.png', 32, 38, false)
     @current_image = @facing_down
 
     @tile_coefficients = {up:[-1,0], down:[1,0], left:[0,-1], right:[0,1]}
@@ -42,18 +40,8 @@ class Player
     when :left
       @current_image = @facing_left
       @x -= @movement_factor unless next_block_is_solid?
-      if @x % 64 > 32
-        @current_image = @running_left_one
-      elsif @x % 64 <= 32
-        @current_image = @running_left_two
-      end
     when :right
       @current_image = @facing_right
-      if @x % 64 < 32
-        @current_image = @running_right_one
-      elsif @x % 64 >= 32
-        @current_image = @running_right_two
-      end
       @x += @movement_factor unless next_block_is_solid?
     end
   end

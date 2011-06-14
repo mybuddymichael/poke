@@ -20,6 +20,8 @@ class Window < Gosu::Window
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
+    @npc1         = NPC.new(self, 256, 160)
+
     @buttons_pushed = []
   end
 
@@ -28,6 +30,7 @@ class Window < Gosu::Window
   def update
     unless @paused
       @player.update
+      @npc1.update
       @coordinates.update
       @camera_x = [[@player.x - 224, 0].max, @current_map.width * 32 - 480].min
       @camera_y = [[@player.y - 160, 0].max, @current_map.height * 32 - 320].min
@@ -39,6 +42,7 @@ class Window < Gosu::Window
     translate(-@camera_x, -@camera_y) do
       @current_map.draw
       @player.draw
+      @npc1.draw
     end
     @coordinates.draw
     if @paused

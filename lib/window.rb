@@ -1,6 +1,6 @@
 class Window < Gosu::Window
 
-  attr_reader :buttons_pushed, :current_map
+  attr_reader :buttons_pushed, :current_map, :player
 
   def initialize
     super(480, 320, false)
@@ -20,7 +20,7 @@ class Window < Gosu::Window
     @coordinates  = Coordinates.new(self, @player)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
-    @npc1         = NPC.new(self, 256, 160)
+    @npc1         = NPC.new(self, 416, 160)
 
     @buttons_pushed = []
   end

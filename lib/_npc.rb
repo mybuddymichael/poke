@@ -11,6 +11,12 @@ class NPC < Player
     @movement_factor = 1
   end
 
+  def draw
+    @current_image.draw(@x, @y-8, get_zorder)
+  end
+
+  private
+
   def get_current_direction
     movement_coefficient = 1800
     movement = rand(movement_coefficient)
@@ -26,6 +32,14 @@ class NPC < Player
       else
         @direction = nil
       end
+    end
+  end
+
+  def get_zorder
+    if @y > @window.player.y
+      ZOrder::NPC_low
+    else
+      ZOrder::NPC_high
     end
   end
 

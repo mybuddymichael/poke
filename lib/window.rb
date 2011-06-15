@@ -1,6 +1,6 @@
 class Window < Gosu::Window
 
-  attr_reader :buttons_pushed, :current_map, :player, :npc1
+  attr_reader :buttons_pushed, :current_grid, :user
 
   def initialize
     super(480, 320, false)
@@ -11,16 +11,13 @@ class Window < Gosu::Window
 
     @paused = false
 
-    @background   = Gosu::Image.new(self, 'media/background.png', false)
-
-    @world_one    = Map.new(self, 'media/map.txt', 'media/tileset.png',
-                            {'V'=>0, 'g'=>1, '.'=>nil})
-    @current_map  = @world_one
-    @player       = Player.new(self, 416, 288)
-    @coordinates  = Coordinates.new(self, @player)
+    @user         = User.new(self, 416, 288)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
-    @npc1         = NPC.new(self, 416, 160)
+    @grid_one     = GridOne.new(self, @user)
+    @grid_one.start
+
+    @current_grid = @grid_one
 
     @buttons_pushed = []
   end
@@ -29,22 +26,19 @@ class Window < Gosu::Window
 
   def update
     unless @paused
-      @player.update
-      @npc1.update
-      @coordinates.update
-      @camera_x = [[@player.x - 224, 0].max, @current_map.width * 32 - 480].min
-      @camera_y = [[@player.y - 160, 0].max, @current_map.height * 32 - 320].min
+      @current_grid.update
+      @user.update
+      @camera_x = [[@user.x - 224, 0].max, @current_grid.width * 32 - 480].min
+      @camera_y = [[@user.y - 160, 0].max, @current_grid.height * 32 - 320].min
     end
   end
 
   def draw
-    @background.draw(0, 0, ZOrder::Background)
     translate(-@camera_x, -@camera_y) do
-      @current_map.draw
-      @player.draw
-      @npc1.draw
+      @current_grid.draw
+      @user.draw
     end
-    @coordinates.draw
+    @current_grid.background.draw(0,0,ZOrder::Background)
     if @paused
       @pause_screen.draw
     end

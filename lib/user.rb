@@ -68,8 +68,8 @@ class User
 
   def next_block_is_solid?
     unless movement_is_locked?
-      solid_blocks = @window.current_map.solid_blocks
-      maptiles     = @window.current_map.lines
+      solid_blocks = @window.current_grid.solid_blocks
+      maptiles     = @window.current_grid.lines
 
       x_tile, y_tile = @x/32, @y/32
       x_tc = (@tile_coefficients[@direction][1])
@@ -83,13 +83,13 @@ class User
     unless movement_is_locked?
       case @direction
       when :up
-        (@window.npc1.x == @x) and ((@window.npc1.y)/32 == (@y/32 - 1))
+        (@window.current_grid.program_1.x == @x) and ((@window.current_grid.program_1.y)/32 == (@y/32 - 1))
       when :down
-        (@window.npc1.x == @x) and ((@window.npc1.y)/32 == (@y/32 + 1))
+        (@window.current_grid.program_1.x == @x) and ((@window.current_grid.program_1.y)/32 == (@y/32 + 1))
       when :left
-        (@window.npc1.y == @y) and ((@window.npc1.x)/32 == (@x/32 - 1))
+        (@window.current_grid.program_1.y == @y) and ((@window.current_grid.program_1.x)/32 == (@x/32 - 1))
       when :right
-        (@window.npc1.y == @y) and ((@window.npc1.x)/32 == (@x/32 + 1))
+        (@window.current_grid.program_1.y == @y) and ((@window.current_grid.program_1.x)/32 == (@x/32 + 1))
       end
     end
   end

@@ -9,7 +9,6 @@ class Grid
   end
 
   def update
-    @map.update
   end
 
   def draw

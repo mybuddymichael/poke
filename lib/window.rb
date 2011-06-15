@@ -5,8 +5,8 @@ class Window < Gosu::Window
   def initialize
     super(480, 320, false)
     self.caption = 'Poke'
-
     @width, @height = 480, 320
+
     @camera_x = @camera_y = 0
 
     @paused = false

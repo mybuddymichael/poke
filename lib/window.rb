@@ -9,17 +9,17 @@ class Window < Gosu::Window
 
     @camera_x = @camera_y = 0
 
-    @paused = false
-
     @user         = User.new(self, 416, 288)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
     @grid_one = GridOne.new(self, @user)
     @grid_one.start
 
-    @current_grid = @grid_one
-
     @buttons_pushed = []
+  end
+
+  def set_current_grid_as(grid)
+    @current_grid = grid
   end
 
   private

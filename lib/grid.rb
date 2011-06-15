@@ -2,9 +2,9 @@ class Grid
 
   attr_reader :map, :background
 
-  def initialize(window, user, map, tileset, map_key, background)
+  def initialize(window, user, mapfile, tileset, map_key, background)
     @window, @user = window, user
-    @map = Map.new(window, map, tileset, map_key)
+    @map = Map.new(window, mapfile, tileset, map_key)
     @background  = Gosu::Image.new(window, background, false)
   end
 

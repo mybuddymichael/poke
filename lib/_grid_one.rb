@@ -3,10 +3,13 @@ class GridOne < Grid
   attr_reader :program_1
 
   def initialize(window, user)
-    super(window, user, 'media/grid_one.txt',
-          'media/grid_one_tileset.png', {'V'=>0, 'g'=>1, '.'=>nil},
+    super(window, user,
+          'media/grid_one.txt',
+          'media/grid_one_tileset.png',
+          {'V'=>0, 'g'=>1, '.'=>nil},
           'media/background.png')
-    @program_1   = Program.new(@window, 416, 160)
+
+    @program_1 = Program.new(@window, 416, 160)
   end
 
   def update

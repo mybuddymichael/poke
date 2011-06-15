@@ -36,7 +36,7 @@ class Program < User
   end
 
   def get_zorder
-    if @y > @window.player.y
+    if @y > @window.user.y
       ZOrder::NPC_low
     else
       ZOrder::NPC_high

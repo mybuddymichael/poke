@@ -2,7 +2,6 @@ class Program < User
 
   def initialize(window, x, y)
     super
-    @window, @x, @y, = window, x, y
 
     @facing_up, @facing_down, @facing_left, @facing_right =
       Gosu::Image.load_tiles(window, 'media/orange_player.png', 32, 38, false)

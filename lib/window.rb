@@ -12,7 +12,9 @@ class Window < Gosu::Window
     @user         = User.new(self, 416, 288)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
-    @grid_one = GridOne.new(self, @user)
+    @grid_one = GridOne.new(self, @user, 'media/grid_one.txt',
+                            'grid_one_tileset.png', {'V'=>0, 'g'=>1, '.'=>nil},
+                            'background.png')
     @grid_one.start
 
     @buttons_pushed = []

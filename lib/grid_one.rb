@@ -1,6 +1,6 @@
 class GridOne
 
-  attr_reader :map, :user, :program_1, :background
+  attr_reader :map, :program_1, :background
 
   def initialize(window, user)
     @window, @user = window, user

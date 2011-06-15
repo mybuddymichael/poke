@@ -1,12 +1,12 @@
 class Coordinates
 
-  def initialize(window, player)
-    @window, @player = window, player
+  def initialize(window, user)
+    @window, @user = window, user
     @coordinate_text = Gosu::Font.new(@window, Media::Font, 16)
   end
 
   def update
-    @x, @y = @player.x, @player.y
+    @x, @y = @user.x, @user.y
   end
 
   def draw

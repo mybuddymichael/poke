@@ -1,6 +1,6 @@
-module ReadFile
+module ReadMap
 
-  def get_line(file)
+  def get_lines(file)
     @lines = File.readlines(file).map { |line| line.chomp }
   end
 

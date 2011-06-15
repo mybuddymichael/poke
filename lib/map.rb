@@ -1,6 +1,6 @@
 class Map
 
-  include ReadFile
+  include ReadMap
 
   attr_reader :lines, :tiles, :width, :height, :solid_blocks
 

@@ -1,4 +1,4 @@
-class NPC < Player
+class Program < User
 
   def initialize(window, x, y)
     super

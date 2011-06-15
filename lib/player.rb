@@ -33,16 +33,16 @@ class Player
     case @direction
     when :up
       @current_image = @facing_up
-      @y -= @movement_factor unless next_block_is_solid?
+      @y -= @movement_factor unless next_block_is_solid? or npc?
     when :down
       @current_image = @facing_down
-      @y += @movement_factor unless next_block_is_solid?
+      @y += @movement_factor unless next_block_is_solid? or npc?
     when :left
       @current_image = @facing_left
-      @x -= @movement_factor unless next_block_is_solid?
+      @x -= @movement_factor unless next_block_is_solid? or npc?
     when :right
       @current_image = @facing_right
-      @x += @movement_factor unless next_block_is_solid?
+      @x += @movement_factor unless next_block_is_solid? or npc?
     end
   end
 
@@ -76,6 +76,21 @@ class Player
       y_tc = (@tile_coefficients[@direction][0])
 
       solid_blocks.include?(maptiles[y_tile+y_tc][x_tile+x_tc])
+    end
+  end
+
+  def npc?
+    unless movement_is_locked?
+      case @direction
+      when :up
+        (@window.npc1.x == @x) and ((@window.npc1.y)/32 == (@y/32 - 1))
+      when :down
+        (@window.npc1.x == @x) and ((@window.npc1.y)/32 == (@y/32 + 1))
+      when :left
+        (@window.npc1.y == @y) and ((@window.npc1.x)/32 == (@x/32 - 1))
+      when :right
+        (@window.npc1.y == @y) and ((@window.npc1.x)/32 == (@x/32 + 1))
+      end
     end
   end
 

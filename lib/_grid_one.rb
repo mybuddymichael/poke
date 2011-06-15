@@ -9,7 +9,6 @@ class GridOne < Grid
     @program_1   = Program.new(@window, 416, 160)
   end
 
-
   def update
     super
     @program_1.update

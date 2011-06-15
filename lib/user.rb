@@ -1,4 +1,4 @@
-class Player
+class User
 
   attr_reader :x, :y, :direction
 

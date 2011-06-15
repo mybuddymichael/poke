@@ -1,5 +1,7 @@
 class Map
 
+  include ReadFile
+
   attr_reader :lines, :tiles, :width, :height, :solid_blocks
 
   def initialize(window, mapfile, tileset, map_key)
@@ -35,18 +37,6 @@ class Map
         @solid_blocks.push(key)
       end
     end
-  end
-
-  def get_lines(file)
-    @lines = File.readlines(file).map { |line| line.chomp }
-  end
-
-  def get_width
-    @width = @lines[0].size
-  end
-
-  def get_height
-    @height = @lines.size
   end
 
   def map_tiles

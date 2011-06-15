@@ -4,10 +4,10 @@ class GridOne < Grid
 
   def initialize(window, user)
     super(window, user,
-          'media/grid_one.txt',
-          'media/grid_one_tileset.png',
-          {'V'=>0, 'g'=>1, '.'=>nil},
-          'media/background.png')
+         'media/grid_one.txt',
+         'media/grid_one_tileset.png',
+        {'V'=>0, 'g'=>1, '.'=>nil},
+         'media/background.png')
 
     @program_1 = Program.new(@window, 416, 160)
   end

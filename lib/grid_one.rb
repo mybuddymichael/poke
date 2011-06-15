@@ -30,4 +30,12 @@ class GridOne
     @map.height
   end
 
+  def solid_blocks
+    @map.solid_blocks
+  end
+
+  def lines
+    @map.lines
+  end
+
 end

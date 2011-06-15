@@ -5,7 +5,7 @@ class GridOne
   end
   
   def start
-    @map = Map.new(self, 'media/map.txt'
+    @map = Map.new(self, 'media/grid_one.txt', 'media/
   end
 
 end

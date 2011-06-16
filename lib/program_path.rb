@@ -6,6 +6,7 @@ class ProgramPath
 
   def initialize(pathfile)
     get_lines(pathfile)
+    @non_path_blocks = 0
   end
 
 end

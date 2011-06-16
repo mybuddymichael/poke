@@ -33,16 +33,16 @@ class User
     case @direction
     when :up
       @current_image = @facing_up
-      @y -= @movement_factor unless next_block_is_solid? or npc?
+      @y -= @movement_factor unless path_is_blocked?
     when :down
       @current_image = @facing_down
-      @y += @movement_factor unless next_block_is_solid? or npc?
+      @y += @movement_factor unless path_is_blocked?
     when :left
       @current_image = @facing_left
-      @x -= @movement_factor unless next_block_is_solid? or npc?
+      @x -= @movement_factor unless path_is_blocked?
     when :right
       @current_image = @facing_right
-      @x += @movement_factor unless next_block_is_solid? or npc?
+      @x += @movement_factor unless path_is_blocked?
     end
   end
 
@@ -64,6 +64,10 @@ class User
     else
       unlock
     end
+  end
+
+  def path_is_blocked?
+    next_block_is_solid? or npc?
   end
 
   def next_block_is_solid?

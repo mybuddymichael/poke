@@ -48,4 +48,8 @@ class Program < User
     next_block_is_solid? or block_is_out_of_path?
   end
 
+  def block_is_out_of_path?
+    unless movement_is_locked?
+
+
 end

@@ -42,4 +42,8 @@ class Program < User
     end
   end
 
+  def path_is_blocked?
+    next_block_is_solid? or block_is_out_of_path?
+  end
+
 end

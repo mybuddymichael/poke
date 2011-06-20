@@ -25,6 +25,13 @@ class TestWindow < MiniTest::Unit::TestCase
     assert_equal(:left, @window.buttons_pushed.last)
   end
 
+  def test_that_escape_toggles_pause
+    @window.button_down(Gosu::KbEscape)
+    assert_equal(true, @window.paused)
+    @window.button_down(Gosu::KbEscape)
+    assert_equal(false, @window.paused)
+  end
+
 end
 
 class TestUser < MiniTest::Unit::TestCase

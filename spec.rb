@@ -61,9 +61,4 @@ class TestUser < MiniTest::Unit::TestCase
     end
   end
 
-  def test_that_direction_can_be_reset
-    @user.reset_direction
-    assert_equal(:no_direction, @user.direction)
-  end
-
 end

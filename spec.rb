@@ -46,26 +46,4 @@ class TestUser < MiniTest::Unit::TestCase
     refute_nil(@user)
   end
 
-  def test_that_user_will_move
-    @directions.each do |direction|
-      @user.move(direction)
-      assert_equal(direction, @user.direction)
-    end
-  end
-
-  def test_that_user_will_stay_onscreen
-    @directions.each do |direction|
-      300.times do
-        @user.move(direction)
-        @user.update
-      end
-      case direction
-        when :up    then assert_equal(0, @user.y)
-        when :down  then assert_equal(288, @user.y)
-        when :left  then assert_equal(0, @user.x)
-        when :right then assert_equal(448, @user.x)
-      end
-    end
-  end
-
 end

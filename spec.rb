@@ -27,43 +27,43 @@ class TestWindow < MiniTest::Unit::TestCase
 
 end
 
-class TestPlayer < MiniTest::Unit::TestCase
+class TestUser < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
-    @player = Player.new(@window, 'Ferd', 224, 128)
+    @user = User.new(@window, 'Ferd', 224, 128)
     @directions = [:up, :down, :left, :right].freeze
   end
 
-  def test_that_player_is_created
-    refute_nil(@player)
+  def test_that_user_is_created
+    refute_nil(@user)
   end
 
-  def test_that_player_will_move
+  def test_that_user_will_move
     @directions.each do |direction|
-      @player.move(direction)
-      assert_equal(direction, @player.direction)
+      @user.move(direction)
+      assert_equal(direction, @user.direction)
     end
   end
 
-  def test_that_player_will_stay_onscreen
+  def test_that_user_will_stay_onscreen
     @directions.each do |direction|
       300.times do
-        @player.move(direction)
-        @player.update
+        @user.move(direction)
+        @user.update
       end
       case direction
-        when :up    then assert_equal(0, @player.y)
-        when :down  then assert_equal(288, @player.y)
-        when :left  then assert_equal(0, @player.x)
-        when :right then assert_equal(448, @player.x)
+        when :up    then assert_equal(0, @user.y)
+        when :down  then assert_equal(288, @user.y)
+        when :left  then assert_equal(0, @user.x)
+        when :right then assert_equal(448, @user.x)
       end
     end
   end
 
   def test_that_direction_can_be_reset
-    @player.reset_direction
-    assert_equal(:no_direction, @player.direction)
+    @user.reset_direction
+    assert_equal(:no_direction, @user.direction)
   end
 
 end

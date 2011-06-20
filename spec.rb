@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'gosu'
-Dir['./lib/*.rb'].each { |file| require file }
+require './poke.rb'
 
 class TestWindow < MiniTest::Unit::TestCase
 

@@ -50,6 +50,13 @@ class Program < User
 
   def block_is_out_of_path?
     unless movement_is_locked?
+      path = @program_path.lines
+      x_tile, y_tile = @x/32, @y/32
+      x_tc = (@tile_coefficients[@direction][1])
+      y_tc = (@tile_coefficients[@direction][0])
 
+      path[y_tile+y_tc][x_tile+x_tc] == 0
+    end
+  end
 
 end

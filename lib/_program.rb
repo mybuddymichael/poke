@@ -19,7 +19,7 @@ class Program < User
   private
 
   def get_current_direction
-    movement_coefficient = 1600
+    movement_coefficient = 400
     movement = rand(movement_coefficient)
     unless movement_is_locked?
       if movement == 0

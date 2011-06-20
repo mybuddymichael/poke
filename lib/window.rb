@@ -22,8 +22,6 @@ class Window < Gosu::Window
     @current_grid = grid
   end
 
-  private
-
   def update
     unless @paused
       @current_grid.update
@@ -63,6 +61,8 @@ class Window < Gosu::Window
     when Gosu::KbRight then @buttons_pushed.delete(:right)
     end
   end
+
+  private
 
   def toggle_pause
     if @paused

@@ -9,7 +9,7 @@ class GridOne < Grid
         {'V'=>0, 'g'=>1, '.'=>nil},
          'media/background.png')
 
-    @program_1 = Program.new(@window, 416, 160)
+    @program_1 = Program.new(@window, 416, 160, 'media/grid_one_program_1.txt')
   end
 
   def update

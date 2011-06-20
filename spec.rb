@@ -12,6 +12,12 @@ class TestWindow < MiniTest::Unit::TestCase
     refute_nil(@window)
   end
 
+  def test_that_buttons_pushed_contains_the_last_pressed_button
+    @window.button_down(Gosu::KbLeft)
+    @window.button_down(Gosu::KbUp)
+    assert_equal(:up, @window.buttons_pushed.last)
+  end
+
 end
 
 class TestPauseScreeen < MiniTest::Unit::TestCase

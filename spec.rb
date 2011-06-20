@@ -27,19 +27,6 @@ class TestWindow < MiniTest::Unit::TestCase
 
 end
 
-class TestPauseScreeen < MiniTest::Unit::TestCase
-
-  def setup
-    @window = Window.new
-    @pause_screen = PauseScreen.new(@window, 480, 320)
-  end
-
-  def test_that_pause_screen_is_created
-    refute_nil(@pause_screen)
-  end
-
-end
-
 class TestPlayer < MiniTest::Unit::TestCase
 
   def setup

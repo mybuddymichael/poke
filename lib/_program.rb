@@ -55,7 +55,7 @@ class Program < User
       x_tc = (@tile_coefficients[@direction][1])
       y_tc = (@tile_coefficients[@direction][0])
 
-      path[y_tile+y_tc][x_tile+x_tc] == 0
+      path[y_tile+y_tc][x_tile+x_tc] == "0"
     end
   end
 

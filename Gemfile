@@ -1,2 +1,2 @@
 source :rubygems
-gem 'gosu'
+gem 'gosu', '~> 0.7.31'

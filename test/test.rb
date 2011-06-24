@@ -51,3 +51,22 @@ class TestUser < MiniTest::Unit::TestCase
   end
 
 end
+
+class TestCoordinate < MiniTest::Unit::TestCase
+
+  def setup
+    @window = Window.new
+    @user = User.new(@window, 224, 128)
+    @coordinates = Coordinates.new(@window, @user)
+  end
+
+  def test_that_coordinates_are_created
+    refute_nil(@coordinates)
+  end
+
+  def test_that_update_changes_coordinate_text
+    @coordinates.update
+    assert_equal(@coordinates.instance_variable_get(:@x), @user.x)
+  end
+
+end

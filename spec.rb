@@ -39,7 +39,6 @@ class TestUser < MiniTest::Unit::TestCase
   def setup
     @window = Window.new
     @user = User.new(@window, 224, 128)
-    @directions = [:up, :down, :left, :right].freeze
   end
 
   def test_that_user_is_created

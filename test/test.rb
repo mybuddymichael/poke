@@ -22,6 +22,8 @@ class TestWindow < MiniTest::Unit::TestCase
   end
 
   def test_that_button_release_removes_button_press_from_array
+    @window.button_down(Gosu::KbDown)
+    @window.button_down(Gosu::KbRight)
     @window.button_down(Gosu::KbLeft)
     @window.button_down(Gosu::KbUp)
     @window.button_up(Gosu::KbUp)

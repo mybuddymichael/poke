@@ -72,7 +72,7 @@ class TestCoordinates < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
-    @user = User.new(@window, 224, 128)
+    @user = @window.user
     @coordinates = Coordinates.new(@window, @user)
   end
 

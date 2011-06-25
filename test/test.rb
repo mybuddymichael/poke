@@ -43,11 +43,27 @@ class TestUser < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
-    @user = User.new(@window, 224, 128)
+    @user = @window.user
+    @starting_x = @user.x
+    @starting_y = @user.y
   end
 
   def test_that_user_is_created
     refute_nil(@user)
+  end
+
+  def test_that_update_changes_the_direction
+    @window.button_down(Gosu::KbLeft)
+    @user.update
+    assert_equal(:left, @user.direction)
+  end
+
+  def test_that_user_moves
+    assert_equal(@starting_x, @user.x)
+    @window.button_down(Gosu::KbRight)
+    @user.update
+    assert_equal(:right, @user.direction)
+    assert_equal(@starting_x+2, @user.x)
   end
 
 end

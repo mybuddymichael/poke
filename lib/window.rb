@@ -36,7 +36,6 @@ class Window < Gosu::Window
       @current_grid.draw
       @user.draw
     end
-    @current_grid.background.draw(0,0,ZOrder::Background)
     if @paused
       @pause_screen.draw
     end

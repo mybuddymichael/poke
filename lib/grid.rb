@@ -7,9 +7,6 @@ class Grid
     @map = Map.new(window, mapfile, tileset, map_key)
   end
 
-  def update
-  end
-
   def draw
     @map.draw
   end

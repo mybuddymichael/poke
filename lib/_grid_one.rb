@@ -13,7 +13,6 @@ class GridOne < Grid
   end
 
   def update
-    super
     @program_1.update
   end
 

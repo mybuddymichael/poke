@@ -18,6 +18,7 @@ class TestWindow < MiniTest::Unit::TestCase
   def test_that_buttons_pushed_contains_the_last_pressed_button
     @window.button_down(Gosu::KbLeft)
     @window.button_down(Gosu::KbUp)
+
     assert_equal(:up, @window.buttons_pushed.last)
   end
 
@@ -26,13 +27,16 @@ class TestWindow < MiniTest::Unit::TestCase
     @window.button_down(Gosu::KbRight)
     @window.button_down(Gosu::KbLeft)
     @window.button_down(Gosu::KbUp)
+
     @window.button_up(Gosu::KbUp)
+
     assert_equal(:left, @window.buttons_pushed.last)
   end
 
   def test_that_escape_toggles_pause
     @window.button_down(Gosu::KbEscape)
     assert_equal(true, @window.instance_variable_get(:@paused))
+
     @window.button_down(Gosu::KbEscape)
     assert_equal(false, @window.instance_variable_get(:@paused))
   end
@@ -55,13 +59,16 @@ class TestUser < MiniTest::Unit::TestCase
   def test_that_update_changes_the_direction
     @window.button_down(Gosu::KbLeft)
     @user.update
+
     assert_equal(:left, @user.direction)
   end
 
   def test_that_user_moves
     assert_equal(@starting_x, @user.x)
+
     @window.button_down(Gosu::KbRight)
     @user.update
+
     assert_equal(:right, @user.direction)
     assert_equal(@starting_x+2, @user.x)
   end

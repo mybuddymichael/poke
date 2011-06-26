@@ -13,13 +13,9 @@ class Window < Gosu::Window
     @pause_screen = PauseScreen.new(self, @width, @height)
 
     @grid_one = GridOne.new(self, @user)
-    @grid_one.start
+    @current_grid = @grid_one
 
     @buttons_pushed = []
-  end
-
-  def set_current_grid_as(grid)
-    @current_grid = grid
   end
 
   def update

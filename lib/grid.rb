@@ -14,10 +14,6 @@ class Grid
     @map.draw
   end
 
-  def start
-    @window.set_current_grid_as(self)
-  end
-
   def width
     @map.width
   end

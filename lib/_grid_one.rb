@@ -6,8 +6,7 @@ class GridOne < Grid
     super(window, user,
          'media/grid_one.txt',
          'media/grid_one_tileset.png',
-        {'V'=>0, 'g'=>1, '.'=>nil},
-         'media/background.png')
+        {'.'=>0, 'V'=>1, 'g'=>2})
 
     @program_1 = Program.new(@window, 416, 160,
                              'media/grid_one_program_1_path.txt')

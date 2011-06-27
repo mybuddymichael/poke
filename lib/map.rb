@@ -11,7 +11,7 @@ class Map
     get_solid_blocks
 
     get_lines(mapfile)
-    remove_map_key
+    extract_map_key
     get_width
     get_height
     map_tiles
@@ -30,7 +30,7 @@ class Map
 
   private
 
-  def remove_map_key
+  def extract_map_key
     map_break = @lines.index('')
     map_key = map_break+1
     @map_key = @lines[map_key]

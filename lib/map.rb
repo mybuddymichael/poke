@@ -2,7 +2,7 @@ class Map
 
   include ReadMap
 
-  attr_reader :lines, :tiles, :width, :height, :solid_blocks
+  attr_reader :lines, :tiles, :width, :height, :solid_blocks, :map_key
 
   def initialize(window, mapfile, tileset, map_key)
     @tileset = Gosu::Image.load_tiles(window, tileset,

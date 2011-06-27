@@ -32,6 +32,7 @@ class Window < Gosu::Window
       @current_grid.draw
       @user.draw
     end
+
     if @paused
       @pause_screen.draw
     end

@@ -1,4 +1,4 @@
-class ProgramPath
+class ProgramMap
 
   include ReadMap
 

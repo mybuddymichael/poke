@@ -1,8 +1,8 @@
 class Grid
 
-  def initialize(window, user, mapfile, tileset, map_key)
+  def initialize(window, user, mapfile, tileset)
     @window, @user = window, user
-    @map = Map.new(window, mapfile, tileset, map_key)
+    @map = Map.new(window, mapfile, tileset)
   end
 
   def draw

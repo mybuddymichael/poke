@@ -1,6 +1,6 @@
 class Grid
 
-  def initialize(window, user, mapfile, tileset)
+  def initialize(window, user, mapfile, tileset, programs=nil)
     @window, @user = window, user
     @map = Map.new(window, mapfile, tileset)
   end

@@ -7,7 +7,6 @@ class Map
   def initialize(window, mapfile, tileset, map_key)
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
-    @map_key = map_key
     get_solid_blocks
 
     get_lines(mapfile)
@@ -33,7 +32,7 @@ class Map
   def extract_map_key
     map_break = @lines.index('')
     map_key = map_break+1
-    @map_key = @lines[map_key]
+    @map_key = eval(@lines[map_key])
 
     @lines.delete_at(map_break)
     @lines.delete_at(map_key)

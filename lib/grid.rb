@@ -1,7 +1,5 @@
 class Grid
 
-  attr_reader :map
-
   def initialize(window, user, mapfile, tileset, map_key)
     @window, @user = window, user
     @map = Map.new(window, mapfile, tileset, map_key)

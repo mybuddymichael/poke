@@ -45,7 +45,6 @@ class Grid
       id = 'program_' + number.to_s
       instance_variable_set("@#{id}", Program.new)
     end
-
   end
 
 end

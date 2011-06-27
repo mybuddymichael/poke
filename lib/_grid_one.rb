@@ -4,12 +4,12 @@ class GridOne < Grid
 
   def initialize(window, user)
     super(window, user,
-         'media/grid_one.txt',
-         'media/grid_one_tileset.png',
+         'media/grid_one/map.txt',
+         'media/grid_one/tileset.png',
         {'.'=>0, 'V'=>1, 'g'=>2})
 
     @program_1 = Program.new(@window, 416, 160,
-                             'media/grid_one_program_1_path.txt')
+                             'media/grid_one/program_path_1.txt')
   end
 
   def update

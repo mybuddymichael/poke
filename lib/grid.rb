@@ -30,11 +30,11 @@ class Grid
   private
 
   def create_programs(program_file)
-    @program_map = ProgramMap.new(program_file)
+    program_map = ProgramMap.new(program_file)
     n = 0
     programs = []
 
-    @program_map.lines.each do |line|
+    program_map.lines.each do |line|
       if line.include?('s')
         n += 1
         programs.push(n)

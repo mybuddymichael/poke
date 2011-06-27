@@ -10,3 +10,5 @@ Vggggg..V.........V..gggggV
 Vggggg.....ggggg.....gggggV
 Vggggg.....ggggg.....gggggV
 VVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+{'.'=>0, 'V'=>1, 'g'=>2}

@@ -5,6 +5,7 @@ class Map
   attr_reader :lines, :tiles, :width, :height, :solid_blocks, :map_key
 
   def initialize(window, mapfile, tileset, map_key)
+    @mapfile = mapfile
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
     get_solid_blocks
@@ -31,6 +32,10 @@ class Map
 
   def extract_map_key
     map_break = @lines.index('')
+    if map_break == nil
+      raise IndexError, "There's no map break in #{@mapfile}"
+    end
+
     map_key = map_break+1
 
     @map_key = eval(@lines[map_key])

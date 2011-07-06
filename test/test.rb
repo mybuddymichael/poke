@@ -92,6 +92,7 @@ class TestCoordinates < MiniTest::Unit::TestCase
   end
 
   def test_that_coordinates_respond_to_draw_method
+    @coordinates.draw
     assert_respond_to(@coordinates, :draw)
   end
 

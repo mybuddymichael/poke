@@ -36,6 +36,26 @@ class ProgramMap
     end
   end
 
+  def current_cell
+    @map_in_columns[x][y]
+  end
+
+  def above
+    @map_in_columns[x][y-1]
+  end
+
+  def below
+    @map_in_columns[x][y+1]
+  end
+
+  def to_the_left
+    @map_in_columns[x-1][y]
+  end
+
+  def to_the_right
+    @map_in_columns[x+1][y]
+  end
+
   def mark_upper_left_boundary(x, y)
     @boundary[up: y, left: x]
   end

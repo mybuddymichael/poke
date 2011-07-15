@@ -10,11 +10,11 @@ module ReadMap
     width = lines[0].size
     height = lines.size
 
-    @columns = Array.new(@width, '')
+    @map_in_columns = Array.new(@width, '')
 
     lines.each do |line|
       width.times do |x|
-        @columns[x] += line[x]
+        @map_in_columns[x] += line[x]
       end
     end
   end

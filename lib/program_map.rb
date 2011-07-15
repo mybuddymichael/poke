@@ -13,25 +13,22 @@ class ProgramMap
   private
 
   def get_paths
-    @height.times do |y|
-      @width.times do |x|
-        if @lines[y][x] == ('p' or 's')
-          if @lines[y][x-1] == '.' # => Left boundary.
-            if @lines[y-1][x] == '.' # => Upper boundary.
-              mark_upper_left_boundary(x, y)
-            elsif @lines[y-1][x] == '.' and @lines[y+1][x] == '.'
-              # => Upper and lower boundary.
-              mark_upper_left_boundary(x, y)
-              mark_bottom_left_boundary(x, y)
-            elsif @lines[y+1][x] == '.' # => Lower boundary.
-              mark_bottom_left_boundary(x,y)
-            end
-          elsif @lines[y][x+1] == '.' # => Right boundary.
-            if @lines[y-1][x] == '.' # => Upper boundary.
-              mark_upper_right_boundary(x+1, y)
-            end
+    @width.times do |x|
+      @height.times do |y|
+
+        next if current_cell == "."
+
+        if @map_in_columns[x][y] == "p"
+          if @map_in_columns[x-1][y] == "." and @map_in_columns[x][y-1] == "."
+            mark_upper_left_boundary
+          elsif @map_in_columns[x+1][y] == "." and @map_in_columns[x][y=1] == "."
+            mark_upper_right_boundary
+          end
+
+          if @map_in_columns[x-1][y] == "." and @map_in_columns[x][y+1] == "."
           end
         end
+
       end
     end
   end

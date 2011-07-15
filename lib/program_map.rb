@@ -48,4 +48,8 @@ class ProgramMap
     @boundary[down: (y+1), left: x]
   end
 
+  def mark_bottom_right_boundary(x, y)
+    @boundary[down: (y+1), right: (x+1)]
+  end
+
 end

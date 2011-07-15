@@ -5,7 +5,7 @@ class ProgramMap
   attr_reader :lines
 
   def initialize(pathfile)
-    get_lines(pathfile)
+    get_columns(pathfile)
     get_width
     get_height
   end

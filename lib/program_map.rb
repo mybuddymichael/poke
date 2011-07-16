@@ -60,21 +60,21 @@ class ProgramMap
   end
 
   def mark_upper_left_boundary
-    instance_variable_set("@boundary#{@n}", Hash.new)
-    boundary = instance_variable_get("@boundary#{@n}")
-    boundary[up: @y, left: @x]
+    instance_variable_set("@path#{@n}", Hash.new)
+    path = instance_variable_get("@path#{@n}")
+    path[up: @y, left: @x]
   end
 
   def mark_upper_right_boundary
-    @boundary[up: @y, right: (@x+1)]
+    @path[up: @y, right: (@x+1)]
   end
 
   def mark_bottom_left_boundary
-    @boundary[down: (@y+1), left: @x]
+    @path[down: (@y+1), left: @x]
   end
 
   def mark_bottom_right_boundary
-    @boundary[down: (@y+1), right: (@x+1)]
+    @path[down: (@y+1), right: (@x+1)]
   end
 
 end

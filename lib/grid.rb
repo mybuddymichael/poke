@@ -34,8 +34,8 @@ class Grid
     n = 0
     programs = []
 
-    program_map.lines.each do |line|
-      if line.include?('s')
+    program_map.map_in_columns.each do |column|
+      if column.include?("s")
         n += 1
         programs.push(n)
       end

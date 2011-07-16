@@ -2,7 +2,7 @@ class ProgramMap
 
   include ReadMap
 
-  attr_reader :lines
+  attr_reader :map_in_columns
 
   def initialize(pathfile)
     get_columns(pathfile)

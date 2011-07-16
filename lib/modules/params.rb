@@ -1,6 +1,6 @@
 module Params
 
-  WrongNumberOfParamsError = Class.new(StandardError)
+  MissingParamsError = Class.new(StandardError)
 
   def Params.check_params(params_given, params_required)
     params_required.each do |param|

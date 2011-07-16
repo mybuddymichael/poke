@@ -14,7 +14,7 @@ class Window < Gosu::Window
 
     @grid_one     = Grid.new(window: self,
                                user: @user,
-                            mapfile: "media/grid_one/map.txt",
+                           map_file: "media/grid_one/map.txt",
                             tileset: "media/grid_one/tileset.png")
     @current_grid = @grid_one
 

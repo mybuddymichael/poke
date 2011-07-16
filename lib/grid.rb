@@ -4,8 +4,8 @@ class Grid
     params = {programfile: nil}.merge(params)
     Params.check_params(params, [:window, :user, :map_file, :tileset])
 
-    @window, @user = window, user
     @map = Map.new(window, mapfile, tileset)
+    @window, @user = params[:window], params[:user]
 
     create_programs(program_file)
   end

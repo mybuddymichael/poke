@@ -6,7 +6,7 @@ module Params
     params_required.each do |param|
       unless params_given.keys.include?(param)
         raise WrongNumberOfParamsError,
-          "Parameters given do not include #{param}"
+          "parameters given do not include \":#{param}\""
       end
     end
   end

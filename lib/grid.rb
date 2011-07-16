@@ -4,10 +4,10 @@ class Grid
     params = {programfile: nil}.merge(params)
     Params.check_params(params, [:window, :user, :map_file, :tileset])
 
-    @map = Map.new(window, mapfile, tileset)
     @window, @user = params[:window], params[:user]
+    @map = Map.new(@window, params[:map_file], params[:tileset])
 
-    create_programs(program_file)
+    create_programs(params[:program_file])
   end
 
   def draw

@@ -21,9 +21,9 @@ class ProgramMap
       @height.times do |y|
         @y = y
 
-        next if current_cell == "."
-
-        if current_cell == "p"
+        if current_cell == "."
+          next
+        elsif current_cell == ("p" or "s")
           if to_the_left == "." and above == "."
             @n += 1
             mark_upper_left_boundary

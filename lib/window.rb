@@ -12,7 +12,10 @@ class Window < Gosu::Window
     @user         = User.new(self, 416, 288)
     @pause_screen = PauseScreen.new(self, @width, @height)
 
-    @grid_one     = Grid.new(self, @user)
+    @grid_one     = Grid.new(window: self,
+                               user: @user,
+                            mapfile: "media/grid_one/map.txt",
+                            tileset: "media/grid_one/tileset.png")
     @current_grid = @grid_one
 
     @buttons_pushed = []

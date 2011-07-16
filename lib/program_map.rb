@@ -25,7 +25,7 @@ class ProgramMap
 
         if current_cell == "p"
           if to_the_left == "." and above == "."
-            mark_upper_left_boundary(
+            mark_upper_left_boundary
           elsif to_the_right == "." and above == "."
             mark_upper_right_boundary
           end
@@ -58,19 +58,19 @@ class ProgramMap
     @map_in_columns[@x+1][@y]
   end
 
-  def mark_upper_left_boundary(@x, @y)
+  def mark_upper_left_boundary
     @boundary[up: @y, left: @x]
   end
 
-  def mark_upper_right_boundary(@x, @y)
+  def mark_upper_right_boundary
     @boundary[up: @y, right: (@x+1)]
   end
 
-  def mark_bottom_left_boundary(@x, @y)
+  def mark_bottom_left_boundary
     @boundary[down: (@y+1), left: @x]
   end
 
-  def mark_bottom_right_boundary(@x, @y)
+  def mark_bottom_right_boundary
     @boundary[down: (@y+1), right: (@x+1)]
   end
 

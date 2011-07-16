@@ -23,14 +23,14 @@ class ProgramMap
 
         next if current_cell == "."
 
-        if @map_in_columns[x][y] == "p"
-          if @map_in_columns[x-1][y] == "." and @map_in_columns[x][y-1] == "."
-            mark_upper_left_boundary
-          elsif @map_in_columns[x+1][y] == "." and @map_in_columns[x][y=1] == "."
+        if current_cell == "p"
+          if to_the_left == "." and above == "."
+            mark_upper_left_boundary(
+          elsif to_the_right == "." and above == "."
             mark_upper_right_boundary
           end
 
-          if @map_in_columns[x-1][y] == "." and @map_in_columns[x][y+1] == "."
+          if to_the_left == "." and below == "."
           end
         end
 

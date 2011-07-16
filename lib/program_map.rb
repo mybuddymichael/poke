@@ -27,11 +27,10 @@ class ProgramMap
           if to_the_left == "." and above == "."
             @n += 1
             mark_upper_left_boundary
-          elsif to_the_right == "." and above == "."
-            mark_upper_right_boundary
           end
 
           if to_the_left == "." and below == "."
+            mark_bottom_left_boundary
           end
         end
 
@@ -70,7 +69,8 @@ class ProgramMap
   end
 
   def mark_bottom_left_boundary
-    @path[down: (@y+1), left: @x]
+    path = instance_variable_get("@path_#{@n}")
+    path[down: (@y+1), left: @x]
   end
 
   def mark_bottom_right_boundary

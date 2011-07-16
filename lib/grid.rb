@@ -2,7 +2,7 @@ class Grid
 
   def initialize(params)
     params = {programfile: nil}.merge(params)
-    Params::check_params(params, [:window, :user, :mapfile, :tileset])
+    Params.check_params(params, [:window, :user, :map_file, :tileset])
 
     @window, @user = window, user
     @map = Map.new(window, mapfile, tileset)

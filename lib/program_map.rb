@@ -61,7 +61,7 @@ class ProgramMap
   def mark_upper_left_boundary
     instance_variable_set("@path_#{@n}", Hash.new)
     path = instance_variable_get("@path_#{@n}")
-    path[up: @y, left: @x]
+    path[:left], path[:up] = @x, @y
   end
 
   def mark_upper_right_boundary

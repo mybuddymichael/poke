@@ -14,11 +14,9 @@ class ProgramMap
 
   def get_paths
     @width.times do |x|
-
       @x = x
 
       @height.times do |y|
-
         @y = y
 
         next if current_cell == "."

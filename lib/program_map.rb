@@ -60,8 +60,8 @@ class ProgramMap
   end
 
   def mark_upper_left_boundary
-    instance_variable_set("@path#{@n}", Hash.new)
-    path = instance_variable_get("@path#{@n}")
+    instance_variable_set("@path_#{@n}", Hash.new)
+    path = instance_variable_get("@path_#{@n}")
     path[up: @y, left: @x]
   end
 

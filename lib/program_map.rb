@@ -13,6 +13,8 @@ class ProgramMap
   private
 
   def get_paths
+    @n = 0
+
     @width.times do |x|
       @x = x
 
@@ -23,6 +25,7 @@ class ProgramMap
 
         if current_cell == "p"
           if to_the_left == "." and above == "."
+            @n += 1
             mark_upper_left_boundary
           elsif to_the_right == "." and above == "."
             mark_upper_right_boundary
@@ -57,7 +60,9 @@ class ProgramMap
   end
 
   def mark_upper_left_boundary
-    @boundary[up: @y, left: @x]
+    instance_variable_set("@boundary#{@n}", Hash.new)
+    boundary = instance_variable_get("@boundary#{@n}")
+    boundary[up: @y, left: @x]
   end
 
   def mark_upper_right_boundary

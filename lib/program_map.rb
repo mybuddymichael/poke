@@ -5,9 +5,9 @@ class ProgramMap
   attr_reader :map_in_columns
 
   def initialize(pathfile)
-    get_columns(pathfile)
-    get_width
-    get_height
+    @map_in_columns = get_columns(pathfile)
+    @width  = get_width_for_columns(@map_in_columns)
+    @height = get_height_for_columns(@map_in_columns)
   end
 
   private

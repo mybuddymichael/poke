@@ -12,11 +12,12 @@ class Map
 
     @map_in_lines = get_lines(@map_file)
 
+    @map_key = extract_map_key
     @solid_blocks = get_solid_blocks
 
-    extract_map_key
     @width  = get_width_for_lines(@map_in_lines)
     @height = get_height_for_lines(@map_in_lines)
+
     map_tiles
   end
 
@@ -34,17 +35,19 @@ class Map
   private
 
   def extract_map_key
-    map_break = @lines.index('')
+    map_break = @map_in_lines.index('')
     if map_break == nil
       raise IndexError, "There's no map break in #{@map_file}"
     end
 
-    map_key = map_break+1
+    map_key_location = map_break+1
 
-    @map_key = eval(@lines[map_key])
+    map_key = eval(@map_in_lines[map_key])
 
-    @lines.delete_at(map_break)
-    @lines.delete_at(map_key)
+    @map_in_lines.delete_at(map_break)
+    @map_in_lines.delete_at(map_key)
+
+    map_key
   end
 
   def get_solid_blocks

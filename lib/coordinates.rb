@@ -2,7 +2,7 @@ class Coordinates
 
   def initialize(window, user)
     @window, @user = window, user
-    @coordinate_text = Gosu::Font.new(@window, Media::Font, 16)
+    @coordinate_text = Gosu::Font.new(@window, Media::FONT, 16)
   end
 
   def update
@@ -11,7 +11,7 @@ class Coordinates
 
   def draw
     @coordinate_text.draw("#{@x.to_s}, #{@y.to_s}", 416, 300, 1, 1, 1,
-                          Color::White, :default)
+                          Color::WHITE, :default)
   end
 
 end

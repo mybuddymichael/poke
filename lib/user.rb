@@ -20,7 +20,7 @@ class User
   end
 
   def draw
-    @current_image.draw(@x, @y-8, ZOrder::Player)
+    @current_image.draw(@x, @y-8, ZOrder::PLAYER)
   end
 
   private

@@ -9,9 +9,11 @@ class Map
     @map_file = params[:map_file]
     @tileset = Gosu::Image.load_tiles(params[:window], params[:tileset],
                                       32, 32, false)
+
+    @map_in_lines = get_lines(@map_file)
+
     @solid_blocks = get_solid_blocks
 
-    @map_in_lines = get_lines(map_file)
     extract_map_key
     @width  = get_width_for_lines(@map_in_lines)
     @height = get_height_for_lines(@map_in_lines)

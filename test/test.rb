@@ -46,7 +46,7 @@ class TestUser < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
-    @user = @window.user
+    @user = @window.instance_variable_get(:@user)
     @starting_x = @user.x
     @starting_y = @user.y
   end
@@ -78,7 +78,7 @@ class TestCoordinates < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
-    @user = @window.user
+    @user = @window.instance_variable_get(:@user)
     @coordinates = Coordinates.new(@window, @user)
   end
 

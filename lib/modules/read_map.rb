@@ -1,7 +1,7 @@
 module ReadMap
 
   def get_lines(file)
-    @lines = File.readlines(file).map { |line| line.chomp }
+    File.readlines(file).map { |line| line.chomp }
   end
 
   def get_columns(file)
@@ -19,12 +19,20 @@ module ReadMap
     end
   end
 
-  def get_width
-    @width = @lines[0].size
+  def get_width_for_lines(lines)
+    lines[0].size
   end
 
-  def get_height
-    @height = @lines.size
+  def get_height_for_lines(lines)
+    lines.size
+  end
+
+  def get_width_for_columns(columns)
+    columns.size
+  end
+
+  def get_height_for_columns(columns)
+    columns[0].size
   end
 
 end

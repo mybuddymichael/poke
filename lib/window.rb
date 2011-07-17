@@ -10,7 +10,9 @@ class Window < Gosu::Window
     @camera_x = @camera_y = 0
 
     @user         = User.new(self, 416, 288)
-    @pause_screen = PauseScreen.new(self, @width, @height)
+    @pause_screen = PauseScreen.new(window: self,
+                                     width: @width,
+                                    height: @height)
 
     @grid_one     = Grid.new(window: self,
                                user: @user,

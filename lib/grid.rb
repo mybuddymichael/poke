@@ -5,7 +5,9 @@ class Grid
     Params.check_params(params, [:window, :user, :map_file, :tileset])
 
     @window, @user = params[:window], params[:user]
-    @map = Map.new(@window, params[:map_file], params[:tileset])
+    @map = Map.new(window: @window,
+                   map_file: params[:map_file],
+                   tileset: params[:tileset])
 
     create_programs(params[:program_file])
   end

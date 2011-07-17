@@ -4,8 +4,9 @@ class Map
 
   attr_reader :lines, :tiles, :width, :height, :solid_blocks, :map_key
 
-  def initialize(window, mapfile, tileset)
-    @mapfile = mapfile
+  def initialize(params)
+    Params.check_params(params, [:window, :map_file, :tileset])
+    @map_file = map_file
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
     @solid_blocks = get_solid_blocks

@@ -44,8 +44,8 @@ class Map
 
     map_key = eval(@map_in_lines[map_key_location])
 
-    @map_in_lines.delete_at(map_break)
     @map_in_lines.delete_at(map_key_location)
+    @map_in_lines.delete_at(map_break)
 
     map_key
   end

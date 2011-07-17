@@ -64,17 +64,4 @@ class ProgramMap
     path[:left], path[:up] = @x, @y
   end
 
-  def mark_upper_right_boundary
-    @path[up: @y, right: (@x+1)]
-  end
-
-  def mark_bottom_left_boundary
-    path = instance_variable_get("@path_#{@n}")
-    path[down: (@y+1), left: @x]
-  end
-
-  def mark_bottom_right_boundary
-    @path[down: (@y+1), right: (@x+1)]
-  end
-
 end

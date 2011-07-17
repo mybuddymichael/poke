@@ -2,7 +2,7 @@ class Map
 
   include ReadMap
 
-  attr_reader :lines, :tiles, :width, :height, :solid_blocks, :map_key
+  attr_reader :map_in_lines, :tiles, :width, :height, :solid_blocks, :map_key
 
   def initialize(params)
     Params.check_params(params, [:window, :map_file, :tileset])

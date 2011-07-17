@@ -14,6 +14,9 @@ class Grid
     end
   end
 
+  def update
+  end
+
   def draw
     @map.draw
   end

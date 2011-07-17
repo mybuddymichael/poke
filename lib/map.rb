@@ -34,7 +34,7 @@ class Map
   def extract_map_key
     map_break = @lines.index('')
     if map_break == nil
-      raise IndexError, "There's no map break in #{@mapfile}"
+      raise IndexError, "There's no map break in #{@map_file}"
     end
 
     map_key = map_break+1

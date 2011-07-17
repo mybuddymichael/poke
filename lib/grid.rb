@@ -9,7 +9,9 @@ class Grid
                    map_file: params[:map_file],
                    tileset: params[:tileset])
 
-    create_programs(params[:program_file])
+    if params[:program_file]
+      create_programs(params[:program_file])
+    end
   end
 
   def draw

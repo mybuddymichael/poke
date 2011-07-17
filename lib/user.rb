@@ -84,18 +84,6 @@ class User
   end
 
   def npc?
-    unless movement_is_locked?
-      case @direction
-      when :up
-        (@window.current_grid.program_1.x == @x) and ((@window.current_grid.program_1.y)/32 == (@y/32 - 1))
-      when :down
-        (@window.current_grid.program_1.x == @x) and ((@window.current_grid.program_1.y)/32 == (@y/32 + 1))
-      when :left
-        (@window.current_grid.program_1.y == @y) and ((@window.current_grid.program_1.x)/32 == (@x/32 - 1))
-      when :right
-        (@window.current_grid.program_1.y == @y) and ((@window.current_grid.program_1.x)/32 == (@x/32 + 1))
-      end
-    end
   end
 
 end

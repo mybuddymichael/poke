@@ -26,7 +26,7 @@ class Map
       @width.times do |x|
         tile = @tiles[y][x]
         if tile
-          @tileset[tile].draw(x * 32, y * 32, ZOrder::Map)
+          @tileset[tile].draw(x * 32, y * 32, ZOrder::MAP)
         end
       end
     end

@@ -69,7 +69,7 @@ class Map
       line = []
       @width.times do |x|
         @map_key.each do |key, value|
-          if @lines[y][x] == key
+          if @map_in_lines[y][x] == key
             line.push(value)
           end
         end

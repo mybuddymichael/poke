@@ -1,11 +1,13 @@
 class PauseScreen
 
-  def initialize(window, window_width, window_height)
-    @window = window
-    @window_width, @window_height = window_width, window_height
+  def initialize(params)
+    Params.check_params(params, [:window, :window_width, :window_height]
+    @window        = params[:window]
+    @window_width  = params[:window_width]
+    @window_height = params[:window_height]
 
-    @pause_button = Gosu::Image.new(window, 'media/pause_button.png', false)
-    @press_q      = Gosu::Image.new(window, 'media/press_q.png', false)
+    @pause_button = Gosu::Image.new(@window, 'media/pause_button.png', false)
+    @press_q      = Gosu::Image.new(@window, 'media/press_q.png', false)
   end
 
   def draw

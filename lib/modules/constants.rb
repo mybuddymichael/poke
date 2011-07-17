@@ -1,14 +1,14 @@
 module Color
-  Black       = Gosu::Color::BLACK
-  White       = Gosu::Color::WHITE
-  Trans_black = Gosu::Color.argb(0xd5000000)
+  BLACK       = Gosu::Color::BLACK
+  WHITE       = Gosu::Color::WHITE
+  TRANS_BLACK = Gosu::Color.argb(0xd5000000)
 end
 
 module ZOrder
-  Background, Grid, Map, NPC_high, Player, NPC_low, Pause_background,
-    Pause_button = *0..7
+  BACKGROUND, GRID, MAP, NPC_HIGH, PLAYER, NPC_LOW, PAUSE_BACKGROUND,
+    PAUSE_BUTTON = *0..7
 end
 
 module Media
-  Font = 'media/poke.dfont'
+  FONT = 'media/poke.dfont'
 end

@@ -8,12 +8,12 @@ class Map
     @mapfile = mapfile
     @tileset = Gosu::Image.load_tiles(window, tileset,
                                       32, 32, false)
-    get_solid_blocks
+    @solid_blocks = get_solid_blocks
 
-    get_lines(mapfile)
+    @map_in_lines = get_lines(map_file)
     extract_map_key
-    get_width
-    get_height
+    @width  = get_width_for_lines(@map_in_lines)
+    @height = get_height_for_lines(@map_in_lines)
     map_tiles
   end
 
@@ -45,13 +45,15 @@ class Map
   end
 
   def get_solid_blocks
-    @solid_blocks = []
+    solid_blocks = []
 
     @map_key.each_key do |key|
       if (key.upcase == key) and (key != '.')
-        @solid_blocks.push(key)
+        solid_blocks.push(key)
       end
     end
+
+    solid_blocks
   end
 
   def map_tiles

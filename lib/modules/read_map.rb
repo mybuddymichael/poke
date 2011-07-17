@@ -10,13 +10,15 @@ module ReadMap
     width = lines[0].size
     height = lines.size
 
-    @map_in_columns = Array.new(width, '')
+    columns = Array.new(width, '')
 
     lines.each do |line|
       width.times do |x|
-        @map_in_columns[x] += line[x]
+        columns[x] += line[x]
       end
     end
+
+    columns
   end
 
   def get_width_for_lines(lines)

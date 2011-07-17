@@ -33,8 +33,8 @@ class Grid
     @map.solid_blocks
   end
 
-  def lines
-    @map.lines
+  def map_in_lines
+    @map.map_in_lines
   end
 
   private

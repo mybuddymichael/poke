@@ -26,7 +26,7 @@ class User
   private
 
   def get_current_direction
-    @direction = @window.buttons_pushed.last unless movement_is_locked?
+    @direction = @window.controls.last_button_pressed unless movement_is_locked?
   end
 
   def move

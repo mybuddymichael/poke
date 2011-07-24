@@ -9,7 +9,7 @@ class Controls
 
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)
-    
+    @window = params[:window]
   end
 
 end

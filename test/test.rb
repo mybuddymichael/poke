@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'minitest/autorun'
-require './poke.rb'
+require_relative '../main'
 
 class TestWindow < MiniTest::Unit::TestCase
 

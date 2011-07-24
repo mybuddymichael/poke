@@ -42,6 +42,20 @@ class TestWindow < MiniTest::Unit::TestCase
 
 end
 
+class TestControls < MiniTest::Unit::TestCase
+
+  def setup
+    @window = Window.new
+  end
+
+  def test_that_pressing_a_button_updates_the_controls_array
+    @window.button_down(Gosu::KbLeft)
+    assert_equal(:left, @controls.buttons_pressed.last)
+  end
+
+end
+
+
 class TestUser < MiniTest::Unit::TestCase
 
   def setup

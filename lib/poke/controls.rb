@@ -10,6 +10,7 @@ class Controls
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)
     @window = params[:window]
+    @buttons_pressed = []
   end
 
   def press_button(button)

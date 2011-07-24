@@ -1,6 +1,7 @@
 class Window < Gosu::Window
 
   attr_reader :current_grid, :controls
+  attr_accessor :paused
 
   def initialize
     super(480, 320, false)
@@ -8,6 +9,8 @@ class Window < Gosu::Window
     @width, @height = 480, 320
 
     @camera_x = @camera_y = 0
+
+    @paused = false
 
     @user         = User.new(self, 416, 288)
     @controls     = Controls.new(window: self)

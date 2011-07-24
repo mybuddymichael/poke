@@ -1,4 +1,4 @@
-require 'gosu'
+require "gosu"
 Dir['./lib/modules/*.rb'].each { |file| require file }
 Dir['./lib/[^_]*.rb'].each { |file| require file }
 Dir['./lib/_*.rb'].each { |file| require file }

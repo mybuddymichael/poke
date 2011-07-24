@@ -49,7 +49,7 @@ class TestControls < MiniTest::Unit::TestCase
     @controls = @window.controls
   end
 
-  def test_that_pressing_a_button_updates_the_controls_array
+  def test_that_pressing_a_button_updates_the_controls
     @window.button_down(Gosu::KbLeft)
     assert_equal(:left, @controls.last_button_pressed)
   end

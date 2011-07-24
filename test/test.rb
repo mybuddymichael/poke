@@ -51,6 +51,10 @@ class TestControls < MiniTest::Unit::TestCase
     assert_equal(true, @window.paused)
   end
 
+  def test_pressing_Q_should_quit_if_paused
+    skip("Haven't figured out how to test this yet.")
+  end
+
 end
 
 

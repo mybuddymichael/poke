@@ -14,24 +14,6 @@ class TestWindow < MiniTest::Unit::TestCase
     refute_nil(@window)
   end
 
-  def test_that_buttons_pushed_contains_the_last_pressed_button
-    @window.button_down(Gosu::KbLeft)
-    @window.button_down(Gosu::KbUp)
-
-    assert_equal(:up, @window.buttons_pushed.last)
-  end
-
-  def test_that_button_release_removes_button_press_from_array
-    @window.button_down(Gosu::KbDown)
-    @window.button_down(Gosu::KbRight)
-    @window.button_down(Gosu::KbLeft)
-    @window.button_down(Gosu::KbUp)
-
-    @window.button_up(Gosu::KbUp)
-
-    assert_equal(:left, @window.buttons_pushed.last)
-  end
-
 end
 
 class TestControls < MiniTest::Unit::TestCase

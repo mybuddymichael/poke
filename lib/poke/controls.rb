@@ -34,4 +34,12 @@ class Controls
     @buttons_pressed.last
   end
 
+  def toggle_pause
+    if @window.paused == false
+      @window.paused = true
+    else
+      @window.paused = false
+    end
+  end
+
 end

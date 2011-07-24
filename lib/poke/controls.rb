@@ -20,6 +20,8 @@ class Controls
       if button == value
         if key == :escape
           toggle_pause
+        elsif key == :q
+          quit
         else
           @buttons_pressed.push(key)
         end
@@ -45,6 +47,10 @@ class Controls
     else
       @window.paused = false
     end
+  end
+
+  def quit
+    @window.close if @window.paused
   end
 
 end

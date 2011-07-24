@@ -62,7 +62,7 @@ class TestControls < MiniTest::Unit::TestCase
                  @controls.last_button_pressed)
   end
 
-  def test_that_pressing_q_toggles_pause
+  def test_that_pressing_escape_toggles_pause
     @window.button_down(Gosu::KbEscape)
     assert_equal(true, @window.paused)
   end

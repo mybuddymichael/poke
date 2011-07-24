@@ -29,4 +29,8 @@ class Controls
     end
   end
 
+  def last_button_pressed
+    @buttons_pressed.last
+  end
+
 end

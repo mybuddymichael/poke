@@ -55,12 +55,4 @@ class Window < Gosu::Window
 
   private
 
-  def toggle_pause
-    if @paused
-      @paused = false
-    else
-      @paused = true
-    end
-  end
-
 end

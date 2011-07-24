@@ -39,7 +39,7 @@ class TestControls < MiniTest::Unit::TestCase
     @window.button_down(Gosu::KbEscape)
     assert_equal(true, @window.paused)
 
-    @window.button_up(Gosu::KbEscape)
+    @window.button_down(Gosu::KbEscape)
     assert_equal(false, @window.paused)
   end
 

@@ -46,6 +46,7 @@ class TestControls < MiniTest::Unit::TestCase
 
   def setup
     @window = Window.new
+    @controls = @window.controls
   end
 
   def test_that_pressing_a_button_updates_the_controls_array

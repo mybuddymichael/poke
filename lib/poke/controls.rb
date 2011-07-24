@@ -12,4 +12,12 @@ class Controls
     @window = params[:window]
   end
 
+  def press_button(button)
+    BUTTONS.each do |key, value|
+      if button == value
+        @buttons_pressed = key
+      end
+    end
+  end
+
 end

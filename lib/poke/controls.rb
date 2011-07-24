@@ -17,7 +17,11 @@ class Controls
   def press_button(button)
     BUTTONS.each do |key, value|
       if button == value
-        @buttons_pressed.push(key)
+        if key == :q
+          toggle_pause
+        else
+          @buttons_pressed.push(key)
+        end
       end
     end
   end

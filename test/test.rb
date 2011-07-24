@@ -43,6 +43,14 @@ class TestControls < MiniTest::Unit::TestCase
     assert_equal(false, @window.paused)
   end
 
+  def test_that_only_pressing_escape_toggles_pause_and_not_releasing
+    @window.button_down(Gosu::KbEscape)
+    assert_equal(true, @window.paused)
+
+    @window.button_up(Gosu::KbEscape)
+    assert_equal(true, @window.paused)
+  end
+
 end
 
 

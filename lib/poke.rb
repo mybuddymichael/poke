@@ -1,5 +1,6 @@
 require_relative "poke/modules"
 require_relative "poke/window"
+require_relative "poke/controls"
 require_relative "poke/map"
 require_relative "poke/grid"
 require_relative "poke/user"

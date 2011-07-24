@@ -45,15 +45,8 @@ class Window < Gosu::Window
     end
   end
 
-  def button_down(id)
-    case id
-    when Gosu::KbUp     then @buttons_pushed.push(:up)
-    when Gosu::KbDown   then @buttons_pushed.push(:down)
-    when Gosu::KbLeft   then @buttons_pushed.push(:left)
-    when Gosu::KbRight  then @buttons_pushed.push(:right)
-    when Gosu::KbEscape then toggle_pause
-    when Gosu::KbQ      then close if @paused
-    end
+  def button_down(button)
+    @controls.press_button(button)
   end
 
   def button_up(id)

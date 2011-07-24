@@ -30,11 +30,7 @@ class Controls
   def release_button(button)
     BUTTONS.each do |key, value|
       if button == value
-        if key == :escape
-          toggle_pause
-        else
-          @buttons_pressed.delete(key)
-        end
+        @buttons_pressed.delete(key)
       end
     end
   end

@@ -50,8 +50,7 @@ class TestControls < MiniTest::Unit::TestCase
     @window.button_down(Gosu::KbLeft)
     @window.button_down(Gosu::KbRight)
 
-    assert_equal(:right,
-                 @controls.last_button_pressed)
+    assert_equal(:right, @controls.last_button_pressed)
   end
 
   def test_that_pressing_escape_toggles_pause

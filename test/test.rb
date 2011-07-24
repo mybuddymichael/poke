@@ -54,6 +54,14 @@ class TestControls < MiniTest::Unit::TestCase
     assert_equal(:left, @controls.last_button_pressed)
   end
 
+  def test_that_pressing_multiple_buttons_still_returns_last_button
+    @window.button_down(Gosu::KbLeft)
+    @window.button_down(Gosu::KbRight)
+
+    assert_equal(:right,
+                 @controls.last_button_pressed)
+  end
+
 end
 
 

@@ -49,15 +49,6 @@ class Window < Gosu::Window
     @controls.press_button(button)
   end
 
-  def button_up(id)
-    case id
-    when Gosu::KbUp    then @buttons_pushed.delete(:up)
-    when Gosu::KbDown  then @buttons_pushed.delete(:down)
-    when Gosu::KbLeft  then @buttons_pushed.delete(:left)
-    when Gosu::KbRight then @buttons_pushed.delete(:right)
-    end
-  end
-
   def button_up(button)
     @controls.release_button(button)
   end

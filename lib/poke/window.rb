@@ -1,6 +1,6 @@
 class Window < Gosu::Window
 
-  attr_reader :current_grid, :buttons_pushed
+  attr_reader :current_grid, :controls
 
   def initialize
     super(480, 320, false)

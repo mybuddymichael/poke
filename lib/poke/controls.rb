@@ -16,7 +16,7 @@ class Controls
   def press_button(button)
     BUTTONS.each do |key, value|
       if button == value
-        @buttons_pressed = key
+        @buttons_pressed.push(key)
       end
     end
   end

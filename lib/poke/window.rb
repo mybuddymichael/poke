@@ -53,6 +53,4 @@ class Window < Gosu::Window
     @controls.release_button(button)
   end
 
-  private
-
 end

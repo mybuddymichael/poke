@@ -2,11 +2,12 @@ class Controls
 
   PARAMS_REQUIRED = [:window]
 
-  BUTTONS = { up:    Gosu::KbUp,
-              down:  Gosu::KbDown,
-              left:  Gosu::KbLeft,
-              right: Gosu::KbRight,
-              q:     Gosu::KbQ }
+  BUTTONS = { up:     Gosu::KbUp,
+              down:   Gosu::KbDown,
+              left:   Gosu::KbLeft,
+              right:  Gosu::KbRight,
+              q:      Gosu::KbQ,
+              escape: Gosu::KbEscape }
 
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)

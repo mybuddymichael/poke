@@ -58,6 +58,10 @@ class Window < Gosu::Window
     end
   end
 
+  def button_up(button)
+    @controls.release_button(button)
+  end
+
   private
 
   def toggle_pause

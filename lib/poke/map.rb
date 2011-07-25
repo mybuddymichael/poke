@@ -2,10 +2,12 @@ class Map
 
   include ReadMap
 
+  PARAMS_REQUIRED = [:window, :map_file, :tileset]
+
   attr_reader :map_in_lines, :tiles, :width, :height, :solid_blocks, :map_key
 
   def initialize(params)
-    Params.check_params(params, [:window, :map_file, :tileset])
+    Params.check_params(params, PARAMS_REQUIRED)
     @map_file = params[:map_file]
     @tileset = Gosu::Image.load_tiles(params[:window], params[:tileset],
                                       32, 32, false)

@@ -40,7 +40,7 @@ class Map
       raise IndexError, "There's no map break in #{@map_file}"
     end
 
-    map_key_location = map_break+1
+    map_key_location = map_break + 1
 
     map_key = eval(@map_in_lines[map_key_location])
 

@@ -1,7 +1,9 @@
 class PauseScreen
 
+  PARAMS_REQUIRED = [:window, :width, :height]
+
   def initialize(params)
-    Params.check_params(params, [:window, :width, :height])
+    Params.check_params(params, PARAMS_REQUIRED)
     @window = params[:window]
     @width  = params[:width]
     @height = params[:height]

@@ -35,6 +35,17 @@ class TestControls < MiniTest::Unit::TestCase
     assert_equal(:right, @controls.last_button_pressed)
   end
 
+  def test_releasing_a_button_removes_it_from_the_array
+    @window.button_down(Gosu::KbUp)
+    @window.button_down(Gosu::KbLeft)
+    @window.button_down(Gosu::KbDown)
+    @window.button_down(Gosu::KbRight)
+    @window.button_up(Gosu::KbDown)
+    @window.button_up(Gosu::KbRight)
+
+    assert_equal(:left, @controls.last_button_pressed)
+  end
+
   def test_that_pressing_escape_toggles_pause
     @window.button_down(Gosu::KbEscape)
     assert_equal(true, @window.paused)

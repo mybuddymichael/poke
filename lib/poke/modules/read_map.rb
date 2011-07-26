@@ -5,7 +5,7 @@ module ReadMap
   end
 
   def get_columns(file)
-    lines = File.readlines(file).map { |line| line.chomp }
+    lines = get_lines(file)
 
     width = lines[0].size
     height = lines.size

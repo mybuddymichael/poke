@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     gosu (0.7.33)
+    rmagick (2.13.1)
     simplecov (0.4.2)
       simplecov-html (~> 0.4.4)
     simplecov-html (0.4.5)
@@ -11,4 +12,5 @@ PLATFORMS
 
 DEPENDENCIES
   gosu (~> 0.7.31)
+  rmagick (~> 2.13.1)
   simplecov (>= 0.4.0)

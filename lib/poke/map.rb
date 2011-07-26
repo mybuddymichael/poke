@@ -4,7 +4,7 @@ class Map
 
   PARAMS_REQUIRED = [:window, :map_file, :tileset]
 
-  attr_reader :map_in_lines, :tiles, :width, :height, :solid_blocks, :map_key
+  attr_reader :map_in_lines, :tiles, :width, :height, :solid_blocks
 
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)

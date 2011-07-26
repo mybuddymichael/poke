@@ -124,3 +124,7 @@ class TestCoordinates < MiniTest::Unit::TestCase
   end
 
 end
+
+class TestMap < MiniTest::Unit::TestCase
+
+end

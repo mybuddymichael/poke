@@ -127,4 +127,15 @@ end
 
 class TestMap < MiniTest::Unit::TestCase
 
+  def setup
+    @window = Window.new
+    @map_file = <<-eos
+      V....g...V
+      V....g...V
+      {'.'=>0, 'V'=>1, 'g'=>2}
+    eos
+
+    @map = Map.new(window: @window, map_file: @map_file, tileset:nil)
+  end
+
 end

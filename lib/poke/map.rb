@@ -12,7 +12,7 @@ class Map
   end
 
   def extract_map_key
-    @map_file.last
+    eval(@map_file.last)
   end
 
 end

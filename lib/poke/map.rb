@@ -68,9 +68,9 @@ class Map
 
     @height.times do |y|
       @width.times do |x|
-        @key.each do |key, value|
+        @map_key.each do |key, value|
           if @map_in_lines[y][x] == key
-            image_list.push("tile#{value}.png")
+            image_list.push("media/tmp/tile#{value}.png")
           end
         end
       end

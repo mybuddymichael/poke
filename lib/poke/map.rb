@@ -11,6 +11,8 @@ class Map
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)
 
+    @window = params[:window]
+
     @map_file = params[:map_file]
 
     @tileset = Magick::Image.read("media/grid_one/tileset.png")

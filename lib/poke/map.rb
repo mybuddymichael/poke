@@ -27,6 +27,10 @@ class Map
     @height = get_height_for_lines(@map_in_lines)
 
     @image_list = get_image_list_array_by_processing_map_file
+
+    split_tileset_into_individual_tiles
+
+    create_full_map_image
   end
 
   def draw

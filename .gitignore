@@ -2,3 +2,4 @@ notes.txt
 examples
 *.log
 coverage/
+tmp/

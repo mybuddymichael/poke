@@ -124,3 +124,4 @@ class TestCoordinates < MiniTest::Unit::TestCase
   end
 
 end
+

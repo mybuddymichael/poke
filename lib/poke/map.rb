@@ -1,3 +1,5 @@
+require 'rmagick'
+
 class Map
 
   include ReadMap
@@ -8,30 +10,31 @@ class Map
 
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)
+
+    @window = params[:window]
+
     @map_file = params[:map_file]
-    @tileset = Gosu::Image.load_tiles(params[:window], params[:tileset],
-                                      32, 32, false)
+
+    @tileset = Magick::Image.read("media/grid_one/tileset.png")
+    @number_of_tiles = @tileset[0].columns/32
 
     @map_in_lines = get_lines(@map_file)
 
     @map_key = extract_map_key
-    @solid_blocks = get_solid_blocks
+    @solid_blocks = get_array_of_solid_blocks
 
     @width  = get_width_for_lines(@map_in_lines)
     @height = get_height_for_lines(@map_in_lines)
 
-    map_tiles
+    @image_list = get_image_list_array_by_processing_map_file
+
+    split_tileset_into_individual_tiles
+
+    create_full_map_image
   end
 
   def draw
-    @height.times do |y|
-      @width.times do |x|
-        tile = @tiles[y][x]
-        if tile
-          @tileset[tile].draw(x * 32, y * 32, ZOrder::MAP)
-        end
-      end
-    end
+    @full_map_image.draw(0, 0, ZOrder::MAP)
   end
 
   private
@@ -52,7 +55,7 @@ class Map
     map_key
   end
 
-  def get_solid_blocks
+  def get_array_of_solid_blocks
     solid_blocks = []
 
     @map_key.each_key do |key|
@@ -64,20 +67,32 @@ class Map
     solid_blocks
   end
 
-  def map_tiles
-    @tiles = []
+  def get_image_list_array_by_processing_map_file
+    image_list = []
 
     @height.times do |y|
-      line = []
       @width.times do |x|
         @map_key.each do |key, value|
           if @map_in_lines[y][x] == key
-            line.push(value)
+            image_list.push("media/tmp/tile#{value}.png")
           end
         end
       end
-      @tiles[y] = line
     end
+
+    image_list
+  end
+
+  def split_tileset_into_individual_tiles
+    @number_of_tiles.times do |i|
+      image = @tileset[0].crop((i*32), 0, 32, 32)
+      image.write("media/tmp/tile#{i}.png")
+    end
+  end
+
+  def create_full_map_image
+    `montage #{@image_list.join(" ")} -tile #{@width}x -geometry 32x32+0+0 media/grid_one/full_map_image.png`
+    @full_map_image = Gosu::Image.new(@window, "media/grid_one/full_map_image.png", false)
   end
 
 end

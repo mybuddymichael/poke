@@ -13,6 +13,8 @@ class Map
 
     @map_file = params[:map_file]
 
+    @tileset = Magick::Image.read("media/grid_one/tileset.png")
+
     @map_in_lines = get_lines(@map_file)
 
     @map_key = extract_map_key

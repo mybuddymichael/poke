@@ -15,7 +15,7 @@ class Map
     @map_in_lines = get_lines(@map_file)
 
     @map_key = extract_map_key
-    @solid_blocks = get_solid_blocks
+    @solid_blocks = get_array_of_solid_blocks
 
     @width  = get_width_for_lines(@map_in_lines)
     @height = get_height_for_lines(@map_in_lines)
@@ -52,7 +52,7 @@ class Map
     map_key
   end
 
-  def get_solid_blocks
+  def get_array_of_solid_blocks
     solid_blocks = []
 
     @map_key.each_key do |key|

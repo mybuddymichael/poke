@@ -23,7 +23,7 @@ class Map
     @width  = get_width_for_lines(@map_in_lines)
     @height = get_height_for_lines(@map_in_lines)
 
-    map_tiles
+    @image_list = get_image_list_array_by_processing_map_file
   end
 
   def draw

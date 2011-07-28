@@ -1,3 +1,5 @@
+require 'rmagick'
+
 class Map
 
   include ReadMap

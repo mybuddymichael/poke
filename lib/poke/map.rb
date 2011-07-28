@@ -8,6 +8,7 @@ class Map
 
   def initialize(params)
     Params.check_params(params, PARAMS_REQUIRED)
+
     @map_file = params[:map_file]
     @tileset = Gosu::Image.load_tiles(params[:window], params[:tileset],
                                       32, 32, false)

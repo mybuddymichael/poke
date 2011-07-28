@@ -1,11 +1,7 @@
 module ReadMap
 
   def get_lines(file)
-    if file.class == String
-      file.split("\n")
-    else
-      File.readlines(file).map { |line| line.chomp }
-    end
+    File.readlines(file).map { |line| line.chomp }
   end
 
   def get_columns(file)

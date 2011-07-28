@@ -86,4 +86,9 @@ class Map
     end
   end
 
+  def create_full_map_image
+    `montage #{@image_list.join(" ")} -tile #{@width}x -geometry 32x32+0+0 media/grid_one/full_map_image.png`
+    @full_map_image = Gosu::Image.new(@window, "media/grid_one/full_map_image.png", false)
+  end
+
 end

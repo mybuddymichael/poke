@@ -12,8 +12,6 @@ class Map
     Params.check_params(params, PARAMS_REQUIRED)
 
     @map_file = params[:map_file]
-    @tileset = Gosu::Image.load_tiles(params[:window], params[:tileset],
-                                      32, 32, false)
 
     @map_in_lines = get_lines(@map_file)
 

@@ -24,14 +24,7 @@ class Map
   end
 
   def draw
-    @height.times do |y|
-      @width.times do |x|
-        tile = @tiles[y][x]
-        if tile
-          @tileset[tile].draw(x * 32, y * 32, ZOrder::MAP)
-        end
-      end
-    end
+    @full_map_image.draw(0, 0, ZOrder::MAP)
   end
 
   private

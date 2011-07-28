@@ -60,19 +60,20 @@ class Map
     solid_blocks
   end
 
-  def map_tiles
-    @tiles = []
+  def get_image_list_array_by_processing_map_file
+    image_list = []
 
     @height.times do |y|
-      line = []
       @width.times do |x|
-        @map_key.each do |key, value|
+        @key.each do |key, value|
           if @map_in_lines[y][x] == key
-            line.push(value)
+            image_list.push("tile#{value}.png")
           end
         end
       end
-      @tiles[y] = line
+    end
+
+    image_list
     end
   end
 

@@ -43,4 +43,4 @@ Copyright © 2011 Michael Hanson. See LICENSE for license information.
 [pockets and monsters]: http://en.wikipedia.org/wiki/Pokémon_(video_game_series)
 [RVM]: https://rvm.beginrescueend.com/
 [Bundler]: http://gembundler.com/
-[brew]: http://mxcl.github.com/homebrew/
+[Homebrew]: http://mxcl.github.com/homebrew/

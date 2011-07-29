@@ -2,11 +2,11 @@
 
 Poke is a simple game-design project using [Ruby] and [Gosu]. It is intended to be a two-dimensional adventure game, similar to that wonderful Japanese game about [pockets and monsters] (hence, "Poke", which is certainly a working title).
 
-## So what will the game be like?
+### So what will the game be like?
 
 I'm thinking robots. In your pocket. (Pokébots?)
 
-## The future
+### The future
 
 The future of Poke is certainly uncertain, as it's a side-project on which I spend only a limited amount of my free time. That said, I hope to implement the following features:
 
@@ -16,13 +16,13 @@ The future of Poke is certainly uncertain, as it's a side-project on which I spe
 
 See, like I said, simple.
 
-## Currently
+### Currently
 
 Poke is in an alpha of alpha state right now. The engine is being actively built and much is frequently changing. It's not a game. It's not fun in any way. However, if after that you would like to try it out, here's how...
 
-## Installation
+### Installation
 
-Poke runs on Ruby 1.9.x. To easily install this, I highly recommend you install [RVM]. You can read how on the RVM website. I also recommend you install the [Bundler] gem, which makes installation and updating of gems crazy-easy. So, without further adieu:
+Poke runs on Ruby 1.9.x. To easily install this, I highly recommend you install [RVM]. You can read how on the RVM website. I also recommend you install the [Bundler] gem, which makes installation and updating of gems crazy-easy. So, without further ado:
 
 
 Currently:

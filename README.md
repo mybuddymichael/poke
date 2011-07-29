@@ -18,7 +18,7 @@ See, like I said, *simple*.
 
 ### Currently
 
-Poke is in an alpha of alpha state right now. The engine is being actively built and much is frequently changing. It's not a game. It's not fun in any way. However, if after that you would like to try it out, here's how...
+Poke is in an alpha of alpha state right now. The engine is being actively built and much is frequently changing. It's not a game. It's not fun in any way. However, if you would really like to try it out, here's how...
 
 ### Installation
 

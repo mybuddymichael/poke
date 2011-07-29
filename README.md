@@ -14,7 +14,7 @@ The future of Poke is certainly uncertain, as it's a side-project on which I spe
 - A system to give the player a sense of accomplishment and a goal. (Possibly collecting or creating robots.)
 - A crafting system that allows the player to create various items, vehicles, and robots of infinite possibilities.
 
-See, like I said, simple.
+See, like I said, *simple*.
 
 ### Currently
 

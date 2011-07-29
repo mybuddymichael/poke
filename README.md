@@ -24,11 +24,11 @@ Poke is in an alpha of alpha state right now. The engine is being actively built
 
 Poke runs on Ruby 1.9.x. To easily install this, I highly recommend you install [RVM]. You can read how on the RVM website. I also recommend you install the [Bundler] gem, which makes installation and updating of gems crazy-easy. So, without further ado:
 
-- `cd` into where you want to download the source and run `git clone git://github.com/mybuddymichael/Poke.git`
-- If you have Bundler installed, simply type `bundle install` to install gem dependencies. Otherwise you have to `gem install gosu` and  `gem install rmagick`.
-- Install ImageMagick, via [Homebrew] or macports or fink or whatever you want to use.
-- ???
-- `cd` into `Poke` and `ruby main.rb`
+1. `cd` into where you want to download the source and run `git clone git://github.com/mybuddymichael/Poke.git`
+2. If you have Bundler installed, simply type `bundle install` to install gem dependencies. Otherwise you have to `gem install gosu` and  `gem install rmagick`.
+3. Install ImageMagick, via [Homebrew] or macports or fink or whatever you want to use.
+4. ???
+5. `cd` into `Poke` and `ruby main.rb`
 
 ### OBLIGATORY SCREENSHOTS
 

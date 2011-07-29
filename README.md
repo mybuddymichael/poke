@@ -1,6 +1,6 @@
 # Poke
 
-Poke is a simple game-design project using [Ruby] and [Gosu]. It is intended to be a two-dimensional adventure game, similar to that wonderful Japanese game about [pockets and monsters] (hence, "Poke", which is certainly a working title).
+Poke is a simple game-design project using [Ruby] and [Gosu]. It is intended to be a two-dimensional adventure game, similar to that wonderful Japanese game about [pockets and monsters] \(hence, "Poke", which is certainly a working title).
 
 ### So what will the game be like?
 
@@ -24,8 +24,15 @@ Poke is in an alpha of alpha state right now. The engine is being actively built
 
 Poke runs on Ruby 1.9.x. To easily install this, I highly recommend you install [RVM]. You can read how on the RVM website. I also recommend you install the [Bundler] gem, which makes installation and updating of gems crazy-easy. So, without further ado:
 
+1. `cd` into where you want to download the source and run `git clone git://github.com/mybuddymichael/Poke.git`
+2. If you have Bundler installed, simply type `bundle install` to install gem dependencies. Otherwise you have to
+> gem install gosu
+> gem install rmagick
+3. Install ImageMagick, via [Homebrew] or macports or fink or whatever you want to use.
+4. ???
+5. `cd` into `Poke` and `ruby main.rb`
 
-Currently:
+### OBLIGATORY SCREENSHOTS
 
 ![](https://github.com/mybuddymichael/Poke/raw/master/screenshots/screenshot.png)
 ![](https://github.com/mybuddymichael/Poke/raw/master/screenshots/screenshot_paused.png)
@@ -38,3 +45,4 @@ Copyright © 2011 Michael Hanson. See LICENSE for license information.
 [pockets and monsters]: http://en.wikipedia.org/wiki/Pokémon_(video_game_series)
 [RVM]: https://rvm.beginrescueend.com/
 [Bundler]: http://gembundler.com/
+[brew]: http://mxcl.github.com/homebrew/

@@ -28,7 +28,7 @@ Poke runs on Ruby 1.9.x. To install this *easily*, I highly recommend you use [R
 2. If you have Bundler installed, simply type `bundle install` to install gem dependencies. Otherwise you have to `gem install gosu` and  `gem install rmagick`.
 3. Install ImageMagick, via [Homebrew] or macports or fink or whatever you want to use.
 4. ???
-5. `cd` into `Poke` and `ruby main.rb`
+5. `cd` into `Poke/` and `ruby main.rb`
 
 ### OBLIGATORY SCREENSHOTS
 

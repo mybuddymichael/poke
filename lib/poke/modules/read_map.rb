@@ -1,5 +1,14 @@
 module ReadMap
 
+  # Creates an array of strings corresponding to the lines of the file passed in
+  # as an argument.
+  #
+  # Examples
+  #
+  #   get_lines("map.txt")
+  #   # => ["VVV...ggg", "...VVVggg", "...VVV..."]
+  #
+  # Returns an Array of Strings.
   def get_array_of_lines_from_file(file)
     File.readlines(file).map { |line| line.chomp }
   end

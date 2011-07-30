@@ -15,6 +15,18 @@ module ReadMap
     File.readlines(file).map { |line| line.chomp }
   end
 
+  # Creates an array of strings corresponding to the columns of the file passed
+  # in as an argument. Useful for traversing a map using X-then-Y notation.
+  # e.g. @map_in_columns[x][y]
+  #
+  # file - A String containing the path to the file to be converted.
+  #
+  # Examples
+  #
+  #   get_array_of_columns_from_file("map.txt")
+  #   # => ["V..", "V..", ".VV", ".VV", "gg.", "gg."]
+  #
+  # Returns an Array of Strings.
   def get_array_of_columns_from_file(file)
     lines = get_lines(file)
 

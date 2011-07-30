@@ -1,6 +1,6 @@
 # Contains methods for parsing a map file, creating map objects suitable for
 # later usage by other objects.
-# e.g. a map file may be such as:
+# e.g. a map file may be thus:
 #
 #   VV..gg
 #   ..VVgg

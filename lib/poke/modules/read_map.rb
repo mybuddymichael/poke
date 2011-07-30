@@ -8,7 +8,7 @@ module ReadMap
   # Examples
   #
   #   get_array_of_lines_from_file("map.txt")
-  #   # => ["VVV...ggg", "...VVVggg", "...VVV..."]
+  #   # => ["VV..gg", "..VVgg", "..VV.."]
   #
   # Returns an Array of Strings.
   def get_array_of_lines_from_file(file)

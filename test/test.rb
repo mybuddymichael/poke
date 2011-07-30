@@ -1,8 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require 'minitest/autorun'
-require_relative '../main'
+require_relative "test_helper.rb"
 
 class TestWindow < MiniTest::Unit::TestCase
 

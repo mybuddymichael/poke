@@ -1,6 +1,6 @@
 class Grid
 
-  def initialize(params)
+  def initialize(params = {})
     params = {program_file: nil}.merge(params)
     Params.check_params(params, [:window, :user, :map_file, :tileset])
 

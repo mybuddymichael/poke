@@ -8,7 +8,7 @@ class Map
 
   attr_reader :map_in_lines, :tiles, :width, :height, :solid_blocks
 
-  def initialize(params)
+  def initialize(params = {})
     Params.check_params(params, PARAMS_REQUIRED)
 
     @window = params[:window]

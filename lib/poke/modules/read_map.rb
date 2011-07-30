@@ -13,7 +13,7 @@ module ReadMap
     File.readlines(file).map { |line| line.chomp }
   end
 
-  def get_columns(file)
+  def get_array_of_columns_from_file(file)
     lines = get_lines(file)
 
     width = lines[0].size

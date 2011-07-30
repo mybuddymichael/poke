@@ -3,6 +3,8 @@ module ReadMap
   # Creates an array of strings corresponding to the lines of the file passed in
   # as an argument.
   #
+  # file - A String containing the path to the file to be converted.
+  #
   # Examples
   #
   #   get_lines("map.txt")

@@ -1,4 +1,5 @@
-# Poke
+Poke
+====
 
 Poke is a simple game-design project using [Ruby] and [Gosu]. It is intended to
 be a two-dimensional adventure game, similar to that wonderful Japanese game

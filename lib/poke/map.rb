@@ -18,7 +18,7 @@ class Map
     @tileset = Magick::Image.read("media/grid_one/tileset.png")
     @number_of_tiles = @tileset[0].columns/32
 
-    @map_in_lines = get_lines(@map_file)
+    @map_in_lines = get_array_of_lines_from_file(@map_file)
 
     @map_key = extract_map_key
     @solid_blocks = get_array_of_solid_blocks

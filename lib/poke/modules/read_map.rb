@@ -1,3 +1,12 @@
+# Contains methods for parsing a map file, creating map objects suitable for
+# later usage by other objects.
+# e.g. a map file may be such as:
+#
+#   VV..gg
+#   ..VVgg
+#   ..VV..
+#
+# in a plain-text file (such as "map.txt")
 module ReadMap
 
   # Creates an array of strings corresponding to the lines of the file passed in

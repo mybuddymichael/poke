@@ -7,7 +7,7 @@ module ReadMap
   #
   # Examples
   #
-  #   get_lines("map.txt")
+  #   get_array_of_lines_from_file("map.txt")
   #   # => ["VVV...ggg", "...VVVggg", "...VVV..."]
   #
   # Returns an Array of Strings.

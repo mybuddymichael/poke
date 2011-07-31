@@ -40,6 +40,10 @@ module ReadMap
   def get_array_of_columns_from_file(file)
     lines = File.readlines(file).map { |line| line.chomp }
 
+    rx = /(\{[^}]+\})/i
+    lines.delete_if { |e| rx.match e }
+    lines.delete("")
+
     width = lines[0].size
     height = lines.size
 

@@ -58,6 +58,12 @@ module ReadMap
     columns
   end
 
+  # Get the width of a lines Array. Width corresponds to the amount of
+  # characters in each String element.
+  #
+  # lines - An Array of Strings, corresponding to lines in a map file.
+  #
+  # Returns a Fixnum.
   def get_width_for_lines(lines)
     lines[0].size
   end

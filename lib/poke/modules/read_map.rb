@@ -26,8 +26,8 @@ module ReadMap
   end
 
   # Creates an array of strings corresponding to the columns of the file passed
-  # in as an argument. Useful for traversing a map using X-then-Y notation.
-  # e.g. @map_in_columns[x][y]
+  # in as an argument. It will remove any empty lines and any hash keys. Useful
+  # for traversing a map using X-then-Y notation, e.g. @map_in_columns[x][y].
   #
   # file - A String containing the path to the file to be converted.
   #

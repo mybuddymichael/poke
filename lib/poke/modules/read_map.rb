@@ -86,7 +86,7 @@ module ReadMap
   #       print "V!"
   #     end
   #   end
-  #   # => V! V! V! V! V! V! V! V!  => 8
+  #   # => V! V! V! V! V! V! V! V!
   #
   # Returns nothing.
   def iterate_over_each_character_in_array_of_lines(lines)

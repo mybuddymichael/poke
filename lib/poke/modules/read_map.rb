@@ -68,6 +68,12 @@ module ReadMap
     lines[0].size
   end
 
+  # Get the height of a lines Array. Height corresponds to the amount of
+  # elements in the Array.
+  #
+  # lines - An Array of Strings, corresponding to lines in a map file.
+  #
+  # Returns a Fixnum.
   def get_height_for_lines(lines)
     lines.size
   end

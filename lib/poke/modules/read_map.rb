@@ -79,6 +79,8 @@ module ReadMap
   #
   # lines - An Array of Strings, corresponding to lines in a map file.
   #
+  # Yields two Fixnum.
+  #
   # Examples
   #
   #   iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|

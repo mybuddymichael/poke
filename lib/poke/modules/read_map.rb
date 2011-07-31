@@ -38,7 +38,7 @@ module ReadMap
   #
   # Returns an Array of Strings.
   def get_array_of_columns_from_file(file)
-    lines = get_array_of_lines_from_file(file)
+    lines = File.readlines(file).map { |line| line.chomp }
 
     width = lines[0].size
     height = lines.size

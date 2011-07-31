@@ -27,4 +27,12 @@ class TestReadMap < Poke::Test
     assert_equal(12, @object.get_height_for_lines(@lines))
   end
 
+  test "can get the width of a columns array" do
+    assert_equal(27, @object.get_width_for_columns(@columns))
+  end
+
+  test "can get the height of a columns array" do
+    assert_equal(12, @object.get_height_for_columns(@columns))
+  end
+
 end

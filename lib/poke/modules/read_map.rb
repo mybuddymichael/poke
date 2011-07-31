@@ -77,7 +77,7 @@ module ReadMap
   # Iterates over each individual character in an array of lines, performing the
   # passed block on each element.
   #
-  # lines  - An Array of Strings, corresponding to lines in a map file.
+  # lines - An Array of Strings, corresponding to lines in a map file.
   #
   # Examples
   #

@@ -90,6 +90,12 @@ module Poke
       columns.size
     end
 
+    # Gets the height of a columns Array. Height corresponds to the amount of
+    # characters in each String element.
+    #
+    # columns - An Array of Strings, corresponding to columns in a map file.
+    #
+    # Returns a Fixnum.
     def get_height_for_columns(columns)
       columns[0].size
     end

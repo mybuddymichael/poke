@@ -60,7 +60,7 @@ module Poke
       columns
     end
 
-    # Get the width of a lines Array. Width corresponds to the amount of
+    # Gets the width of a lines Array. Width corresponds to the amount of
     # characters in each String element.
     #
     # lines - An Array of Strings, corresponding to lines in a map file.
@@ -70,7 +70,7 @@ module Poke
       lines[0].size
     end
 
-    # Get the height of a lines Array. Height corresponds to the amount of
+    # Gets the height of a lines Array. Height corresponds to the amount of
     # elements in the Array.
     #
     # lines - An Array of Strings, corresponding to lines in a map file.

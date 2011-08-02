@@ -1,6 +1,6 @@
 class ProgramMap
 
-  include ReadMap
+  include Poke::ReadMap
 
   attr_reader :map_in_columns
 

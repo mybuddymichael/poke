@@ -80,6 +80,12 @@ module Poke
       lines.size
     end
 
+    # Gets the width of a columns Array. Width corresponds to the amount of
+    # elements in the Array.
+    #
+    # columns - An Array of Strings, corresponding to columns in a map file.
+    #
+    # Returns a Fixnum.
     def get_width_for_columns(columns)
       columns.size
     end

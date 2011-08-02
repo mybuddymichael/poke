@@ -2,7 +2,7 @@ require 'rmagick'
 
 class Map
 
-  include ReadMap
+  include Poke::ReadMap
 
   PARAMS_REQUIRED = [:window, :map_file, :tileset]
 

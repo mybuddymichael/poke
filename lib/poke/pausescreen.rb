@@ -1,30 +1,34 @@
-class PauseScreen
+module Poke
 
-  PARAMS_REQUIRED = [:window, :width, :height]
+  class PauseScreen
 
-  def initialize(params)
-    Params.check_params(params, PARAMS_REQUIRED)
-    @window = params[:window]
-    @width  = params[:width]
-    @height = params[:height]
+    PARAMS_REQUIRED = [:window, :width, :height]
 
-    @pause_button = Gosu::Image.new(@window, 'media/pause_button.png', false)
-    @press_q      = Gosu::Image.new(@window, 'media/press_q.png', false)
-  end
+    def initialize(params)
+      Params.check_params(params, PARAMS_REQUIRED)
+      @window = params[:window]
+      @width  = params[:width]
+      @height = params[:height]
 
-  def draw
-    draw_rect(@width, @height, Color::TRANS_BLACK,
-              ZOrder::PAUSE_BACKGROUND)
-    @pause_button.draw(160, 144, ZOrder::PAUSE_BUTTON)
-    @press_q.draw(170, 296, ZOrder::PAUSE_BUTTON)
-  end
+      @pause_button = Gosu::Image.new(@window, 'media/pause_button.png', false)
+      @press_q      = Gosu::Image.new(@window, 'media/press_q.png', false)
+    end
 
-  private
+    def draw
+      draw_rect(@width, @height, Color::TRANS_BLACK,
+                ZOrder::PAUSE_BACKGROUND)
+      @pause_button.draw(160, 144, ZOrder::PAUSE_BUTTON)
+      @press_q.draw(170, 296, ZOrder::PAUSE_BUTTON)
+    end
 
-  def draw_rect(width, height, color, z_order)
-    # Draws a rectangle by coordinates clockwise from top-left
-    @window.draw_quad(0, 0, color, width, 0, color, width, height, color,
-                      0, height, color, z_order, :default)
+    private
+
+    def draw_rect(width, height, color, z_order)
+      # Draws a rectangle by coordinates clockwise from top-left
+      @window.draw_quad(0, 0, color, width, 0, color, width, height, color,
+                        0, height, color, z_order, :default)
+    end
+
   end
 
 end

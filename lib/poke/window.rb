@@ -1,5 +1,7 @@
 class Window < Gosu::Window
 
+  include Poke
+
   attr_reader :current_grid, :controls
   attr_accessor :paused
 

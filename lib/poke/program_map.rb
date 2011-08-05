@@ -6,7 +6,16 @@ module Poke
 
     include Poke::ReadMap
 
-    def initialize
+    # The parameters required at initialization.
+    PARAMS_REQUIRED = [:map_file]
+
+    # Creates a new +ProgramMap+.
+    #
+    # @param [Hash] params
+    # @option params [String] :map_file a String containing the path to the map
+    #   file
+    def initialize(params = {})
+      Poke::Params.check_params(params, PARAMS_REQUIRED)
     end
 
   end

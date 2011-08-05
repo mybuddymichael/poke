@@ -3,3 +3,5 @@ examples
 *.log
 coverage/
 tmp/
+doc/
+.yardoc/

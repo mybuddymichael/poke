@@ -25,7 +25,7 @@ module Poke
       @current_image.draw(@x, @y-8, ZOrder::PLAYER)
     end
 
-    private
+  private
 
     def get_current_direction
       @direction = @window.controls.last_button_pressed unless movement_is_locked?

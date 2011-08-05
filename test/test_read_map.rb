@@ -4,7 +4,7 @@ class TestReadMap < Poke::Test
 
   def setup
     @object = Object.new
-    @object.extend(ReadMap)
+    @object.extend(Poke::ReadMap)
     @mf = "media/grid_one/map.txt"
     @pmf = "media/grid_one/program_map.txt"
     @lines = @object.get_array_of_lines_from_file(@pmf)

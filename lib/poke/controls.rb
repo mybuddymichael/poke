@@ -1,5 +1,5 @@
 module Poke
-
+  # The +Controls+ controller handles keyboard input from the user.
   class Controls
 
     PARAMS_REQUIRED = [:window]

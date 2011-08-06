@@ -13,6 +13,12 @@ module Poke
                 q:      Gosu::KbQ,
                 escape: Gosu::KbEscape }
 
+    # Create a +Controls+ object, storing a reference to the {Window} view and
+    # initializing an +Array+ object for containing a list of buttons pressed.
+    #
+    # @param params [{Symbol: Object}] Hash of params
+    # @option params [Window] :window The {Window} view
+    # @return [void] nothing
     def initialize(params = {})
       Params.check_params(params, PARAMS_REQUIRED)
       @window = params[:window]

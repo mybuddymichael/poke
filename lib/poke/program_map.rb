@@ -51,6 +51,8 @@ module Poke
       paths
     end
 
+  private
+
     def above(y, x)
       @map_in_lines[y-1][x]
     end

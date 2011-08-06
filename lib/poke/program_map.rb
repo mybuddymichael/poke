@@ -24,6 +24,9 @@ module Poke
     # separate path rectangle in the map. This indicates a new NPC and a new
     # path.
     #
+    #   find_each_path_rectangle
+    #   # => [[[1, 1], [3, 3]], [[4, 12], [7, 14]], [[8, 23], [10, 25]]]
+    #
     # @api private
     #
     # @return [Array] An array of array elements, each element containing the

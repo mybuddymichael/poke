@@ -39,8 +39,16 @@ module Poke
       @map_in_lines[y-1][x]
     end
 
+    def below(y, x)
+      @map_in_lines[y+1][x]
+    end
+
     def left(y, x)
       @map_in_lines[y][x-1]
+    end
+
+    def right(y, x)
+      @map_in_lines[y][x+1]
     end
 
   end

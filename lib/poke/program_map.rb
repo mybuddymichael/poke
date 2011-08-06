@@ -35,6 +35,14 @@ module Poke
     def find_each_path_rectangle
     end
 
+    def above(y, x)
+      @map_in_lines[y-1][x]
+    end
+
+    def left(y, x)
+      @map_in_lines[y][x-1]
+    end
+
   end
 
 end

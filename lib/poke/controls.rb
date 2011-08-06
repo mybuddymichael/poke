@@ -27,8 +27,8 @@ module Poke
     end
 
     # Interprets button presses passed by {Window}. If the button is escape, it
-    # pauses the update cycle of {Window} ({#toggle_pause}). Calls {#quit} if Q is
-    # pressed.
+    # pauses the update cycle of {Window} ({#toggle_pause}). Calls {#quit} if Q
+    # is pressed.
     #
     # @param button [Fixnum] The keyboard button pressed.
     #

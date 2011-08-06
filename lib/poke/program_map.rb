@@ -13,7 +13,7 @@ module Poke
     #
     # @param [Hash] params
     # @option params [String] :map_file a String containing the path to the map
-    #   file
+    #   file, e.g. "media/map.txt".
     def initialize(params = {})
       Poke::Params.check_params(params, PARAMS_REQUIRED)
     end

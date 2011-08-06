@@ -33,6 +33,22 @@ module Poke
     #   coordinates (in y,x notation) of the upper-left and lower-right corners
     #   of each path.
     def find_each_path_rectangle
+      paths = []
+
+      iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
+        c = @map_in_lines[y][x]
+
+        next if c == '.'
+
+        if above(y, x) == '.' and left(y, x) == '.'
+          paths.push([])
+          paths.last.push([y,x])
+        elsif below(y, x) == '.' and right(y, x) == '.'
+          paths.last.push([y,x])
+        end
+      end
+
+      paths
     end
 
     def above(y, x)

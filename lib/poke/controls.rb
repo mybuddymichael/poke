@@ -52,7 +52,7 @@ module Poke
       @buttons_pressed.last
     end
 
-    private
+  private
 
     def toggle_pause
       if @window.paused == false

@@ -35,4 +35,16 @@ class TestReadMap < Poke::Test
     assert_equal(12, @object.get_height_for_columns(@columns))
   end
 
+  test "iterates over each character in a lines array" do
+    c = @object.get_width_for_lines(@lines) *
+      @object.get_height_for_lines(@lines)
+    n = 0
+
+    @object.iterate_over_each_character_in_array_of_lines(@lines) do |y, x|
+      n += 1 if @lines[y][x]
+    end
+
+    assert_equal(c, n)
+  end
+
 end

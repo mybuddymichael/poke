@@ -26,6 +26,13 @@ module Poke
       @buttons_pressed = []
     end
 
+    # Interprets button presses passed by {Window}. If the button is escape, it
+    # pauses the update cycle of {Window} ({#toggle_pause}). Calls {#quit} if Q is
+    # pressed.
+    #
+    # @param button [Fixnum] The keyboard button pressed.
+    #
+    # @return [void]
     def press_button(button)
       BUTTONS.each do |key, value|
         if button == value

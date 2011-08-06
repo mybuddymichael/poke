@@ -18,6 +18,7 @@ module Poke
     #
     # @param params [{Symbol: Object}] Hash of params
     # @option params [Window] :window The {Window} view
+    #
     # @return [void]
     def initialize(params = {})
       Params.check_params(params, PARAMS_REQUIRED)

@@ -16,6 +16,8 @@ module Poke
     #   file, e.g. "media/map.txt".
     def initialize(params = {})
       Poke::Params.check_params(params, PARAMS_REQUIRED)
+
+      @map_file = params[:map_file]
     end
 
   end

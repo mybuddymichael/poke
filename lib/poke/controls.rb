@@ -13,7 +13,7 @@ module Poke
                 q:      Gosu::KbQ,
                 escape: Gosu::KbEscape }
 
-    def initialize(params)
+    def initialize(params = {})
       Params.check_params(params, PARAMS_REQUIRED)
       @window = params[:window]
       @buttons_pressed = []

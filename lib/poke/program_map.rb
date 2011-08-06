@@ -20,6 +20,18 @@ module Poke
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
     end
 
+    # Parses a map array for the upper-left and lower-right corners of each
+    # separate path rectangle in the map. This indicates a new NPC and a new
+    # path.
+    #
+    # @api private
+    #
+    # @return [Array] An array of array elements, each element containing the
+    #   coordinates (in y,x notation) of the upper-left and lower-right corners
+    #   of each path.
+    def find_each_path_rectangle
+    end
+
   end
 
 end

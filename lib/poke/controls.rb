@@ -2,8 +2,10 @@ module Poke
   # The +Controls+ controller handles keyboard input from the user.
   class Controls
 
+    # Params required at initialization.
     PARAMS_REQUIRED = [:window]
 
+    # A hash storing symbols for easy reference of individual buttons.
     BUTTONS = { up:     Gosu::KbUp,
                 down:   Gosu::KbDown,
                 left:   Gosu::KbLeft,

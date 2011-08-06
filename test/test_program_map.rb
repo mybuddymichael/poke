@@ -7,7 +7,7 @@ class TestProgramMap < Poke::Test
       Poke::ProgramMap.new(map_file: 'media/grid_one/program_map.txt')
   end
 
-  test "finds the upper-left corner of each map file" do
+  test "creates an array of path rectangle coordinates" do
     a = @program_map.find_each_path_rectangle
     e = [[[1, 1], [3, 3]], [[4, 12], [7, 14]], [[8, 23], [10, 25]]]
 

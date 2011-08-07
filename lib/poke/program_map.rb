@@ -59,6 +59,15 @@ module Poke
       paths
     end
 
+    # Parses the map array for any 'N' character and attaches its position to
+    # the appropriate path array.
+    #
+    # @return [Array] An array of array elements, each element containing the
+    #   coordinates (in y,x notation) of the upper-left and lower-right corners
+    #   of each path, along with the starting position of each NPC.
+    def attach_npc_positions_to_path_arrays
+    end
+
   private
 
     def above(y, x)

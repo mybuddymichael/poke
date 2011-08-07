@@ -66,6 +66,25 @@ module Poke
     #   coordinates (in y,x notation) of the upper-left and lower-right corners
     #   of each path, along with the starting position of each NPC.
     def attach_npc_positions_to_path_arrays
+      paths = find_each_path_rectangle
+
+      iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
+        c = @map_in_lines[y][x]
+
+        next if c == '.' or c == 'p'
+
+        if c == 'N'
+          paths.each do |e|
+           if y >= e[0][0] and y <= e[1][0]
+             if x >= e[0][1] and x <= e[1][1]
+               e.push([y, x])
+             end
+           end
+          end
+        end
+      end
+
+      paths
     end
 
   private

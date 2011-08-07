@@ -75,11 +75,11 @@ module Poke
 
         if c == 'N'
           paths.each do |e|
-           if y >= e[0][0] and y <= e[1][0]
-             if x >= e[0][1] and x <= e[1][1]
-               e.push([y, x])
-             end
-           end
+            if y >= e[0][0] and y <= e[1][0]
+              if x >= e[0][1] and x <= e[1][1]
+                e.push([y, x])
+              end
+            end
           end
         end
       end

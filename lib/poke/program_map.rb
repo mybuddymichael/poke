@@ -44,19 +44,15 @@ module Poke
           paths.push([])
           paths.last.push([y,x])
 
-          cur_pos = [y, x]
-
-          until below(cur_pos[0], cur_pos[1]) == '.' and
-            left(cur_pos[0], cur_pos[1]) == '.'
-            cur_pos[0] += 1
+          until below(y, x) == '.' and left(y, x) == '.'
+            y += 1
           end
 
-          until below(cur_pos[0], cur_pos[1]) == '.' and
-            right(cur_pos[0], cur_pos[1]) == '.'
-            cur_pos[1] += 1
+          until below(y, x) == '.' and right(y, x) == '.'
+            x += 1
           end
 
-          paths.last.push(cur_pos)
+          paths.last.push([y, x])
         end
       end
 

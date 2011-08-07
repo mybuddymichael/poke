@@ -43,8 +43,20 @@ module Poke
         if above(y, x) == '.' and left(y, x) == '.'
           paths.push([])
           paths.last.push([y,x])
-        elsif below(y, x) == '.' and right(y, x) == '.'
-          paths.last.push([y,x])
+
+          cur_pos = [y, x]
+
+          until below(cur_pos[0], cur_pos[1]) == '.' and
+            left(cur_pos[0], cur_pos[1]) == '.'
+            cur_pos[0] += 1
+          end
+
+          until below(cur_pos[0], cur_pos[1]) == '.' and
+            right(cur_pos[0], cur_pos[1]) == '.'
+            cur_pos[1] += 1
+          end
+
+          paths.last.push(cur_pos)
         end
       end
 

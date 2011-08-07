@@ -25,6 +25,7 @@ class TestProgramMap < Poke::Test
     e = [[[2, 12], [6, 14],  [5, 13]],
          [[3, 1],  [5, 3],   [4, 2]],
          [[8, 23], [10, 25], [9, 24]]]
+
     assert_equal(e, a)
   end
 

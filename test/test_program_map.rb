@@ -20,7 +20,7 @@ class TestProgramMap < Poke::Test
     assert_equal(e, a)
   end
 
-  test "adds the program position to the end of the appropriate arrays" do
+  test "adds each program position to the appropriate array" do
     a = @program_map.attach_npc_positions_to_path_arrays
     e = [[[2, 12], [6, 14],  [5, 13]],
          [[3, 1],  [5, 3],   [4, 2]],

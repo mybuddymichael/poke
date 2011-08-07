@@ -15,7 +15,7 @@ class TestProgramMap < Poke::Test
 
   test "creates an array of path rectangle coordinates" do
     a = @program_map.find_each_path_rectangle
-    e = [[[1, 1], [3, 3]], [[4, 12], [7, 14]], [[8, 23], [10, 25]]]
+    e = [[[3, 1], [5, 3]], [[4, 12], [7, 14]], [[8, 23], [10, 25]]]
 
     assert_equal(e, a)
   end

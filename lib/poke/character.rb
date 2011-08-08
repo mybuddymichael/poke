@@ -14,6 +14,23 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
     end
 
+    def update
+    end
+
+    def draw
+    end
+
+  private
+
+    def lock_direction_unless_square
+    end
+
+    def lock
+    end
+
+    def unlock
+    end
+
   end
-  
+
 end

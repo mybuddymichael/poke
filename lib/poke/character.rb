@@ -11,6 +11,7 @@ module Poke
     attr_reader :direction
 
     def initialize(params = {})
+      Poke::Params.check_params(params, PARAMS_REQUIRED)
     end
 
   end

@@ -15,4 +15,8 @@ module Poke
     FONT = 'media/poke.dfont'
   end
 
+  module Math
+    GRID = 32
+  end
+
 end

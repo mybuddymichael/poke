@@ -22,7 +22,18 @@ module Poke
     # Fetches the Player's current location and updates the camera as the
     # inverse of that location.
     def update
+      get_x
+      get_y
     end
+
+    def get_x
+      @x = [[@player.x - 224, 0].max, @current_grid.width * 32 - 480].min
+    end
+
+    def get_y
+      @y = [[@player.y - 160, 0].max, @current_grid.width * 32 - 320].min
+    end
+
   end
 
 end

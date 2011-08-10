@@ -10,8 +10,6 @@ class Window < Gosu::Window
     self.caption = 'Poke'
     @width, @height = 480, 320
 
-    @camera_x = @camera_y = 0
-
     @paused = false
 
     @user         = User.new(self, 416, 288)
@@ -34,8 +32,7 @@ class Window < Gosu::Window
     unless @paused
       @current_grid.update
       @user.update
-      @camera_x = [[@user.x - 224, 0].max, @current_grid.width * 32 - 480].min
-      @camera_y = [[@user.y - 160, 0].max, @current_grid.height * 32 - 320].min
+      @camera.update
     end
   end
 

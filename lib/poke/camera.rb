@@ -5,7 +5,7 @@ module Poke
   class Camera
 
     # Params required at initialization.
-    PARAMS_REQUIRED = [:player]
+    PARAMS_REQUIRED = [:window, :player]
 
     # Creates a Camera object.
     #
@@ -14,6 +14,7 @@ module Poke
     #
     # Returns a Camera object.
     def initialize(params = {})
+      @window = params[:window]
       @player = params[:player]
       @x, @y  = 0
     end

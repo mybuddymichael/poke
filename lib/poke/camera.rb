@@ -22,7 +22,6 @@ module Poke
     def initialize(params = {})
       @window = params[:window]
       @player = params[:player]
-      @x, @y  = 0
     end
 
     # Called by Window at designated intervals, calls #get_x and #get_y to

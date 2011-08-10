@@ -19,6 +19,8 @@ module Poke
       @x, @y  = 0
     end
 
+    # Fetches the Player's current location and updates the camera as the
+    # inverse of that location.
     def update
     end
   end

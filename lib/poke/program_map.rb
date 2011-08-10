@@ -18,8 +18,6 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
-
-      @paths = attach_npc_positions_to_path_arrays
     end
 
     # Parses a map array for the upper-left and lower-right corners of each
@@ -86,7 +84,7 @@ module Poke
         end
       end
 
-      paths
+      @paths = paths
     end
 
   private

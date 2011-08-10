@@ -19,8 +19,11 @@ module Poke
       @x, @y  = 0
     end
 
-    # Fetches the Player's current location and updates the camera as the
-    # inverse of that location.
+    # Called by Window at designated intervals, calls #get_x and #get_y to
+    # calculate the Camera's x and y values, which are stored in
+    # publicly-accessible instance variables.
+    #
+    # Returns nothing.
     def update
       get_x
       get_y

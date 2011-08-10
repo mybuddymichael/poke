@@ -17,6 +17,9 @@ module Poke
       @player = params[:player]
       @x, @y  = 0
     end
+
+    def update
+    end
   end
 
 end

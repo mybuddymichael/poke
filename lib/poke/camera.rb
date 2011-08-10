@@ -18,8 +18,6 @@ module Poke
     # params - The Hash of Symbol options.
     #   :window - The Window object creating Camera.
     #   :player - The Player object that the Camera is tracking.
-    #
-    # Returns a Camera object.
     def initialize(params = {})
       Poke::Params.check_params(params, PARAMS_REQUIRED)
       @window = params[:window]

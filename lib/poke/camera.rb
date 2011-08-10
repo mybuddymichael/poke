@@ -29,6 +29,8 @@ module Poke
       get_y
     end
 
+  private
+
     def get_x
       @x = [[@player.x - 224, 0].max, @current_grid.width * 32 - 480].min
     end

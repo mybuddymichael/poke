@@ -12,14 +12,14 @@ class Window < Gosu::Window
 
     @paused = false
 
-    @user         = User.new(self, 416, 288)
+    @player       = User.new(self, 416, 288)
     @controls     = Controls.new(window: self)
     @pause_screen = PauseScreen.new(window: self,
                                      width: @width,
                                     height: @height)
 
     @grid_one     = Grid.new(window: self,
-                               user: @user,
+                               user: @player,
                            map_file: "media/grid_one/map.txt",
                             tileset: "media/grid_one/tileset.png")
     @current_grid = @grid_one
@@ -31,7 +31,7 @@ class Window < Gosu::Window
   def update
     unless @paused
       @current_grid.update
-      @user.update
+      @player.update
       @camera.update
     end
   end
@@ -39,7 +39,7 @@ class Window < Gosu::Window
   def draw
     translate(-@camera_x, -@camera_y) do
       @current_grid.draw
-      @user.draw
+      @player.draw
     end
 
     if @paused

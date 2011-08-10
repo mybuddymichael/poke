@@ -25,6 +25,9 @@ class Window < Gosu::Window
                            map_file: "media/grid_one/map.txt",
                             tileset: "media/grid_one/tileset.png")
     @current_grid = @grid_one
+
+    @camera       = Camera.new(window: self,
+                               player: @player)
   end
 
   def update

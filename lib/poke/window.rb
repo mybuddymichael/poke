@@ -37,7 +37,7 @@ class Window < Gosu::Window
   end
 
   def draw
-    translate(-@camera_x, -@camera_y) do
+    translate(-@camera.x, -@camera.y) do
       @current_grid.draw
       @player.draw
     end

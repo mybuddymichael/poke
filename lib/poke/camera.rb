@@ -41,7 +41,7 @@ module Poke
     end
 
     def get_y
-      @y = [[@player.y - 160, 0].max,@window.current_grid.height * 32 - 320].min
+      @y = [[@player.y - 144, 0].max,@window.current_grid.height * 32 - 320].min
     end
 
   end

@@ -8,9 +8,13 @@ module Poke
     PARAMS_REQUIRED = [:window, :player]
 
     # Gets Camera's x-axis value.
+    #
+    # Returns a Fixnum.
     attr_reader :x
 
     # Gets Camera's y-axis value.
+    #
+    # Returns a Fixnum.
     attr_reader :y
 
     # Creates a Camera object.

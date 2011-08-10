@@ -36,10 +36,16 @@ module Poke
 
   private
 
+    # Calculates what Camera's x-axis value should be. It is based on the
+    # Player's position. It will not track beyond the left or right edges of the
+    # Map, but otherwise keeps the Player in the center of the viewport.
+    #
+    # Returns nothing.
     def get_x
       @x = [[@player.x - 224, 0].max, @window.current_grid.width * 32 - 480].min
     end
 
+    # See #get_x.
     def get_y
       @y = [[@player.y - 144, 0].max,@window.current_grid.height * 32 - 320].min
     end

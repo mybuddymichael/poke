@@ -1,6 +1,6 @@
 module Poke
 
-  class Program < User
+  class NPC < User
 
     def initialize(window, x, y, pathfile)
       super(window, x, y)

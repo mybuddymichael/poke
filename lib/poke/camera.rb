@@ -14,6 +14,8 @@ module Poke
     #
     # Returns a Camera object.
     def initialize(params = {})
+      @player = params[:player]
+      @x, @y  = 0
     end
   end
 

@@ -5,8 +5,6 @@ module Poke
     def initialize(window, x, y, pathfile)
       super(window, x, y)
 
-      @program_path = ProgramPath.new(pathfile)
-
       @facing_up, @facing_down, @facing_left, @facing_right =
         Gosu::Image.load_tiles(window, 'media/orange_player.png', 32, 38, false)
       @current_image = @facing_down

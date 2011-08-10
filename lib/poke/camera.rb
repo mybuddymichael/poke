@@ -20,6 +20,7 @@ module Poke
     #
     # Returns a Camera object.
     def initialize(params = {})
+      Poke::Params.check_params(params, PARAMS_REQUIRED)
       @window = params[:window]
       @player = params[:player]
     end

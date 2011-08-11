@@ -53,5 +53,4 @@ module Poke
     end
 
   end
-
 end

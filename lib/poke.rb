@@ -1,4 +1,5 @@
 require_relative 'poke/modules'
+require_relative 'poke/params'
 require_relative 'poke/read_map'
 require_relative 'poke/window'
 require_relative 'poke/camera'

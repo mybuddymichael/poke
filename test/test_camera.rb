@@ -12,7 +12,6 @@ class TestCamera < Poke::Test
   end
 
   def setup
-    @window = TWindow.new
     @player = Player.new
     @camera = Poke::Camera.new(window: @window, player: @player)
   end

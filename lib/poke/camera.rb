@@ -42,14 +42,16 @@ module Poke
     #
     # Returns nothing.
     def get_x
-      @x = [[@player.x - 224, 0].max, @window.current_grid.width * 32 - 480].min
+      grid_width = @window.current_grid.width
+      @x = [[@player.x - 224, 0].max, grid_width * 32 - 480].min
     end
 
     # See #get_x.
     #
     # Returns nothing.
     def get_y
-      @y = [[@player.y - 144, 0].max,@window.current_grid.height * 32 - 320].min
+      grid_height = @window.current_grid.height
+      @y = [[@player.y - 144, 0].max, grid_height * 32 - 320].min
     end
 
   end

@@ -15,6 +15,7 @@ module Poke
     # params - A Hash of Symbol options.
     #   :map_file - An ASCII file that represents the Map.
     def initialize(params = {})
+      Poke::Params.check_params(params, PARAMS_REQUIRED)
     end
 
   end

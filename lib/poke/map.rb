@@ -19,7 +19,6 @@ module Poke
       extract_map_key
     end
 
-
     # Finds the Map key, which is in the form of a Hash, assigns in to an
     # instance variable, then deletes the key from the Map Array, along with any
     # blank lines.

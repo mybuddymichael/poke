@@ -18,5 +18,20 @@ module Poke
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
     end
 
+
+    # Finds the Map key, which is in the form of a Hash, assigns in to an
+    # instance variable, then deletes the key from the Map Array, along with any
+    # blank lines.
+    #
+    # Returns nothing.
+    def extract_map_key
+      rx = /\{[^}]+\}/i
+      map_key_index = @map_in_lines.index { |i\ rx.match i }
+
+      @map_key = eval(@map_in_lines[map_key_index])
+
+      @map_in_lines.delete_at(map_key_index)
+      @map_in_lines.delete('')
+    end
   end
 end

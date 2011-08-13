@@ -19,9 +19,9 @@ module Poke
 
   private
 
-    # Creates an array of strings corresponding to the lines of the file passed in
-    # as an argument. Useful for traversing a map using Y-then-X notation, e.g.
-    # @map_in_columns[y][x].
+    # Creates an array of strings corresponding to the lines of the file passed
+    # in as an argument. Useful for traversing a map using Y-then-X notation,
+    # e.g. @map_in_columns[y][x].
     #
     # file - A String containing the path to the file to be converted.
     #

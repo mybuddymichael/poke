@@ -124,5 +124,23 @@ module Poke
       end
     end
 
+    # Searches an Array of lines for an element that matches the pattern of a
+    # Hash. It extracts the String then deletes the element and any blank lines.
+    #
+    # lines - An Array of Strings, corresponding to lines in a map file.
+    #
+    # Returns a Hash, which is a Map-image key.
+    def extract_map_key(lines)
+      rx = /\{[^}]+\}/i
+      map_key_index = lines.index { |i| rx.match i }
+
+      map_key = eval(lines[map_key_index])
+
+      lines.delete_at(map_key_index)
+      lines.delete('')
+
+      map_key
+    end
+
   end
 end

@@ -1,5 +1,3 @@
-require 'rmagick'
-
 module Poke
   # Map reads an ASCII file and coverts it to an object that can be read and
   # manipulated by other program objects.

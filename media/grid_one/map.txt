@@ -1,14 +1,14 @@
-VVVVVVVVVVVVVVVVVVVVVVVVVVV
-Vggggg.....ggggg.....gggggV
-Vggggg.....ggggg.....gggggV
-Vggggg..V.........V..gggggV
-Vggggg..V.........V..gggggV
-Vggggg.....ggggg.....gggggV
-Vggggg.....ggggg.....gggggV
-Vggggg..V.........V..gggggV
-Vggggg..V.........V..gggggV
-Vggggg.....ggggg.....gggggV
-Vggggg.....ggggg.....gggggV
-VVVVVVVVVVVVVVVVVVVVVVVVVVV
+V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,P,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.
 
 {'.'=>0, 'V'=>1, 'g'=>2}

@@ -17,6 +17,8 @@ module Poke
       @map_key      = extract_map_key(@map_in_lines)
     end
 
+  private
+
     # Creates an array of strings corresponding to the lines of the file passed in
     # as an argument. Useful for traversing a map using Y-then-X notation, e.g.
     # @map_in_columns[y][x].

@@ -16,7 +16,7 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
-      extract_map_key
+      @map_key      = extract_map_key(@map_in_lines)
     end
 
   end

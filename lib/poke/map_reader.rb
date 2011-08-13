@@ -8,7 +8,7 @@ module Poke
   #   ..VV..
   #
   # in a plain-text file (such as "map.txt").
-  module ReadMap
+  class MapReader
 
     # Creates an array of strings corresponding to the lines of the file passed in
     # as an argument. Useful for traversing a map using Y-then-X notation, e.g.

@@ -7,6 +7,8 @@ module Poke
   #   ..VVgg
   #   ..VV..
   #
+  #   {'.'=>0, 'V'=>1, 'g'=>2}
+  #
   # in a plain-text file (such as "map.txt").
   class MapReader
 

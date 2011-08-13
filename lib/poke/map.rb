@@ -7,6 +7,8 @@ module Poke
 
     include Poke::ReadMap
 
+    # Params required at initialization.
+    PARAMS_REQUIRED = {:map_file}
 
     # Creates a Map object.
     #

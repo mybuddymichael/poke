@@ -27,7 +27,7 @@ module Poke
     # Returns nothing.
     def extract_map_key
       rx = /\{[^}]+\}/i
-      map_key_index = @map_in_lines.index { |i\ rx.match i }
+      map_key_index = @map_in_lines.index { |i| rx.match i }
 
       @map_key = eval(@map_in_lines[map_key_index])
 

@@ -1,13 +1,13 @@
 module Poke
-  # Contains methods for parsing a map file, creating map objects suitable for
-  # later usage by other objects.
-  # e.g. a map file may be thus:
+  # A MapReader object provides an engine for parsing and reading an ASCII map
+  # file, and can provide various outputs for usage by other game objects.
+  # e.g. A map file may be thus:
   #
   #   VV..gg
   #   ..VVgg
   #   ..VV..
   #
-  # in a plain-text file (such as "map.txt")
+  # in a plain-text file (such as "map.txt").
   module ReadMap
 
     # Creates an array of strings corresponding to the lines of the file passed in

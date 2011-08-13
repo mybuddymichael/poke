@@ -3,8 +3,6 @@ module Poke
   # manipulated by other program objects.
   class Map
 
-    include Poke::ReadMap
-
     # Params required at initialization.
     PARAMS_REQUIRED = [:map_file]
 

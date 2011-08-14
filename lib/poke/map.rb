@@ -51,6 +51,33 @@ module Poke
       @map_in_lines.delete('')
     end
 
+    # Reads the Array of lines, creating an Array that corresponds to the
+    # background map.
+    #
+    # Returns nothing.
+    def get_background_map
+      @background_map = Array.new(@map_in_lines.size, '')
+
+      iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
+        if x.even?
+          @background_map[y][x] = @map_in_lines[y][x]
+        end
+      end
+    end
+
+    # See #get_background_map.
+    #
+    # Returns nothing.
+    def get_character_map
+      @character_map = Array.new(@map_in_lines.size, '')
+
+      iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
+        if x.odd?
+          @character_map[y][x] = @map_in_lines[y][x]
+        end
+      end
+    end
+
     # Iterates over each individual character in an array of lines, performing the
     # passed block on each element.
     #

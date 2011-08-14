@@ -20,6 +20,7 @@ module Poke
       extract_map_image_key
       get_background_map
       get_character_map
+      get_array_of_solid_blocks
       create_background_image
     end
 

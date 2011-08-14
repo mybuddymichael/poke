@@ -92,6 +92,16 @@ module Poke
     #
     # Returns nothing.
     def create_background_image
+
+      iterate_over_each_character_in_array_of_lines(@maps[:background]) do |y,x|
+        @map_image_key.each do |key, value|
+          if @map_in_lines[y][x] == key
+            image_list ||= []
+            image_list.push("media/tmp/tile#{value}.png")
+          end
+        end
+      end
+
     end
 
     # Helper method to split a uniform tile set into separate tiles that can be

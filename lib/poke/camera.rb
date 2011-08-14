@@ -42,7 +42,7 @@ module Poke
     #
     # Returns nothing.
     def get_x
-      grid_width = @window.current_grid.width
+      grid_width = @window.current_map.width
       @x = [[@player.x - 224, 0].max, grid_width * 32 - 480].min
     end
 
@@ -50,7 +50,7 @@ module Poke
     #
     # Returns nothing.
     def get_y
-      grid_height = @window.current_grid.height
+      grid_height = @window.current_map.height
       @y = [[@player.y - 144, 0].max, grid_height * 32 - 320].min
     end
 

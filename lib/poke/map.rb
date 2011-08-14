@@ -14,7 +14,6 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
-      @maps = {}
 
       extract_map_image_key
       get_background_map
@@ -60,6 +59,7 @@ module Poke
     # Returns nothing.
     def get_background_map
       background_map = Array.new(@map_in_lines.size, '')
+      @maps ||= {}
 
       iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
         if x.even?
@@ -75,6 +75,7 @@ module Poke
     # Returns nothing.
     def get_character_map
       character_map = Array.new(@map_in_lines.size, '')
+      @maps ||= {}
 
       iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
         if x.odd?

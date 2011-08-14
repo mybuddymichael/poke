@@ -92,6 +92,7 @@ module Poke
     #
     # Returns nothing.
     def create_background_image
+      number_of_tiles = @tile_set[0].columns/32
       @maps[:background]
     end
 

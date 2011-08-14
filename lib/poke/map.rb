@@ -98,8 +98,8 @@ module Poke
     #
     # Returns nothing.
     def iterate_over_each_character_in_array_of_lines(lines)
-      get_height_for_lines(lines).times do |y|
-        get_width_for_lines(lines).times do |x|
+      lines.size.times do |y|
+        lines[0].size.times do |x|
           yield(y, x)
         end
       end

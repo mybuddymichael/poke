@@ -103,6 +103,12 @@ module Poke
         end
       end
 
+      montage_cmd = "montage #{image_list.join(' ')} "
+      montage_cmd += "-tile #{@maps[:background][0].size}x "
+      montage_cmd += "-geometry 32x32+0+0 media/grid_one/full_map_image.png"
+
+      `#{montage_cmd}`
+
       FileUtils.rm_r Dir.glob('media/tmp/*')
     end
 

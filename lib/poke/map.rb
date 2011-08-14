@@ -102,6 +102,7 @@ module Poke
         end
       end
 
+      FileUtils.rm_r Dir.glob('media/tmp/*')
     end
 
     # Helper method to split a uniform tile set into separate tiles that can be

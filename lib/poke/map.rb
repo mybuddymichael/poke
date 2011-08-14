@@ -16,6 +16,8 @@ module Poke
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
 
       extract_map_image_key
+      get_background_map
+      get_character_map
     end
 
   private

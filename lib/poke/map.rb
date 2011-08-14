@@ -23,6 +23,10 @@ module Poke
       create_background_image
     end
 
+    def draw
+      @background_image.draw(0, 0, Poke::ZOrder::MAP)
+    end
+
   private
 
     # Creates an array of strings corresponding to the lines of the file passed

@@ -35,5 +35,21 @@ module Poke
       File.readlines(file).map { |line| line.chomp }
     end
 
+
+    # Retrieves the map-image key from the Array of lines (@map_in_lines), evals
+    # it to create a Hash, then stores that Hash as the @map_image_key ivar.
+    # It will delete the line containing the key, along with any blank lines.
+    #
+    # Returns nothing.
+    def extract_map_image_key
+      rx = /\{[^}]+\}/i
+      map_key_index = @map_in_lines.index { |i| rx.match i }
+
+      @map_image_key = eval(@map_in_lines[map_key_index])
+
+      @map_in_lines.delete_at(map_key_index)
+      @map_in_lines.delete('')
+    end
+
   end
 end

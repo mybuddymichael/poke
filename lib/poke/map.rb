@@ -27,6 +27,20 @@ module Poke
       @background_image.draw(0, 0, Poke::ZOrder::MAP)
     end
 
+    # Gets the width of the background map lines Array.
+    #
+    # Returns a Fixnum.
+    def width
+      @maps[:background][0].size
+    end
+
+    # Gets the height of the background map lines Array.
+    #
+    # Returns a Fixnum.
+    def height
+      @maps[:background].size
+    end
+
   private
 
     # Creates an array of strings corresponding to the lines of the file passed

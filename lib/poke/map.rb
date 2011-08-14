@@ -98,8 +98,6 @@ module Poke
         image = @tileset[0].crop((i*32), 0, 32, 32)
         image.write("media/tmp/tile#{i}.png")
       end
-
-      @maps[:background]
     end
 
     # Iterates over each individual character in an array of lines, performing

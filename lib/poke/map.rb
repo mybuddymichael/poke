@@ -14,7 +14,7 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
-      @tile_set = params[:tile_set]
+      @tile_set = Magick::Image.read(params[:tile_set])
 
       extract_map_image_key
       get_background_map

@@ -19,6 +19,7 @@ module Poke
       extract_map_image_key
       get_background_map
       get_character_map
+      create_background_image
     end
 
   private

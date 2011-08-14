@@ -74,14 +74,14 @@ module Poke
 
     def next_block_is_solid?
       unless movement_is_locked?
-        solid_blocks = @window.current_grid.solid_blocks
-        map_tiles    = @window.current_grid.map_in_lines
+        solid_blocks = @window.current_map.solid_blocks
+        map          = @window.current_map.maps[:background]
 
         x_tile, y_tile = @x/32, @y/32
         x_tc = (@tile_coefficients[@direction][1])
         y_tc = (@tile_coefficients[@direction][0])
 
-        solid_blocks.include?(map_tiles[y_tile+y_tc][x_tile+x_tc])
+        solid_blocks.include?(map[y_tile+y_tc][x_tile+x_tc])
       end
     end
 

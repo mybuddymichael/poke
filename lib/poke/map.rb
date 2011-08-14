@@ -87,6 +87,10 @@ module Poke
       @maps[:characters] = character_map
     end
 
+    # Reads the background map Array and creates a background image which will
+    # be drawn by Map#draw.
+    #
+    # Returns nothing.
     def create_background_image
       @maps[:background]
     end

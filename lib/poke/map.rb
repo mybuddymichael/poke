@@ -4,7 +4,7 @@ module Poke
   class Map
 
     # Params required at initialization.
-    PARAMS_REQUIRED = [:map_file]
+    PARAMS_REQUIRED = [:map_file, :tile_set]
 
     # Creates a Map object.
     #
@@ -14,6 +14,7 @@ module Poke
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
+      @tile_set = params[:tile_set]
 
       extract_map_image_key
       get_background_map

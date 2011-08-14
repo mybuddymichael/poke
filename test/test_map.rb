@@ -3,8 +3,7 @@ require_relative 'test_helper'
 class TestMap < MiniTest::Unit::TestCase
 
   def setup
-    @window = Window.new
-    @map = @window.current_grid.instance_variable_get(:@map)
+    @map = Poke::Map.new(map_file: 'media/grid_one/map.txt')
     @map_key = @map.instance_variable_get(:@map_key)
   end
 

@@ -107,6 +107,20 @@ module Poke
       @maps[:characters] = character_map
     end
 
+    # Reads the map-image key for any upper-case letters, and creates an array
+    # containing those characters, if any.
+    #
+    # Returns nothing.
+    def get_array_of_solid_blocks
+      @solid_blocks = []
+
+      @map_image_key.each_key do |key|
+        if (key.upcase == key) and (key != ',')
+          @solid_blocks.push(key)
+        end
+      end
+    end
+
     # Reads the background map Array and creates a background image which will
     # be drawn by Map#draw.
     #

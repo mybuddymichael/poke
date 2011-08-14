@@ -109,6 +109,10 @@ module Poke
 
       `#{montage_cmd}`
 
+      @background_image = Gosu::Image.new(@window,
+                                          'media/grid_one/full_map_image.png',
+                                          false)
+
       FileUtils.rm_r Dir.glob('media/tmp/*')
     end
 

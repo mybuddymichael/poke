@@ -6,6 +6,9 @@ module Poke
     # Returns an Array of the background map's solid blocks.
     attr_reader :solid_blocks
 
+    # Returns a Hash containing the character and background map Arrays.
+    attr_reader :maps
+
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :map_file, :tile_set]
 

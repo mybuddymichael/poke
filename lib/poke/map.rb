@@ -92,6 +92,13 @@ module Poke
     #
     # Returns nothing.
     def create_background_image
+    end
+
+    # Helper method to split a uniform tile set into separate tiles that can be
+    # used by rmagick.
+    #
+    # Returns nothing.
+    def split_tile_set_into_tiles
       number_of_tiles = @tile_set[0].columns/32
 
       number_of_tiles.times do |i|

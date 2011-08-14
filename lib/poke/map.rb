@@ -93,6 +93,12 @@ module Poke
     # Returns nothing.
     def create_background_image
       number_of_tiles = @tile_set[0].columns/32
+
+      number_of_tiles.times do |i|
+        image = @tileset[0].crop((i*32), 0, 32, 32)
+        image.write("media/tmp/tile#{i}.png")
+      end
+
       @maps[:background]
     end
 

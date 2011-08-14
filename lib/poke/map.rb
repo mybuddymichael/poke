@@ -62,7 +62,7 @@ module Poke
 
       iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
         if x.even?
-          @background_map[y][x/2] = @map_in_lines[y][x]
+          @background_map[y] += @map_in_lines[y][x]
         end
       end
     end
@@ -75,7 +75,7 @@ module Poke
 
       iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
         if x.odd?
-          @character_map[y][x/2] = @map_in_lines[y][x]
+          @character_map[y] += @map_in_lines[y][x]
         end
       end
     end

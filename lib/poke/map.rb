@@ -86,6 +86,10 @@ module Poke
       @maps[:characters] = character_map
     end
 
+    def create_background_image
+      @maps[:background]
+    end
+
     # Iterates over each individual character in an array of lines, performing
     # the passed block on each element.
     #

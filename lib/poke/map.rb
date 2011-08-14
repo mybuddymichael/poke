@@ -3,6 +3,9 @@ module Poke
   # manipulated by other program objects.
   class Map
 
+    # Returns an Array of the background map's solid blocks.
+    attr_reader :solid_blocks
+
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :map_file, :tile_set]
 

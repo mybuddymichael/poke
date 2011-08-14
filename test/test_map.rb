@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class TestMap < MiniTest::Unit::TestCase
+class TestMap < Poke::Test
 
   def setup
     @map = Poke::Map.new(map_file: 'media/grid_one/map.txt')

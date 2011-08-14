@@ -4,7 +4,7 @@ module Poke
   class Map
 
     # Params required at initialization.
-    PARAMS_REQUIRED = [:map_file, :tile_set]
+    PARAMS_REQUIRED = [:window, :map_file, :tile_set]
 
     # Creates a Map object.
     #
@@ -13,6 +13,7 @@ module Poke
     def initialize(params = {})
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 
+      @window = params[:window]
       @map_in_lines = get_array_of_lines_from_file(params[:map_file])
       @tile_set = Magick::Image.read(params[:tile_set])
 

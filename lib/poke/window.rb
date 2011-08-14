@@ -2,7 +2,7 @@ class Window < Gosu::Window
 
   include Poke
 
-  attr_reader :current_grid, :controls
+  attr_reader :current_map, :controls
   attr_accessor :paused
 
   def initialize
@@ -18,11 +18,10 @@ class Window < Gosu::Window
                                      width: @width,
                                     height: @height)
 
-    @grid_one     = Grid.new(window: self,
-                               user: @player,
-                           map_file: "media/grid_one/map.txt",
-                            tileset: "media/grid_one/tileset.png")
-    @current_grid = @grid_one
+    @map_one      = Map.new(window: self,
+                            map_file: 'media/grid_one/map.txt',
+                            tile_set: 'media/grid_one/tileset.png')
+    @current_map  = @map_one
 
     @camera       = Camera.new(window: self,
                                player: @player)
@@ -30,7 +29,6 @@ class Window < Gosu::Window
 
   def update
     unless @paused
-      @current_grid.update
       @player.update
       @camera.update
     end
@@ -38,7 +36,7 @@ class Window < Gosu::Window
 
   def draw
     translate(-@camera.x, -@camera.y) do
-      @current_grid.draw
+      @current_map.draw
       @player.draw
     end
 

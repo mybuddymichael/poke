@@ -51,8 +51,8 @@ module Poke
       @map_in_lines.delete('')
     end
 
-    # Reads the Array of lines, creating an Array that corresponds to the
-    # background map.
+    # Reads the Array of lines, fetching every even character and creating an
+    # Array that corresponds to the background map.
     #
     # Returns nothing.
     def get_background_map

@@ -114,10 +114,11 @@ module Poke
     def create_background_image
       split_tile_set_into_tiles
 
+      image_list = []
+
       iterate_over_each_character_in_array_of_lines(@maps[:background]) do |y,x|
         @map_image_key.each do |key, value|
           if @map_in_lines[y][x] == key
-            image_list ||= []
             image_list.push("media/tmp/tile#{value}.png")
           end
         end

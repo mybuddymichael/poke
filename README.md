@@ -40,9 +40,15 @@ without further ado:
 
 1. `cd` into where you want to download the source and run `git clone
    git://github.com/mybuddymichael/Poke.git`.
-2. If you have [Bundler] installed, `cd` into `Poke/` and simply type `bundle
-   install` to install gem dependencies. Otherwise you have to `gem install
-   gosu` and  `gem install rmagick`.
+2. If you have [Bundler] installed, `cd` into `Poke/` and simply type
+
+        $ bundle install
+
+    to install gem dependencies. Otherwise you have to
+
+        $ gem install gosu
+        $ gem install rmagick
+
 3. Install ImageMagick, via [Homebrew] or macports or fink or whatever you want
    to use.
 4. ???

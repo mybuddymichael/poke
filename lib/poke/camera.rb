@@ -54,7 +54,7 @@ module Poke
     # Returns nothing.
     def get_y
       grid_height = @window.current_map.height
-      half_y = HEIGHT * GRID / 2 - GRID / 2
+      half_y = HEIGHT / 2 - GRID / 2
       @y = [[@player.y - half_y, 0].max, grid_height * GRID - HEIGHT].min
     end
 

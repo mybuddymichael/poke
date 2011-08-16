@@ -6,12 +6,6 @@ module Poke
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :map_file, :tile_set]
 
-    # Returns an Array of the background map's solid blocks.
-    attr_reader :solid_blocks
-
-    # Returns a Hash containing the character and background map Arrays.
-    attr_reader :maps
-
     # Creates a Map object.
     #
     # params - A Hash of Symbol options.
@@ -47,6 +41,12 @@ module Poke
     def height
       @maps[:background].size
     end
+
+    # Returns an Array of the background map's solid blocks.
+    attr_reader :solid_blocks
+
+    # Returns a Hash containing the character and background map Arrays.
+    attr_reader :maps
 
   private
 

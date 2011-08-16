@@ -1,6 +1,7 @@
 class Window < Gosu::Window
 
   include Poke
+  include Dimensions
 
   attr_reader :current_map, :controls
   attr_accessor :paused

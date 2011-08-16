@@ -7,8 +7,8 @@ class Window < Gosu::Window
   attr_accessor :paused
 
   def initialize
-    @width  = Poke::Dimensions::WIDTH
-    @height = Poke::Dimensions::HEIGHT
+    @width  = WIDTH * GRID
+    @height = HEIGHT * GRID
 
     super(@width, @height, false)
 

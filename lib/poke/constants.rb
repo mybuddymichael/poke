@@ -2,8 +2,8 @@ module Poke
 
   module Dimensions
     GRID   = 32
-    HEIGHT = 15
-    WIDTH  = 10
+    HEIGHT = 15 * GRID
+    WIDTH  = 10 * GRID
   end
 
   module Color

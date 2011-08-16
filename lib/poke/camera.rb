@@ -4,6 +4,8 @@ module Poke
   # the user see the movement of the character on the screen.
   class Camera
 
+    include Poke::Dimensions
+
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :player]
 

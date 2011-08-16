@@ -9,6 +9,10 @@ V.g.g.g.g.g.,.,.V.,.,.,.,.,C,.,.,.,.V.,.,.gNgfgfgfg.V.
 V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.gfgfgfgfg.V.
 V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
 V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.V.,.,.,.,.,.,.,.,.,.V.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
+V.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.,.,.,.,.,.g.g.g.g.g.V.
 V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.V.
 
 {','=>0, 'V'=>1, 'g'=>2}

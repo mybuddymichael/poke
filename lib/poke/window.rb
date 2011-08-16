@@ -7,8 +7,8 @@ class Window < Gosu::Window
   attr_accessor :paused
 
   def initialize
-    @width  = WIDTH * GRID
-    @height = HEIGHT * GRID
+    @width  = WIDTH
+    @height = HEIGHT
 
     super(@width, @height, false)
 

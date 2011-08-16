@@ -13,8 +13,8 @@ module Poke
     end
 
     def draw
-      draw_rect(Poke::Math::WIDTH, Poke::Math::HEIGHT, Color::TRANS_BLACK,
-                ZOrder::PAUSE_BACKGROUND)
+      draw_rect(Poke::Dimensions::WIDTH, Poke::Dimensions::HEIGHT,
+                Color::TRANS_BLACK, ZOrder::PAUSE_BACKGROUND)
       @pause_button.draw(160, 144, ZOrder::PAUSE_BUTTON)
       @press_q.draw(170, 296, ZOrder::PAUSE_BUTTON)
     end

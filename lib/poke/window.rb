@@ -6,8 +6,8 @@ class Window < Gosu::Window
   attr_accessor :paused
 
   def initialize
-    @width  = Poke::Math::WIDTH
-    @height = Poke::Math::HEIGHT
+    @width  = Poke::Dimensions::WIDTH
+    @height = Poke::Dimensions::HEIGHT
 
     super(@width, @height, false)
 

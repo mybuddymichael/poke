@@ -1,6 +1,6 @@
 module Poke
 
-  module Math
+  module Dimensions
     GRID   = 32
     HEIGHT = 480
     WIDTH  = 320

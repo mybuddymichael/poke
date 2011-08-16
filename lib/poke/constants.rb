@@ -1,5 +1,11 @@
 module Poke
 
+  module Math
+    GRID   = 32
+    HEIGHT = 480
+    WIDTH  = 320
+  end
+
   module Color
     BLACK       = Gosu::Color::BLACK
     WHITE       = Gosu::Color::WHITE
@@ -13,10 +19,6 @@ module Poke
 
   module Media
     FONT = 'media/poke.dfont'
-  end
-
-  module Math
-    GRID = 32
   end
 
 end

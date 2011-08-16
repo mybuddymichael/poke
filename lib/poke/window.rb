@@ -6,9 +6,12 @@ class Window < Gosu::Window
   attr_accessor :paused
 
   def initialize
-    super(480, 320, false)
+    @width  = Poke::Math::WIDTH
+    @height = Poke::Math::HEIGHT
+
+    super(@width, @height, false)
+
     self.caption = 'Poke'
-    @width, @height = 480, 320
 
     @paused = false
 

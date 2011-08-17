@@ -33,10 +33,10 @@ However, if you would really like to try it out, here's how...
 
 ### Installation
 
-Poke runs on Ruby 1.9.x. To install this *easily*, I highly recommend you use
-[RVM]. You can read how on the [RVM website][RVM]. I also recommend you install
-the [Bundler] gem, which makes installating and updating gems crazy easy. So,
-without further ado:
+Poke runs on Ruby 1.9.x. To install this *easily*, I recommend you use
+[ruby-build] + [rbenv]. You can read how on the [ruby-build
+website][ruby-build]. I also recommend you install the [Bundler] gem, which
+makes installating and updating gems crazy easy. So, without further ado:
 
 1. `cd` into where you want to download the source and run `git clone
    git://github.com/mybuddymichael/Poke.git`.
@@ -65,6 +65,7 @@ Copyright © 2011 Michael Hanson. See LICENSE for license information.
 [Ruby]: http://www.ruby-lang.org/en/
 [Gosu]: http://libgosu.org/
 [pockets and monsters]: http://en.wikipedia.org/wiki/Pokémon_(video_game_series)
-[RVM]: https://rvm.beginrescueend.com/
+[rbenv]:https://github.com/sstephenson/rbenv
+[ruby-build]:https://github.com/sstephenson/ruby-build
 [Bundler]: http://gembundler.com/
 [Homebrew]: http://mxcl.github.com/homebrew/

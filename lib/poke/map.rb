@@ -138,8 +138,8 @@ module Poke
       FileUtils.rm_r Dir.glob('media/tmp/*')
     end
 
-    # Helper method to split a uniform tile set into separate tiles that can be
-    # used by rmagick.
+    # Splits a uniform tile set into separate tiles that can be used by
+    # ImageMagick `montage` command.
     #
     # Returns nothing.
     def split_tile_set_into_tiles

@@ -33,7 +33,7 @@ module Poke
       #
       #   iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
       #     if @map_in_lines[y][x] == "V"
-      #       print "V!"
+      #       print "V! "
       #     end
       #   end
       #   # => V! V! V! V! V! V! V! V!

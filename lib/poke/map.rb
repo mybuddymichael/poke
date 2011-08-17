@@ -9,7 +9,10 @@ module Poke
     # Creates a Map object.
     #
     # params - A Hash of Symbol options.
+    #   :window   - The Window object that will be drawing the Map.
     #   :map_file - An ASCII file that represents the Map.
+    #   :tile_set - The bitmap image that contains the tiles used by the
+    #               background map.
     def initialize(params = {})
       Poke::Params.check_params(params, PARAMS_REQUIRED)
 

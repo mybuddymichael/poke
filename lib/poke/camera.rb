@@ -9,12 +9,6 @@ module Poke
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :player]
 
-    # Returns a Fixnum of the Camera's x-axis value.
-    attr_reader :x
-
-    # Returns a Fixnum of the Camera's x-axis value.
-    attr_reader :y
-
     # Creates a Camera object.
     #
     # params - The Hash of Symbol options.
@@ -35,6 +29,12 @@ module Poke
       get_x
       get_y
     end
+
+    # Returns a Fixnum of the Camera's x-axis value.
+    attr_reader :x
+
+    # Returns a Fixnum of the Camera's x-axis value.
+    attr_reader :y
 
   private
 

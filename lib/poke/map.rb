@@ -123,18 +123,9 @@ module Poke
     # Returns nothing.
     def create_background_image
       split_tile_set_into_tiles
+      create_image_list
 
-      image_list = []
-
-      iterate_over_each_character_in_array_of_lines(@maps[:background]) do |y,x|
-        @map_image_key.each do |key, value|
-          if @maps[:background][y][x] == key
-            image_list.push("media/tmp/tile#{value}.png")
-          end
-        end
-      end
-
-      montage_cmd = "montage #{image_list.join(' ')} "
+      montage_cmd = "montage #{@image_list.join(' ')} "
       montage_cmd += "-tile #{@maps[:background][0].size}x "
       montage_cmd += "-geometry 32x32+0+0 media/grid_one/full_map_image.png"
 
@@ -157,6 +148,25 @@ module Poke
       number_of_tiles.times do |i|
         image = @tile_set[0].crop((i*32), 0, 32, 32)
         image.write("media/tmp/tile#{i}.png")
+      end
+    end
+
+    # Reads the background map array and references the array to the provided
+    # map-image key. It creates a list of tile image file names, corresponding
+    # to each character in the ASCII map, and stores the list as an Array. The
+    # list is used by ImageMagick's `montage` command to create the final
+    # composited background image.
+    #
+    # Returns nothing.
+    def create_image_list
+      @image_list = []
+
+      iterate_over_each_character_in_array_of_lines(@maps[:background]) do |y,x|
+        @map_image_key.each do |key, value|
+          if @maps[:background][y][x] == key
+            @image_list.push("media/tmp/tile#{value}.png")
+          end
+        end
       end
     end
 

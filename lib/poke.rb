@@ -1,3 +1,4 @@
+require_relative 'poke/support'
 require_relative 'poke/constants'
 require_relative 'poke/params'
 require_relative 'poke/window'

@@ -3,6 +3,8 @@ module Poke
   # manipulated by other program objects.
   class Map
 
+    include Support::Map
+
     # Params required at initialization.
     PARAMS_REQUIRED = [:window, :map_file, :tile_set]
 
@@ -52,22 +54,6 @@ module Poke
     attr_reader :maps
 
   private
-
-    # Creates an array of strings corresponding to the lines of the file passed
-    # in as an argument. Useful for traversing a map using Y-then-X notation,
-    # e.g. @map_in_columns[y][x].
-    #
-    # file - A String containing the path to the file to be converted.
-    #
-    # Examples
-    #
-    #   get_array_of_lines_from_file("map.txt")
-    #   # => ["VV..gg", "..VVgg", "..VV.."]
-    #
-    # Returns an Array of Strings.
-    def get_array_of_lines_from_file(file)
-      File.readlines(file).map { |line| line.chomp }
-    end
 
     # Retrieves the map-image key from the Array of lines (@map_in_lines), evals
     # it to create a Hash, then stores that Hash as the @map_image_key ivar.
@@ -171,31 +157,6 @@ module Poke
       number_of_tiles.times do |i|
         image = @tile_set[0].crop((i*32), 0, 32, 32)
         image.write("media/tmp/tile#{i}.png")
-      end
-    end
-
-    # Iterates over each individual character in an array of lines, performing
-    # the passed block on each element.
-    #
-    # lines - An Array of Strings, corresponding to lines in a map file.
-    #
-    # Yields two Fixnum.
-    #
-    # Examples
-    #
-    #   iterate_over_each_character_in_array_of_lines(@map_in_lines) do |y, x|
-    #     if @map_in_lines[y][x] == "V"
-    #       print "V!"
-    #     end
-    #   end
-    #   # => V! V! V! V! V! V! V! V!
-    #
-    # Returns nothing.
-    def iterate_over_each_character_in_array_of_lines(lines)
-      lines.size.times do |y|
-        lines[0].size.times do |x|
-          yield(y, x)
-        end
       end
     end
 

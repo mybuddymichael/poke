@@ -13,17 +13,8 @@ I'm thinking robots. In your pocket. (Pokébots?)
 ### The future
 
 The future of Poke is certainly uncertain, as it's a side-project on which I
-spend only a limited amount of my free time. That said, I hope to implement the
-following features:
-
-- An open-ended randomly-generated world, à la Minecraft, Infiniminer, Dwarf
-  Fortress, and the previous pioneers of an open and random game world.
-- A system to give the player a sense of accomplishment and a goal. (Possibly
-  collecting or creating robots.)
-- A crafting system that allows the player to create various items, vehicles,
-  and robots of infinite possibilities.
-
-See, like I said, *simple*.
+spend only a limited amount of my free time. But I've got some neat ideas, and
+as times goes on we'll see how they go...
 
 ### Currently
 

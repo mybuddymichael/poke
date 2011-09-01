@@ -1,3 +1,7 @@
+require 'gosu'
+require 'rmagick'
+require 'fileutils'
+
 require_relative 'poke/support'
 require_relative 'poke/constants'
 require_relative 'poke/params'

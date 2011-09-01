@@ -129,7 +129,7 @@ module Poke
       montage_cmd += "-tile #{@maps[:background][0].size}x "
       montage_cmd += "-geometry 32x32+0+0 media/grid_one/full_map_image.png"
 
-      `#{montage_cmd}`
+      system("#{montage_cmd}")
 
       @background_image = Gosu::Image.new(@window,
                                           'media/grid_one/full_map_image.png',

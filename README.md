@@ -1,26 +1,7 @@
 Poke
 ====
 
-Poke is a simple game-design project using [Ruby] and [Gosu]. It is intended to
-be a two-dimensional adventure game, similar to that wonderful Japanese game
-about [pockets and monsters] \(hence, "Poke", which is certainly a working
-title).
-
-### So what will the game be like?
-
-I'm thinking robots. In your pocket. (Pokébots?)
-
-### The future
-
-The future of Poke is certainly uncertain, as it's a side-project on which I
-spend only a limited amount of my free time. But I've got some neat ideas, and
-as times goes on we'll see how they go...
-
-### Currently
-
-Poke is in an alpha of alpha state right now. The engine is being actively built
-and much is frequently changing. It's not a game. It's not fun in any way.
-However, if you would really like to try it out, here's how...
+Poke is a simple game-design experiment using [Ruby] and the [Gosu framework]. 
 
 ### Installation
 
@@ -50,11 +31,13 @@ makes installating and updating gems crazy easy. So, without further ado:
 ![](http://dl.dropbox.com/u/2827486/poke_screenshot.png)
 ![](http://dl.dropbox.com/u/2827486/poke_screenshot_paused.png)
 
-Copyright © 2011 Michael Hanson. See LICENSE for license information.
+### License
+
+Copyright © 2011 Michael Hanson. See LICENSE.
 
 
 [Ruby]: http://www.ruby-lang.org/en/
-[Gosu]: http://libgosu.org/
+[Gosu framework]: http://libgosu.org/
 [pockets and monsters]: http://en.wikipedia.org/wiki/Pokémon_(video_game_series)
 [rbenv]:https://github.com/sstephenson/rbenv
 [ruby-build]:https://github.com/sstephenson/ruby-build

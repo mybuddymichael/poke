@@ -33,7 +33,7 @@ makes installating and updating gems crazy easy. So, without further ado:
 
 ### License
 
-Copyright © 2011 Michael Hanson. See LICENSE.
+Copyright © 2011 Michael Hanson. Released under the MIT license; see LICENSE.
 
 
 [Ruby]: http://www.ruby-lang.org/en/
